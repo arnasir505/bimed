@@ -10,6 +10,9 @@ createRoot(document.getElementById('root')!).render(
       theme={{
         token: {
           fontFamily: 'Inter',
+          colorLink: '#000000',
+          colorLinkHover: '#054EDB',
+          colorTextDisabled: '#8B96B1',
         },
         components: {
           Button: {
@@ -20,6 +23,7 @@ createRoot(document.getElementById('root')!).render(
             paddingBlock: 10,
             paddingInline: 24,
           },
+          Typography: {},
         },
       }}
       locale={ruRu}
