@@ -1,11 +1,14 @@
-import HeaderTop from '../widgets/header/headerTop/HeaderTop';
+import { Container } from 'shared/ui';
+import { Header } from 'widgets/header';
 import './style.css';
 
 function App() {
   return (
-    <>
-      <HeaderTop />
-    </>
+    <header className='header'>
+      <Container>
+        <Header />
+      </Container>
+    </header>
   );
 }
 

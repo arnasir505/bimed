@@ -1,0 +1,54 @@
+.header_bottom {
+  margin-top: 25px;
+}
+
+.ant-btn.header__button {
+  padding: 5px;
+  margin-left: 40px;
+  font-size: 15px;
+  position: relative;
+}
+
+.ant-btn.header__button:hover,
+.ant-btn.header__button:active {
+  background: transparent !important;
+}
+
+.header__button_login::before,
+.header__button_cart::before {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 1px;
+  background: #cddaf1;
+  left: -22px;
+  bottom: 3px;
+}
+
+.logo-wrap {
+  margin-left: 12px;
+}
+
+.header__logo {
+  min-width: 104px;
+}
+
+.header__search {
+  max-width: 568px;
+  margin-left: 11px;
+}
+
+.header__search .ant-input {
+  background: #f8faff;
+  text-indent: 5px;
+}
+
+.header__search .ant-input-group-addon {
+  display: none;
+}
+
+.header__search .ant-input-affix-wrapper {
+  border-radius: 14px !important;
+  background: #f8faff;
+  border: 1px solid #d4e3ff;
+}

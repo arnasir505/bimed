@@ -6,9 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "src/",
-    "paths": {
-      "@shared/ui": ["shared/ui/index.ts"]
-    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

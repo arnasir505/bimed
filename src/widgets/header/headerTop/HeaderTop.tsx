@@ -1,29 +1,42 @@
-import { Container } from '@shared/ui';
 import { Button, Flex, Typography } from 'antd';
+import { Link } from 'react-router-dom';
+import './style.css';
 
 const HeaderTop = () => {
   return (
-    <Container>
-      <Flex justify='space-between' align='center'>
-        <Flex gap='24px'>
-          <Link>О нас</Link>
-          <Link>Помощь</Link>
-          <Link>Филиалы</Link>
-          <Link>Контакты</Link>
-        </Flex>
-        <Flex align='center' gap='40px'>
-          <Text>
-            <Text disabled>Тел:</Text> +996 555 55 55 55
-          </Text>
-          <Link>Оптовые цены</Link>
-          <Link>Розничные цены</Link>
-          <Button type='primary'>Обратная связь</Button>
-        </Flex>
+    <Flex justify='space-between' align='center' className='my-9 border-bottom' wrap>
+      <Flex gap='24px' wrap>
+        <Link to={'/'} className='header__links'>
+          О нас
+        </Link>
+        <Link to={'/'} className='header__links'>
+          Помощь
+        </Link>
+        <Link to={'/'} className='header__links'>
+          Филиалы
+        </Link>
+        <Link to={'/'} className='header__links header__links_contacts'>
+          Контакты
+        </Link>
       </Flex>
-    </Container>
+      <Flex align='center' wrap>
+        <Text className='header__phone'>
+          Тел: <span className='header__phoneNumber'>+996 555 55 55 55</span>
+        </Text>
+        <Link to={'/'} className='header__links header__links_wholesalePrice active'>
+          Оптовые цены
+        </Link>
+        <Link to={'/'} className='header__links header__links_retailPrice inactive'>
+          Розничные цены
+        </Link>
+        <Button type='primary' className='header__feedback-btn'>
+          Обратная связь
+        </Button>
+      </Flex>
+    </Flex>
   );
 };
 
-const { Link, Text } = Typography;
+const { Text } = Typography;
 
 export default HeaderTop;

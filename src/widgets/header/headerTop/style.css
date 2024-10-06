@@ -1,0 +1,81 @@
+.my-9 {
+  margin: 9px 0;
+}
+
+.header__feedback-btn {
+  height: 39px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 26px;
+}
+
+.header__links {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.header__links.inactive {
+  font-weight: 400;
+  color: #8b96b1;
+}
+
+.header__links.active {
+  color: #054edb;
+}
+
+.header__phone {
+  font-size: 15px;
+  color: #979797;
+}
+
+.header__phone .header__phoneNumber {
+  color: #0c2037;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.header__links_wholesalePrice,
+.header__links_retailPrice {
+  position: relative;
+}
+
+.header__links_wholesalePrice::before,
+.header__links_retailPrice::before {
+  content: '';
+  position: absolute;
+  height: 21px;
+  width: 1px;
+  background: #858f9b;
+  left: -20px;
+  top: -1px;
+}
+
+.header__links_wholesalePrice::before {
+  left: -24px;
+}
+
+.header__links_wholesalePrice {
+  margin-left: 57px;
+}
+
+.header__links_retailPrice {
+  margin-left: 40px;
+}
+
+.header__links_contacts {
+  position: relative;
+}
+
+.header__links_contacts::after {
+  content: '';
+  position: absolute;
+  height: 24px;
+  width: 1px;
+  background: #cddaf1;
+  right: -27px;
+  bottom: -3px;
+}

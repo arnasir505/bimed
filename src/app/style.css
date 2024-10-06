@@ -2,3 +2,13 @@
   font-family: 'Inter';
   src: url('src/assets/fonts/Inter-VariableFont_opsz,wght.ttf');
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #D4E3FF;
+}
