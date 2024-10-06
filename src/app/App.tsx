@@ -1,15 +1,8 @@
-import { Container } from 'shared/ui';
-import { Header } from 'widgets/header';
+import { Home } from 'pages/Home';
 import './style.css';
 
 function App() {
-  return (
-    <header className='header'>
-      <Container>
-        <Header />
-      </Container>
-    </header>
-  );
+  return <Home />;
 }
 
 export default App;
