@@ -1,0 +1,11 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 224px);
+  grid-template-rows: auto;
+  gap: 12px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 16px;
+}
