@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './app/App';
+import App from './app/ui/App';
 import { ConfigProvider } from 'antd';
 import ruRu from 'antd/locale/ru_RU.js';
 import { BrowserRouter } from 'react-router-dom';
