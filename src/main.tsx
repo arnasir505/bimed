@@ -25,7 +25,6 @@ createRoot(document.getElementById('root')!).render(
               paddingBlock: 10,
               paddingInline: 24,
             },
-            Typography: {},
           },
         }}
         locale={ruRu}

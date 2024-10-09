@@ -5,6 +5,8 @@ import { Flex, Typography } from 'antd';
 import { ProductCard } from 'widgets/product-card';
 import { products } from 'data/products';
 import './style.css';
+import { PromotionsCarousel } from 'widgets/promotions-carousel';
+import { NavHelp } from 'widgets/nav-help';
 
 export const Home = () => {
   return (
@@ -18,11 +20,9 @@ export const Home = () => {
         <Container>
           <Carousel />
         </Container>
-        <div className='bestsellers'>
+        <section className='bestsellers'>
           <Container>
-            <Typography.Title level={3} className='bestsellers__title'>
-              Хиты продаж
-            </Typography.Title>
+            <Typography.Title level={3}>Хиты продаж</Typography.Title>
             <div className='bestsellers__wrapper'>
               {products.map((item) => (
                 <ProductCard key={item.id} item={item} />
@@ -32,7 +32,17 @@ export const Home = () => {
               <SeeAllBtn text='Посмотреть все' />
             </Flex>
           </Container>
-        </div>
+        </section>
+        <section className='promotions'>
+          <Container>
+            <Typography.Title level={3}>Акции</Typography.Title>
+            <PromotionsCarousel />
+            <Flex justify='center'>
+              <SeeAllBtn text='Посмотреть все' />
+            </Flex>
+            <NavHelp />
+          </Container>
+        </section>
       </main>
     </>
   );

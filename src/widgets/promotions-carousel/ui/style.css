@@ -1,0 +1,27 @@
+.promotions__carousel {
+  margin-top: 14px;
+  margin-bottom: 46px;
+}
+
+.promotions__carousel .slick-slide {
+  /* margin-right: 54px; */
+}
+
+.promotions__carousel .slick-list {
+  margin: 0 -27px;
+}
+
+.promotions-carousel__item {
+  border-radius: 16px;
+  height: 232px;
+  padding: 45px 22px;
+  border: 2px solid white;
+}
+
+.promotions-carousel__item:nth-child(1) {
+  background: black;
+}
+
+.promotions-carousel__item:nth-child(2) {
+  background: blue;
+}
