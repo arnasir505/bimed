@@ -1,8 +1,9 @@
-import { Container } from 'shared/ui';
+import { Container, SeeAllBtn } from 'shared/ui';
 import { Header } from 'widgets/header';
 import { Carousel } from 'widgets/carousel';
-import { Typography } from 'antd';
+import { Flex, Typography } from 'antd';
 import { ProductCard } from 'widgets/product-card';
+import { products } from 'data/products';
 import './style.css';
 
 export const Home = () => {
@@ -17,12 +18,19 @@ export const Home = () => {
         <Container>
           <Carousel />
         </Container>
-        <div className='bg-gray'>
+        <div className='bestsellers'>
           <Container>
             <Typography.Title level={3} className='bestsellers__title'>
               Хиты продаж
             </Typography.Title>
-            <ProductCard />
+            <div className='bestsellers__wrapper'>
+              {products.map((item) => (
+                <ProductCard key={item.id} item={item} />
+              ))}
+            </div>
+            <Flex justify='center'>
+              <SeeAllBtn text='Посмотреть все' />
+            </Flex>
           </Container>
         </div>
       </main>

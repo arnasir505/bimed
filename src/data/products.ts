@@ -22,7 +22,7 @@ export const products: Product[] = [
     img: 'src/assets/images/products/2.png',
     oldPrice: 661,
     newPrice: null,
-    isPrescriptionRequired: true,
+    isPrescriptionRequired: false,
     whenToUse:
       'В качестве биологически активной добавки к пище, дополнительного источника витаминов и минералов.',
     country: 'Россия',
