@@ -4,11 +4,12 @@ import { Carousel } from 'widgets/carousel';
 import { Flex, Typography } from 'antd';
 import { ProductCard } from 'widgets/product-card';
 import { products } from 'data/products';
-import './style.css';
 import { PromotionsCarousel } from 'widgets/promotions-carousel';
 import { NavHelp } from 'widgets/nav-help';
 import { news } from 'data/news';
-import { NewsCard } from 'widgets/news-card/ui/NewsCard';
+import { NewsCard } from 'widgets/news-card';
+import { Footer } from 'widgets/footer';
+import './style.css';
 
 export const Home = () => {
   return (
@@ -59,6 +60,11 @@ export const Home = () => {
           </Container>
         </section>
       </main>
+      <footer className='footer'>
+        <Container>
+          <Footer />
+        </Container>
+      </footer>
     </>
   );
 };

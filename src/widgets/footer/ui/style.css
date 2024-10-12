@@ -1,0 +1,28 @@
+.footer__title {
+  color: #98949e;
+  position: relative;
+}
+
+.footer__title::after {
+  content: '';
+  width: calc(100% + 20px);
+  height: 1px;
+  background: #d4e3ff;
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+}
+
+.footer__links {
+  margin-top: 32px;
+}
+
+.footer__link {
+  color: #171717;
+  display: block;
+  margin-top: 20px;
+}
+
+.footer__link:hover {
+  color: #054edb;
+}
