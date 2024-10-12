@@ -1,8 +1,6 @@
 import { Home } from 'pages/home';
 import './style.css';
 
-function App() {
+export const App = () => {
   return <Home />;
-}
-
-export default App;
+};

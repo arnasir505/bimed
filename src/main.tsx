@@ -1,9 +1,9 @@
 import { StrictMode } from 'react';
+import { App } from 'app';
 import { createRoot } from 'react-dom/client';
-import App from './app/ui/App';
 import { ConfigProvider } from 'antd';
-import ruRu from 'antd/locale/ru_RU.js';
 import { BrowserRouter } from 'react-router-dom';
+import ruRu from 'antd/locale/ru_RU.js';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

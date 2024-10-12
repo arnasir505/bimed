@@ -11,7 +11,7 @@ export const promotions: PromotionProduct[] = [
     discountPercentage: 55,
   },
   {
-    id: '104',
+    id: '102',
     img: 'src/assets/images/promotions-carousel-img.png',
     discountPercentage: 70,
   },

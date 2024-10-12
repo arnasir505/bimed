@@ -1,14 +1,14 @@
+import { Flex, Typography } from 'antd';
 import { Container, SeeAllBtn } from 'shared/ui';
 import { Header } from 'widgets/header';
 import { Carousel } from 'widgets/carousel';
-import { Flex, Typography } from 'antd';
 import { ProductCard } from 'widgets/product-card';
-import { products } from 'data/products';
 import { PromotionsCarousel } from 'widgets/promotions-carousel';
 import { NavHelp } from 'widgets/nav-help';
-import { news } from 'data/news';
 import { NewsCard } from 'widgets/news-card';
 import { Footer } from 'widgets/footer';
+import { products } from 'data/products';
+import { news } from 'data/news';
 import './style.css';
 
 export const Home = () => {

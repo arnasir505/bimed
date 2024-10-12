@@ -3,25 +3,46 @@
   margin-bottom: 46px;
 }
 
-.promotions__carousel .slick-slide {
-  /* margin-right: 54px; */
-}
-
-.promotions__carousel .slick-list {
-  margin: 0 -27px;
+.promotions-carousel__wrap {
+  background: #fff;
+  height: 232px;
 }
 
 .promotions-carousel__item {
+  height: 100%;
+  width: 380px;
   border-radius: 16px;
-  height: 232px;
-  padding: 45px 22px;
-  border: 2px solid white;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.promotions-carousel__item:nth-child(1) {
-  background: black;
+.promotions-carousel__item.item-101 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-1.png');
 }
 
-.promotions-carousel__item:nth-child(2) {
-  background: blue;
+.promotions-carousel__item.item-102 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-2.png');
+}
+
+.promotions-carousel__item.item-103 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-3.png');
+}
+
+.promotions-carousel__img {
+  margin-left: 22px;
+  margin-right: 26px;
+}
+
+.promotions-carousel__item.item-101 .ant-typography.promotions-carousel__title {
+  color: #065bab;
+}
+
+.ant-typography.promotions-carousel__title {
+  color: #fff;
+  font-weight: 800;
+}
+
+.promotions-carousel__title > span {
+  font-size: 20px;
+  margin-right: 10px;
 }

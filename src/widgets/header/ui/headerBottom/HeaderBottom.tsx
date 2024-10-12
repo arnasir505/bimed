@@ -1,13 +1,13 @@
+import { Button, Flex, Image, Input } from 'antd';
+import { MenuBtn } from 'shared/ui';
+import { Link } from 'react-router-dom';
 import {
   HeartOutlined,
   LoginOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
-import { Button, Flex, Image, Input } from 'antd';
-import { MenuBtn } from 'shared/ui';
 import './style.css';
-import { Link } from 'react-router-dom';
 
 const HeaderBottom = () => {
   return (
