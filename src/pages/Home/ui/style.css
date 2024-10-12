@@ -15,6 +15,11 @@ h3.ant-typography {
   padding: 32px 0;
 }
 
+.news {
+  background: #f5f5f5;
+  padding: 64px 0;
+}
+
 .bestsellers__wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, 224px);
@@ -26,4 +31,14 @@ h3.ant-typography {
 
 .promotions {
   padding: 64px 0;
+}
+
+.news__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 286px);
+  grid-template-rows: auto;
+  justify-content: center;
+  column-gap: 8px;
+  row-gap: 14px;
+  margin: 14px 0;
 }

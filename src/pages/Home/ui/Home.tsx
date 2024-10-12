@@ -7,6 +7,8 @@ import { products } from 'data/products';
 import './style.css';
 import { PromotionsCarousel } from 'widgets/promotions-carousel';
 import { NavHelp } from 'widgets/nav-help';
+import { news } from 'data/news';
+import { NewsCard } from 'widgets/news-card/ui/NewsCard';
 
 export const Home = () => {
   return (
@@ -25,7 +27,7 @@ export const Home = () => {
             <Typography.Title level={3}>Хиты продаж</Typography.Title>
             <div className='bestsellers__wrapper'>
               {products.map((item) => (
-                <ProductCard key={item.id} item={item} />
+                <ProductCard key={item.id} product={item} />
               ))}
             </div>
             <Flex justify='center'>
@@ -41,6 +43,19 @@ export const Home = () => {
               <SeeAllBtn text='Посмотреть все' />
             </Flex>
             <NavHelp />
+          </Container>
+        </section>
+        <section className='news'>
+          <Container>
+            <Typography.Title level={3}>Новости</Typography.Title>
+            <div className='news__wrapper'>
+              {news.map((item) => (
+                <NewsCard key={item.id} news={item} />
+              ))}
+            </div>
+            <Flex justify='center'>
+              <SeeAllBtn text='Все новости' />
+            </Flex>
           </Container>
         </section>
       </main>

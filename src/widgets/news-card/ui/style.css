@@ -1,0 +1,28 @@
+.ant-card {
+  box-shadow: none !important;
+  border-radius: 16px;
+}
+
+/* .ant-card:hover .news-card__title {
+  color: #054edb;
+} */
+
+.ant-card img {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.ant-card-body {
+  padding: 10px !important;
+}
+
+.news-card__title {
+  font-weight: 500;
+  font-size: 15px;
+  color: #171717;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.news-card__date {
+  color: #8b96b1;
+}

@@ -4,31 +4,31 @@ import './style.css';
 import { Product } from 'types';
 
 interface Props {
-  item: Product;
+  product: Product;
 }
 
-export const ProductCard: React.FC<Props> = ({ item }) => {
+export const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <Flex
       vertical
-      key={item.id}
+      key={product.id}
       className='product-card'
       align='center'
       justify='space-between'
       gap={10}
     >
       <div className='product-card__img-wrapper'>
-        <img src={item.img || ''} alt={item.name} />
+        <img src={product.img || ''} alt={product.name} />
       </div>
-      <Typography.Text className='product-card__name'>{item.name}</Typography.Text>
-      {item.isPrescriptionRequired && (
+      <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
+      {product.isPrescriptionRequired && (
         <Typography.Text className='product-card__prescriptionRequired'>
           По рецепту врача
         </Typography.Text>
       )}
-      {item.newPrice && (
+      {product.newPrice && (
         <Typography.Text disabled className='product-card__oldPrice'>
-          {item.oldPrice} <span>c</span>
+          {product.oldPrice} <span>c</span>
         </Typography.Text>
       )}
       <Flex className='product-card__buttons'>
@@ -40,7 +40,7 @@ export const ProductCard: React.FC<Props> = ({ item }) => {
           icon={<ShoppingCartOutlined style={{ color: '#1D9F22', fontSize: '22px' }} />}
           className='product-card__addToCart'
         >
-          {item.newPrice || item.oldPrice} c
+          {product.newPrice || product.oldPrice} c
         </Button>
       </Flex>
     </Flex>
