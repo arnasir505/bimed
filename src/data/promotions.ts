@@ -20,4 +20,19 @@ export const promotions: PromotionProduct[] = [
     img: 'src/assets/images/promotions-carousel-img.png',
     discountPercentage: 25,
   },
+  {
+    id: '104',
+    img: 'src/assets/images/promotions-carousel-img.png',
+    discountPercentage: 30,
+  },
+  {
+    id: '105',
+    img: 'src/assets/images/promotions-carousel-img.png',
+    discountPercentage: 40,
+  },
+  {
+    id: '106',
+    img: 'src/assets/images/promotions-carousel-img.png',
+    discountPercentage: 10,
+  },
 ];

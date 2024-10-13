@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export const PromotionsCarousel = () => {
   return (
-    <Carousel slidesToShow={3} className='promotions__carousel'>
+    <Carousel arrows autoplay slidesToShow={3} className='promotions__carousel'>
       {promotions.map((item) => (
         <Link to={'/'} key={item.id}>
           <div className='promotions-carousel__wrap'>
