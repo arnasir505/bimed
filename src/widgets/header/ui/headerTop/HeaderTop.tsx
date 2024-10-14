@@ -4,7 +4,7 @@ import './style.css';
 
 const HeaderTop = () => {
   return (
-    <Flex justify='space-between' align='center' className='my-9 border-bottom' wrap>
+    <Flex justify='space-between' align='center' className='header_top' wrap>
       <Flex gap='24px' wrap>
         <Link to={'/'} className='header__links'>
           О нас

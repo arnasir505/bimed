@@ -48,7 +48,7 @@ export const products: Product[] = [
   },
   {
     id: '004',
-    name: 'Витамин С 900 мг 5 г порош.шипуч.№10 саше-пакет',
+    name: 'Витамин С',
     img: 'src/assets/images/products/1.png',
     oldPrice: 13920,
     newPrice: 12980,
@@ -63,7 +63,7 @@ export const products: Product[] = [
   },
   {
     id: '005',
-    name: 'Инозифол 0,8 г №20 саше',
+    name: 'Инозифол',
     img: 'src/assets/images/products/2.png',
     oldPrice: 661,
     newPrice: null,
@@ -78,7 +78,7 @@ export const products: Product[] = [
   },
   {
     id: '006',
-    name: 'Доппельгерц №80 Актив омега-3',
+    name: 'Доппельгерц',
     img: 'src/assets/images/products/3.png',
     oldPrice: 1390,
     newPrice: 1030,
@@ -93,7 +93,7 @@ export const products: Product[] = [
   },
   {
     id: '007',
-    name: 'Витамин С 900 мг 5 г порош.шипуч.№10 саше-пакет',
+    name: 'Витамин А',
     img: 'src/assets/images/products/1.png',
     oldPrice: 13920,
     newPrice: 12980,
@@ -108,7 +108,7 @@ export const products: Product[] = [
   },
   {
     id: '008',
-    name: 'Инозифол 0,8 г №20 саше',
+    name: 'Инозифол 2',
     img: 'src/assets/images/products/2.png',
     oldPrice: 661,
     newPrice: null,
@@ -123,7 +123,7 @@ export const products: Product[] = [
   },
   {
     id: '009',
-    name: 'Доппельгерц №80 Актив омега-3',
+    name: 'Доппельгерц 2',
     img: 'src/assets/images/products/3.png',
     oldPrice: 1390,
     newPrice: 1030,
@@ -138,7 +138,7 @@ export const products: Product[] = [
   },
   {
     id: '010',
-    name: 'Витамин С 900 мг 5 г порош.шипуч.№10 саше-пакет',
+    name: 'Витамин Б',
     img: 'src/assets/images/products/1.png',
     oldPrice: 13920,
     newPrice: 12980,

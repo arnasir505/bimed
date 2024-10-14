@@ -1,4 +1,4 @@
-import { Button, Flex, Image, Input } from 'antd';
+import { Button, Flex, Image, Select, Space } from 'antd';
 import { MenuBtn } from 'shared/ui';
 import { Link } from 'react-router-dom';
 import {
@@ -8,10 +8,12 @@ import {
   ShoppingCartOutlined,
 } from '@ant-design/icons';
 import './style.css';
+import { handleChange, handleSearch } from 'widgets/header/api/search';
+import { products } from 'data/products';
 
 const HeaderBottom = () => {
   return (
-    <Flex align='center' className='header_bottom' wrap>
+    <Flex align='center' className='header_bottom'>
       <MenuBtn />
       <div className='logo-wrap'>
         <Link to={'/'}>
@@ -22,13 +24,34 @@ const HeaderBottom = () => {
           />
         </Link>
       </div>
-      <Input.Search
+      <Select
+        showSearch
+        onSearch={handleSearch}
+        onChange={handleChange}
         className='header__search'
         placeholder='Поиск'
-        suffix={<SearchOutlined />}
+        optionFilterProp='label'
+        defaultActiveFirstOption={false}
+        suffixIcon={<SearchOutlined />}
         size='large'
+        filterSort={(optionA, optionB) =>
+          (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+        }
+        options={(products || []).map((p) => ({
+          value: p.id,
+          label: p.name,
+        }))}
+        optionRender={(option) => <Space className='search__option'>{option.label}</Space>}
+        dropdownRender={(menu) => (
+          <>
+            {menu}
+            <Link to={'/'} className='search__link'>
+              Не нашли то, что искали?
+            </Link>
+          </>
+        )}
       />
-      <>
+      <Flex className='header__buttons_wrap'>
         <Button
           className='header__button'
           icon={<HeartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
@@ -50,7 +73,7 @@ const HeaderBottom = () => {
         >
           Корзина
         </Button>
-      </>
+      </Flex>
     </Flex>
   );
 };
