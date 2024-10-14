@@ -1,13 +1,24 @@
-import { Button, Flex, Typography } from 'antd';
-import { HeartOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Button, Flex, Input, Typography } from 'antd';
+import {
+  HeartOutlined,
+  MinusOutlined,
+  PlusOutlined,
+  ShoppingCartOutlined,
+} from '@ant-design/icons';
 import './style.css';
 import { Product } from 'types';
+import { useAppDispatch, useAppSelector } from 'shared/config';
+import { addToCart, selectCartItems } from 'entities/cart';
 
 interface Props {
   product: Product;
 }
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
+  const dispatch = useAppDispatch();
+  const cart = useAppSelector(selectCartItems);
+
+  const foundItem = cart.find((item) => item.product_id === product.id);
   return (
     <Flex
       vertical
@@ -34,14 +45,29 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <Flex className='product-card__buttons'>
         <Button
           icon={<HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />}
-          className='product-card__addToFavorite'
+          className='product-card__btn product-card__addToFavorite'
         />
-        <Button
-          icon={<ShoppingCartOutlined style={{ color: '#1D9F22', fontSize: '22px' }} />}
-          className='product-card__addToCart'
-        >
-          {product.newPrice || product.oldPrice} c
-        </Button>
+        {foundItem ? (
+          <Flex gap='8px' justify='flex-end'>
+            <Button
+              icon={<MinusOutlined style={{ color: '#032D80' }} />}
+              className='product-card__btn product-card__minusOne'
+            />
+            <Input className='product-card__quantity' type='text' value={foundItem.quantity} />
+            <Button
+              icon={<PlusOutlined style={{ color: '#fff' }} />}
+              className='product-card__btn product-card__addOne'
+            />
+          </Flex>
+        ) : (
+          <Button
+            icon={<ShoppingCartOutlined style={{ color: '#1D9F22', fontSize: '22px' }} />}
+            className='product-card__btn product-card__addToCart'
+            onClick={() => dispatch(addToCart(product.id))}
+          >
+            {product.newPrice || product.oldPrice} c
+          </Button>
+        )}
       </Flex>
     </Flex>
   );
