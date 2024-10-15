@@ -90,3 +90,8 @@
 .product-card__addToCart:hover {
   color: #171717 !important;
 }
+
+.product-card__quantity-wrap {
+  width: min-content;
+  flex-grow: 2;
+}

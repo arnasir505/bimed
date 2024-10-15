@@ -8,7 +8,13 @@ import {
 import './style.css';
 import { Product } from 'types';
 import { useAppDispatch, useAppSelector } from 'shared/config';
-import { addToCart, selectCartItems } from 'entities/cart';
+import {
+  addToCart,
+  inputToCart,
+  minusOneFromCart,
+  plusOneToCart,
+  selectCartItems,
+} from 'entities/cart';
 
 interface Props {
   product: Product;
@@ -17,8 +23,16 @@ interface Props {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCartItems);
-
   const foundItem = cart.find((item) => item.product_id === product.id);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value: inputValue } = e.target;
+    const reg = /^-?\d*(\.\d*)?$/;
+    if (reg.test(inputValue)) {
+      dispatch(inputToCart({ product_id: product.id, quantity: Number(e.target.value) }));
+    }
+  };
+
   return (
     <Flex
       vertical
@@ -48,15 +62,23 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           className='product-card__btn product-card__addToFavorite'
         />
         {foundItem ? (
-          <Flex gap='8px' justify='flex-end'>
+          <Flex gap='8px' justify='flex-end' className='product-card__quantity-wrap'>
             <Button
               icon={<MinusOutlined style={{ color: '#032D80' }} />}
               className='product-card__btn product-card__minusOne'
+              onClick={() => dispatch(minusOneFromCart(product.id))}
             />
-            <Input className='product-card__quantity' type='text' value={foundItem.quantity} />
+            <Input
+              className='product-card__quantity'
+              type='text'
+              maxLength={3}
+              value={foundItem.quantity}
+              onChange={handleChange}
+            />
             <Button
               icon={<PlusOutlined style={{ color: '#fff' }} />}
               className='product-card__btn product-card__addOne'
+              onClick={() => dispatch(plusOneToCart(product.id))}
             />
           </Flex>
         ) : (

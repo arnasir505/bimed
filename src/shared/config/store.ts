@@ -15,6 +15,7 @@ import { cartReducer } from 'entities/cart';
 const cartPersistConfig = {
   key: 'bimed:cart',
   storage,
+  whiteList: ['cart'],
 };
 
 const rootReducer = combineReducers({
