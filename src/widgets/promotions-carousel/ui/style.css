@@ -62,6 +62,7 @@
   border: 2px solid #eaf1ff;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: #fff;
   opacity: 1;
 }
 
@@ -72,10 +73,18 @@
 
 .slick-arrow.slick-prev {
   background-image: url('../../../assets/images/icons/arrow-left.png');
-  inset-inline-start: -63px;
 }
 
 .slick-arrow.slick-next {
   background-image: url('../../../assets/images/icons/arrow-right.png');
+}
+
+.arrows-outside .slick-arrow.slick-prev {
+  inset-inline-start: -63px;
+  background-color: transparent;
+}
+
+.arrows-outside .slick-arrow.slick-next {
   inset-inline-end: -63px;
+  background-color: transparent;
 }

@@ -16,12 +16,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload: id }: PayloadAction<string>) => {
-      const foundIndex = state.items.findIndex((item) => item.product_id === id);
-      if (foundIndex === -1) {
-        state.items.push({ product_id: id, quantity: 1 });
-      } else {
-        state.items[foundIndex].quantity++;
-      }
+      state.items.push({ product_id: id, quantity: 1 });
     },
     plusOneToCart: (state, { payload: id }: PayloadAction<string>) => {
       const foundIndex = state.items.findIndex((item) => item.product_id === id);
