@@ -10,71 +10,78 @@ import {
 import './style.css';
 import { handleChange, handleSearch } from 'widgets/header/api/search';
 import { products } from 'data/products';
+import { useState } from 'react';
+import { CartModal } from 'widgets/cart-modal';
 
 const HeaderBottom = () => {
+  const [cartModalOpen, setCartModalOpen] = useState(false);
   return (
-    <Flex align='center' className='header_bottom'>
-      <MenuBtn />
-      <div className='logo-wrap'>
-        <Link to={'/'}>
-          <Image
-            src='src\assets\images\logo-expanded.jpg'
-            preview={false}
-            className='header__logo'
-          />
-        </Link>
-      </div>
-      <Select
-        showSearch
-        onSearch={handleSearch}
-        onChange={handleChange}
-        className='header__search'
-        placeholder='Поиск'
-        optionFilterProp='label'
-        defaultActiveFirstOption={false}
-        suffixIcon={<SearchOutlined />}
-        size='large'
-        filterSort={(optionA, optionB) =>
-          (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
-        }
-        options={(products || []).map((p) => ({
-          value: p.id,
-          label: p.name,
-        }))}
-        optionRender={(option) => <Space className='search__option'>{option.label}</Space>}
-        dropdownRender={(menu) => (
-          <>
-            {menu}
-            <Link to={'/'} className='search__link'>
-              Не нашли то, что искали?
-            </Link>
-          </>
-        )}
-      />
-      <Flex className='header__buttons_wrap'>
-        <Button
-          className='header__button'
-          icon={<HeartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-          type='text'
-        >
-          Избранное
-        </Button>
-        <Button
-          className='header__button header__button_login'
-          icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-          type='text'
-        >
-          Войти
-        </Button>
-        <Button
-          className='header__button header__button_cart'
-          icon={<ShoppingCartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-          type='text'
-        >
-          Корзина
-        </Button>
+    <>
+      <CartModal open={cartModalOpen} closeModal={() => setCartModalOpen(false)} />
+      <Flex align='center' className='header_bottom'>
+        <MenuBtn />
+        <div className='logo-wrap'>
+          <Link to={'/'}>
+            <Image
+              src='src\assets\images\logo-expanded.jpg'
+              preview={false}
+              className='header__logo'
+            />
+          </Link>
+        </div>
+        <Select
+          showSearch
+          onSearch={handleSearch}
+          onChange={handleChange}
+          className='header__search'
+          placeholder='Поиск'
+          optionFilterProp='label'
+          defaultActiveFirstOption={false}
+          suffixIcon={<SearchOutlined />}
+          size='large'
+          filterSort={(optionA, optionB) =>
+            (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
+          }
+          options={(products || []).map((p) => ({
+            value: p.id,
+            label: p.name,
+          }))}
+          optionRender={(option) => <Space className='search__option'>{option.label}</Space>}
+          dropdownRender={(menu) => (
+            <>
+              {menu}
+              <Link to={'/'} className='search__link'>
+                Не нашли то, что искали?
+              </Link>
+            </>
+          )}
+        />
+        <Flex className='header__buttons_wrap'>
+          <Button
+            className='header__button'
+            icon={<HeartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+            type='text'
+          >
+            Избранное
+          </Button>
+          <Button
+            className='header__button header__button_login'
+            icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+            type='text'
+          >
+            Войти
+          </Button>
+          <Button
+            className='header__button header__button_cart'
+            icon={<ShoppingCartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+            type='text'
+            onClick={() => setCartModalOpen(true)}
+          >
+            Корзина
+          </Button>
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   );
 };
 

@@ -83,9 +83,14 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           </Flex>
         ) : (
           <Button
-            icon={<ShoppingCartOutlined style={{ color: '#1D9F22', fontSize: '22px' }} />}
-            className='product-card__btn product-card__addToCart'
+            icon={
+              <ShoppingCartOutlined
+                style={{ color: product.isAvailable ? '#1D9F22' : '#8b96b1', fontSize: '22px' }}
+              />
+            }
+            className={`product-card__btn product-card__addToCart ${product.isAvailable ? '' : 'not-available'}`}
             onClick={() => dispatch(addToCart(product.id))}
+            disabled={!product.isAvailable}
           >
             {product.newPrice || product.oldPrice} c
           </Button>
