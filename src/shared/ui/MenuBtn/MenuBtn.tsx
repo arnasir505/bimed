@@ -4,8 +4,12 @@ import './style.css';
 
 type CustomIconComponentProps = GetProps<typeof Icon>;
 
-export const MenuBtn = () => {
-  return <Button icon={<HamburgerIcon />} className='menu-btn' />;
+interface Props {
+  onClick: () => void;
+}
+
+export const MenuBtn: React.FC<Props> = ({ onClick }) => {
+  return <Button onClick={onClick} icon={<HamburgerIcon />} className='menu-btn' />;
 };
 
 const HamburgerSvg = () => (

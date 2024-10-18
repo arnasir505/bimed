@@ -12,14 +12,18 @@ import { handleChange, handleSearch } from 'widgets/header/api/search';
 import { products } from 'data/products';
 import { useState } from 'react';
 import { CartModal } from 'widgets/cart-modal';
+import { MenuModal } from 'widgets/menu-modal';
 
 const HeaderBottom = () => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
+  const [menuModalOpen, setMenuModalOpen] = useState(false);
+
   return (
     <>
+      <MenuModal open={menuModalOpen} closeModal={() => setMenuModalOpen(false)} />
       <CartModal open={cartModalOpen} closeModal={() => setCartModalOpen(false)} />
       <Flex align='center' className='header_bottom'>
-        <MenuBtn />
+        <MenuBtn onClick={() => setMenuModalOpen(true)} />
         <div className='logo-wrap'>
           <Link to={'/'}>
             <Image
