@@ -23,13 +23,13 @@ interface Props {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCartItems);
-  const foundItem = cart.find((item) => item.product_id === product.id);
+  const foundItem = cart.find((item) => item.product.id === product.id);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
     if (reg.test(inputValue)) {
-      dispatch(inputToCart({ product_id: product.id, quantity: Number(e.target.value) }));
+      dispatch(inputToCart({ product: product, quantity: Number(e.target.value) }));
     }
   };
 
@@ -66,7 +66,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             <Button
               icon={<MinusOutlined style={{ color: '#032D80' }} />}
               className='product-card__btn product-card__minusOne'
-              onClick={() => dispatch(minusOneFromCart(product.id))}
+              onClick={() => dispatch(minusOneFromCart(product))}
             />
             <Input
               className='product-card__quantity'
@@ -78,7 +78,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             <Button
               icon={<PlusOutlined style={{ color: '#fff' }} />}
               className='product-card__btn product-card__addOne'
-              onClick={() => dispatch(plusOneToCart(product.id))}
+              onClick={() => dispatch(plusOneToCart(product))}
             />
           </Flex>
         ) : (
@@ -89,7 +89,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               />
             }
             className={`product-card__btn product-card__addToCart ${product.isAvailable ? '' : 'not-available'}`}
-            onClick={() => dispatch(addToCart(product.id))}
+            onClick={() => dispatch(addToCart(product))}
             disabled={!product.isAvailable}
           >
             {product.newPrice || product.oldPrice} c

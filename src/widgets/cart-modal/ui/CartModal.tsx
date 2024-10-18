@@ -1,16 +1,18 @@
 import { Button, Empty, Flex, Input, Modal, Typography } from 'antd';
 import { useAppDispatch, useAppSelector } from 'shared/config';
-import { inputToCart, minusOneFromCart, plusOneToCart, selectCartItems } from 'entities/cart';
-import { useEffect, useState } from 'react';
-import { products } from 'data/products';
+import {
+  getCartTotalItems,
+  getCartTotalPrice,
+  inputToCart,
+  minusOneFromCart,
+  plusOneToCart,
+  selectCartItems,
+} from 'entities/cart';
+import { useEffect } from 'react';
 import { Product } from 'types';
-import './style.css';
 import { MinusOutlined, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-
-interface ProductInCart {
-  product: Product;
-  quantity: number;
-}
+import './style.css';
+import { selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart/model/cartSlice';
 
 interface Props {
   open: boolean;
@@ -19,28 +21,20 @@ interface Props {
 
 export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
   const dispatch = useAppDispatch();
-  const cartItemsIDs = useAppSelector(selectCartItems);
-  const [cartItems, setCartItems] = useState<ProductInCart[]>([]);
+  const cartItems = useAppSelector(selectCartItems);
+  const totalPrice = useAppSelector(selectCartItemsTotalPrice);
+  const totalItems = useAppSelector(selectCartItemsTotal);
 
   useEffect(() => {
-    setCartItems(() => {
-      const newCartItems: ProductInCart[] = [];
-      for (let i = 0; i < cartItemsIDs.length; i++) {
-        const cartItemID = cartItemsIDs[i];
-        const foundItem = products.find((item) => item.id === cartItemID.product_id);
-        if (foundItem) {
-          newCartItems.push({ product: foundItem, quantity: cartItemID.quantity });
-        }
-      }
-      return newCartItems;
-    });
-  }, [cartItemsIDs]);
+    dispatch(getCartTotalPrice());
+    dispatch(getCartTotalItems());
+  }, [cartItems]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, product: Product) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
     if (reg.test(inputValue)) {
-      dispatch(inputToCart({ product_id: id, quantity: Number(e.target.value) }));
+      dispatch(inputToCart({ product: product, quantity: Number(e.target.value) }));
     }
   };
 
@@ -53,9 +47,6 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
   );
 
   if (cartItems.length > 0) {
-    const totalPrice = cartItems.reduce((acc, cur) => {
-      return (acc += (cur.product.newPrice || cur.product.oldPrice) * cur.quantity);
-    }, 0);
     modalContent = (
       <>
         {cartItems.map(({ product, quantity }) => (
@@ -77,30 +68,28 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
                 <Button
                   icon={<MinusOutlined style={{ color: '#032D80' }} />}
                   className='product-card__btn product-card__minusOne'
-                  onClick={() => dispatch(minusOneFromCart(product.id))}
+                  onClick={() => dispatch(minusOneFromCart(product))}
                 />
                 <Input
                   className='product-card__quantity'
                   type='text'
                   maxLength={3}
                   value={quantity}
-                  onChange={(e) => handleChange(e, product.id)}
+                  onChange={(e) => handleChange(e, product)}
                 />
                 <Button
                   icon={<PlusOutlined style={{ color: '#fff' }} />}
                   className='product-card__btn product-card__addOne'
-                  onClick={() => dispatch(plusOneToCart(product.id))}
+                  onClick={() => dispatch(plusOneToCart(product))}
                 />
               </Flex>
             </Flex>
           </Flex>
         ))}
-        <Flex vertical gap='8px'>
+        <Flex vertical gap='8px' className='cart-modal__totals-wrap'>
           <Flex gap='8px'>
             <Typography.Text className='cart-modal__totals'>Товаров в корзине:</Typography.Text>
-            <Typography.Text className='cart-modal__totals-value'>
-              {cartItems.length}
-            </Typography.Text>
+            <Typography.Text className='cart-modal__totals-value'>{totalItems}</Typography.Text>
           </Flex>
           <Flex gap='8px'>
             <Typography.Text className='cart-modal__totals'>Общая сумма:</Typography.Text>

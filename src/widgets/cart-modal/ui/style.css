@@ -37,7 +37,8 @@
   color: #171717;
 }
 
-.cart-item__price-for-one, .cart-modal__totals {
+.cart-item__price-for-one,
+.cart-modal__totals {
   color: #8b96b1;
   font-weight: 500;
 }
@@ -51,8 +52,12 @@
   margin-top: auto;
   flex-grow: 0;
   width: auto;
-  scale: .8;
+  scale: 0.8;
   transform-origin: left;
+}
+
+.cart-modal__totals-wrap {
+  margin-top: 15px;
 }
 
 .cart-modal__totals-value {
@@ -60,7 +65,8 @@
   color: #171717;
 }
 
-.cart-modal__totals, .cart-modal__totals-value {
+.cart-modal__totals,
+.cart-modal__totals-value {
   font-size: 16px;
 }
 
