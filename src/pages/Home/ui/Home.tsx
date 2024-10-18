@@ -32,7 +32,7 @@ export const Home = () => {
               ))}
             </div>
             <Flex justify='center'>
-              <SeeAllBtn text='Посмотреть все' />
+              <SeeAllBtn text='Посмотреть все' path='/catalog' />
             </Flex>
           </Container>
         </section>

@@ -5,7 +5,6 @@ import {
   PlusOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
-import './style.css';
 import { Product } from 'types';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import {
@@ -15,6 +14,8 @@ import {
   plusOneToCart,
   selectCartItems,
 } from 'entities/cart';
+import productNoImage from 'assets/images/product-no-image.png';
+import './style.css';
 
 interface Props {
   product: Product;
@@ -43,7 +44,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       gap={10}
     >
       <div className='product-card__img-wrapper'>
-        <img src={product.img || ''} alt={product.name} />
+        <img src={product.img || productNoImage} alt={product.name} />
       </div>
       <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
       {product.isPrescriptionRequired && (

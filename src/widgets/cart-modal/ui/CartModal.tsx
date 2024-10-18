@@ -11,8 +11,9 @@ import {
 import { useEffect } from 'react';
 import { Product } from 'types';
 import { MinusOutlined, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import './style.css';
 import { selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart/model/cartSlice';
+import productNoImage from 'assets/images/product-no-image.png';
+import './style.css';
 
 interface Props {
   open: boolean;
@@ -52,7 +53,7 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
         {cartItems.map(({ product, quantity }) => (
           <Flex key={product.id} className='cart-item'>
             <div className='cart-item__img-wrap'>
-              <img src={product.img || ''} alt='' />
+              <img src={product.img || productNoImage} alt='' />
             </div>
             <Flex vertical gap='5px' className='cart-item__content'>
               <Typography.Text className='cart-item__name'>{product.name}</Typography.Text>
