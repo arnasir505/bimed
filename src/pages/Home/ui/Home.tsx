@@ -27,7 +27,7 @@ export const Home = () => {
           <Container>
             <Typography.Title level={3}>Хиты продаж</Typography.Title>
             <div className='bestsellers__wrapper'>
-              {products.map((item) => (
+              {products.slice(0, 10).map((item) => (
                 <ProductCard key={item.id} product={item} />
               ))}
             </div>

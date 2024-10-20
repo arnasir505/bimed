@@ -3,3 +3,12 @@
   padding-bottom: 72px;
   background: #f5f5f5;
 }
+
+.products__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 224px);
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
