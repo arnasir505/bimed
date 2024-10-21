@@ -11,6 +11,7 @@ export interface Product {
   brand: string;
   formOfRelease: string;
   isAvailable: boolean;
+  datePublished: string;
 }
 
 export interface News {

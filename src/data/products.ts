@@ -15,6 +15,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-21T00:00:00.000Z',
   },
   {
     id: '002',
@@ -30,6 +31,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-02T00:00:00.000Z',
   },
   {
     id: '003',
@@ -45,6 +47,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: false,
+    datePublished: '2024-10-06T00:00:00.000Z',
   },
   {
     id: '004',
@@ -60,6 +63,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-14T00:00:00.000Z',
   },
   {
     id: '005',
@@ -75,6 +79,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-15T00:00:00.000Z',
   },
   {
     id: '006',
@@ -90,6 +95,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-24T00:00:00.000Z',
   },
   {
     id: '007',
@@ -105,6 +111,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: false,
+    datePublished: '2024-10-05T00:00:00.000Z',
   },
   {
     id: '008',
@@ -120,6 +127,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-19T00:00:00.000Z',
   },
   {
     id: '009',
@@ -135,6 +143,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-28T00:00:00.000Z',
   },
   {
     id: '010',
@@ -150,6 +159,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-10T00:00:00.000Z',
   },
   {
     id: '011',
@@ -165,6 +175,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-04T00:00:00.000Z',
   },
   {
     id: '012',
@@ -180,6 +191,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-01T00:00:00.000Z',
   },
   {
     id: '013',
@@ -195,6 +207,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-05T00:00:00.000Z',
   },
   {
     id: '014',
@@ -210,6 +223,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-25T00:00:00.000Z',
   },
   {
     id: '015',
@@ -225,6 +239,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-12T00:00:00.000Z',
   },
   {
     id: '016',
@@ -240,6 +255,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-06T00:00:00.000Z',
   },
   {
     id: '017',
@@ -255,6 +271,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-12T00:00:00.000Z',
   },
   {
     id: '018',
@@ -270,6 +287,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-20T00:00:00.000Z',
   },
   {
     id: '019',
@@ -285,6 +303,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-26T00:00:00.000Z',
   },
   {
     id: '020',
@@ -300,6 +319,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-18T00:00:00.000Z',
   },
   {
     id: '021',
@@ -315,6 +335,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-19T00:00:00.000Z',
   },
   {
     id: '022',
@@ -330,6 +351,7 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-23T00:00:00.000Z',
   },
   {
     id: '023',
@@ -345,5 +367,6 @@ export const products: Product[] = [
     brand: 'БЕЛОРУЧКА',
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
+    datePublished: '2024-10-07T00:00:00.000Z',
   },
 ];

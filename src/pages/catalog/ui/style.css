@@ -12,3 +12,11 @@
   gap: 12px;
   margin: 24px 0;
 }
+
+.sort-options__title {
+  color: #8b96b1;
+}
+
+.sort-options__option {
+  cursor: pointer;
+}
