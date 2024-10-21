@@ -18,5 +18,24 @@
 }
 
 .sort-options__option {
+  padding: 0 !important;
   cursor: pointer;
+  position: relative;
+  padding-left: 10px !important;
+}
+
+.sort-options__option .anticon-caret-up {
+  position: absolute;
+  left: 0;
+  top: 4px;
+}
+
+.sort-options__option .anticon-caret-down {
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+}
+
+.sort-options__option:hover {
+  background: transparent !important;
 }

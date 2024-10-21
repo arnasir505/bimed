@@ -1,7 +1,7 @@
 import { Container } from 'shared/ui';
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
-import { Breadcrumb, Flex, Typography } from 'antd';
+import { Breadcrumb, Button, Flex, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { products } from 'data/products';
 import { ProductCard } from 'widgets/product-card';
@@ -9,6 +9,7 @@ import { useEffect, useReducer, useState } from 'react';
 import { Product } from 'types';
 import { Pagination } from 'widgets/pagination';
 import './style.css';
+import { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';
 
 export const Catalog = () => {
   const [current, setCurrent] = useState(0);
@@ -129,26 +130,59 @@ export const Catalog = () => {
           />
           <Typography.Title level={4}>Витамины</Typography.Title>
           <Flex justify='space-between'>
-            <Flex className='sort-options' gap='12px'>
+            <Flex className='sort-options' gap='14px' align='center'>
               <Typography.Text className='sort-options__title'>Сортировка:</Typography.Text>
-              <Typography.Text
+              <Button
+                type='text'
                 className='sort-options__option'
+                icon={
+                  <Flex vertical>
+                    <CaretUpOutlined
+                      style={{ color: sortByNameOrder === 'default' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                    <CaretDownOutlined
+                      style={{ color: sortByNameOrder === 'asc' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                  </Flex>
+                }
                 onClick={() => sortByName(sortByNameOrder)}
               >
                 По алфавиту
-              </Typography.Text>
-              <Typography.Text
+              </Button>
+              <Button
+                type='text'
                 className='sort-options__option'
+                icon={
+                  <Flex vertical>
+                    <CaretUpOutlined
+                      style={{ color: sortByPriceOrder === 'desc' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                    <CaretDownOutlined
+                      style={{ color: sortByPriceOrder === 'default' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                  </Flex>
+                }
                 onClick={() => sortByPrice(sortByPriceOrder)}
               >
                 По цене
-              </Typography.Text>
-              <Typography.Text
+              </Button>
+              <Button
+                type='text'
                 className='sort-options__option'
+                icon={
+                  <Flex vertical>
+                    <CaretUpOutlined
+                      style={{ color: sortByDateOrder === 'asc' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                    <CaretDownOutlined
+                      style={{ color: sortByDateOrder === 'default' ? '#054EDB' : '#CDDAF1' }}
+                    />
+                  </Flex>
+                }
                 onClick={() => sortByDate(sortByDateOrder)}
               >
                 Новинки
-              </Typography.Text>
+              </Button>
             </Flex>
             <Flex className='catalog-view-options' gap='10px'>
               <Typography.Text>Вид</Typography.Text>
