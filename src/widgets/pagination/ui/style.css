@@ -1,0 +1,17 @@
+.pagination__btn {
+  width: 40px !important;
+  height: 40px;
+  border: 1px solid #eaf1ff;
+  border-radius: 10px;
+}
+
+.pagination__text {
+  color: #8b96b1;
+}
+
+.pagination__current-page {
+  color: #054edb;
+  border: 2px solid #eaf1ff;
+  border-radius: 10px;
+  padding: 7px 15px;
+}
