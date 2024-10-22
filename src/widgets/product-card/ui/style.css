@@ -13,6 +13,7 @@
 .product-card__img-wrapper > img {
   width: 100%;
   height: auto;
+  max-height: 100%;
 }
 
 .product-card__name {

@@ -12,6 +12,7 @@ export interface Product {
   formOfRelease: string;
   isAvailable: boolean;
   datePublished: string;
+  popularity: number;
 }
 
 export interface News {

@@ -16,6 +16,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-21T00:00:00.000Z',
+    popularity: 799,
   },
   {
     id: '002',
@@ -32,6 +33,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-02T00:00:00.000Z',
+    popularity: 685,
   },
   {
     id: '003',
@@ -48,6 +50,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: false,
     datePublished: '2024-10-06T00:00:00.000Z',
+    popularity: 142,
   },
   {
     id: '004',
@@ -64,6 +67,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-14T00:00:00.000Z',
+    popularity: 15,
   },
   {
     id: '005',
@@ -80,6 +84,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-15T00:00:00.000Z',
+    popularity: 176,
   },
   {
     id: '006',
@@ -96,6 +101,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-24T00:00:00.000Z',
+    popularity: 9,
   },
   {
     id: '007',
@@ -112,6 +118,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: false,
     datePublished: '2024-10-05T00:00:00.000Z',
+    popularity: 822,
   },
   {
     id: '008',
@@ -128,6 +135,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-19T00:00:00.000Z',
+    popularity: 865,
   },
   {
     id: '009',
@@ -144,6 +152,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-28T00:00:00.000Z',
+    popularity: 719,
   },
   {
     id: '010',
@@ -160,6 +169,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-10T00:00:00.000Z',
+    popularity: 590,
   },
   {
     id: '011',
@@ -176,6 +186,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-04T00:00:00.000Z',
+    popularity: 821,
   },
   {
     id: '012',
@@ -192,6 +203,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-01T00:00:00.000Z',
+    popularity: 703,
   },
   {
     id: '013',
@@ -208,6 +220,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-05T00:00:00.000Z',
+    popularity: 994,
   },
   {
     id: '014',
@@ -224,6 +237,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-25T00:00:00.000Z',
+    popularity: 488,
   },
   {
     id: '015',
@@ -240,6 +254,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-12T00:00:00.000Z',
+    popularity: 986,
   },
   {
     id: '016',
@@ -256,6 +271,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-06T00:00:00.000Z',
+    popularity: 319,
   },
   {
     id: '017',
@@ -272,6 +288,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-12T00:00:00.000Z',
+    popularity: 802,
   },
   {
     id: '018',
@@ -288,6 +305,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-20T00:00:00.000Z',
+    popularity: 958,
   },
   {
     id: '019',
@@ -304,6 +322,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-26T00:00:00.000Z',
+    popularity: 664,
   },
   {
     id: '020',
@@ -320,6 +339,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-18T00:00:00.000Z',
+    popularity: 364,
   },
   {
     id: '021',
@@ -336,6 +356,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-19T00:00:00.000Z',
+    popularity: 704,
   },
   {
     id: '022',
@@ -352,6 +373,7 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-23T00:00:00.000Z',
+    popularity: 858,
   },
   {
     id: '023',
@@ -368,5 +390,6 @@ export const products: Product[] = [
     formOfRelease: 'Крем для рук 75 мл, туба',
     isAvailable: true,
     datePublished: '2024-10-07T00:00:00.000Z',
+    popularity: 647,
   },
 ];

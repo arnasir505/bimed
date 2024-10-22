@@ -13,6 +13,10 @@
   margin: 24px 0;
 }
 
+.products__wrapper.block-view {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .sort-options__title {
   color: #8b96b1;
 }
@@ -38,4 +42,15 @@
 
 .sort-options__option:hover {
   background: transparent !important;
+}
+
+.catalog-view-options {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.catalog-view-options__title {
+  color: #8b96b1;
+  padding-right: 8px;
 }
