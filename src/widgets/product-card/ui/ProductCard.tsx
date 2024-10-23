@@ -56,7 +56,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         </Typography.Text>
       )}
       {product.newPrice && (
-        <Typography.Text disabled className='product-card__oldPrice'>
+        <Typography.Text className='product-card__oldPrice'>
           {product.oldPrice} <span>c</span>
         </Typography.Text>
       )}

@@ -30,6 +30,11 @@ createRoot(document.getElementById('root')!).render(
                   paddingBlock: 10,
                   paddingInline: 24,
                 },
+                Typography: {
+                  fontSize: 15,
+                  colorText: '#171717',
+                  fontWeightStrong: 700,
+                },
               },
             }}
             locale={ruRu}

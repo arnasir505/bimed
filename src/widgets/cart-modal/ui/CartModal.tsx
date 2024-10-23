@@ -53,10 +53,10 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
         {cartItems.map(({ product, quantity }) => (
           <Flex key={product.id} className='cart-item'>
             <div className='cart-item__img-wrap'>
-              <img src={product.img || productNoImage} alt='' />
+              <img src={product.img ? `/${product.img}` : productNoImage} alt='' />
             </div>
             <Flex vertical gap='5px' className='cart-item__content'>
-              <Typography.Text className='cart-item__name'>{product.name}</Typography.Text>
+              <Typography.Text>{product.name}</Typography.Text>
               <Flex>
                 <Typography.Text className='cart-item__price-for-one'>
                   Цена за шт {product.newPrice || product.oldPrice}

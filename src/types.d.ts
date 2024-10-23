@@ -13,6 +13,7 @@ export interface Product {
   isAvailable: boolean;
   datePublished: string;
   popularity: number;
+  composition: string;
 }
 
 export interface News {

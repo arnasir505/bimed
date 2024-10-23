@@ -39,7 +39,6 @@
   background: url('../../../assets/images/icons/arrow-right-min.svg') right center no-repeat;
   background-origin: content-box;
   border-radius: 12px;
-  color: #171717;
   transition: background-color 0.2s;
   margin-top: 8px;
 }

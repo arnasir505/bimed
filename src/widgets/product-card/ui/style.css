@@ -30,9 +30,9 @@
 }
 
 .product-card__oldPrice {
-  font-size: 15px;
   text-decoration: line-through;
   text-decoration-thickness: 1px;
+  color: #8b96b1;
 }
 
 .product-card__oldPrice > span {
@@ -70,7 +70,8 @@
   border: 1px solid #1fa655;
 }
 
-.product-card__addOne:hover {
+.product-card__addOne:hover,
+.product-card__addOne:active {
   background: #139246 !important;
   border: 1px solid #139246 !important;
 }
@@ -88,7 +89,8 @@
   color: #171717;
 }
 
-.product-card__addToFavorite:hover {
+.product-card__addToFavorite:hover,
+.product-card__addToFavorite:active {
   border-color: #e31b4b !important;
 }
 

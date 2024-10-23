@@ -33,10 +33,6 @@
   padding: 12px;
 }
 
-.cart-item__name {
-  color: #171717;
-}
-
 .cart-item__price-for-one,
 .cart-modal__totals {
   color: #8b96b1;
@@ -62,7 +58,6 @@
 
 .cart-modal__totals-value {
   font-weight: 500;
-  color: #171717;
 }
 
 .cart-modal__totals,
