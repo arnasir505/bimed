@@ -105,3 +105,18 @@
   color: #8b96b1;
   text-decoration: none;
 }
+
+.cart-has-items {
+  position: relative;
+}
+
+.cart-has-items::after {
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #e31b4b;
+  right: -2px;
+  top: -1px;
+}

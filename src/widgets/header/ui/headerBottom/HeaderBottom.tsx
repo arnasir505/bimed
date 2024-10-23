@@ -14,8 +14,11 @@ import { useState } from 'react';
 import { CartModal } from 'widgets/cart-modal';
 import { MenuModal } from 'widgets/menu-modal';
 import LogoExpanded from 'assets/images/logo-expanded.svg';
+import { useAppSelector } from 'shared/config';
+import { selectCartItems } from 'entities/cart';
 
 const HeaderBottom = () => {
+  const cartItems = useAppSelector(selectCartItems);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
 
@@ -74,7 +77,12 @@ const HeaderBottom = () => {
           </Button>
           <Button
             className='header__button header__button_cart'
-            icon={<ShoppingCartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+            icon={
+              <ShoppingCartOutlined
+                className={cartItems.length > 0 ? 'cart-has-items' : ''}
+                style={{ color: '#8B96B1', fontSize: '20px' }}
+              />
+            }
             type='text'
             onClick={() => setCartModalOpen(true)}
           >
