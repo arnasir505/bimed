@@ -1,8 +1,12 @@
 import { Container } from 'shared/ui';
+import { useEffect, useState } from 'react';
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
 import { Button, Flex, Image, Input, Typography } from 'antd';
 import { products } from 'data/products';
+import { useAppDispatch, useAppSelector } from 'shared/config';
+import { NotFound } from 'pages/404';
+import { Link, useParams } from 'react-router-dom';
 import productNoImage from 'assets/images/product-no-image.png';
 import {
   HeartOutlined,
@@ -17,11 +21,8 @@ import {
   plusOneToCart,
   addToCart,
 } from 'entities/cart';
-import { useAppDispatch, useAppSelector } from 'shared/config';
-import { NotFound } from 'pages/404';
-import { useParams } from 'react-router-dom';
+import { ProductCard } from 'widgets/product-card';
 import './styles.css';
-import { useState } from 'react';
 
 export const ProductInfo = () => {
   const params = useParams();
@@ -42,6 +43,10 @@ export const ProductInfo = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
+
   return (
     <>
       <header className='header'>
@@ -51,12 +56,12 @@ export const ProductInfo = () => {
       </header>
       <main className='main'>
         <Container>
-          <Flex gap='44px'>
+          <Flex gap='44px' className='product-info-wrap'>
             <Flex vertical gap='30px'>
               <Flex vertical justify='center' align='center' className='product-img_wrap'>
                 <Image preview={false} src={product.img ? `/${product.img}` : productNoImage} />
               </Flex>
-              <Flex className='product__info-instructins-wrap' gap='8px'>
+              <Flex className='product__info-instructions-wrap' gap='8px'>
                 <Typography.Text className='product__extra-info active'>
                   Информация о товаре
                 </Typography.Text>
@@ -156,6 +161,16 @@ export const ProductInfo = () => {
                   </Button>
                 )}
               </Flex>
+              <Flex vertical gap='8px'>
+                <Typography.Text className='product__share'>Поделиться</Typography.Text>
+                <Flex gap='16px' className='product__share-buttons'>
+                  <Link to={'/'} className='product__share-btn vk' />
+                  <Link to={'/'} className='product__share-btn facebook' />
+                  <Link to={'/'} className='product__share-btn odnoklassniki' />
+                  <Link to={'/'} className='product__share-btn instagram' />
+                  <Link to={'/'} className='product__share-btn whatsapp' />
+                </Flex>
+              </Flex>
             </Flex>
           </Flex>
           <Flex vertical className='product__composition'>
@@ -173,6 +188,24 @@ export const ProductInfo = () => {
             )}
           </Flex>
         </Container>
+        <section className='other-products'>
+          <Container>
+            <Typography.Title level={3}>С этим товаром покупают</Typography.Title>
+            <div className='other-products__wrapper'>
+              {[...products].slice(0, 5).map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
+            <Typography.Title level={3} className='similar-products'>
+              Похожие товары
+            </Typography.Title>
+            <div className='other-products__wrapper'>
+              {[...products].slice(0, 5).map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))}
+            </div>
+          </Container>
+        </section>
       </main>
       <footer className='footer'>
         <Container>

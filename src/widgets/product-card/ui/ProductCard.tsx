@@ -45,7 +45,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       gap={10}
     >
       <div className='product-card__img-wrapper'>
-        <img src={product.img || productNoImage} alt={product.name} />
+        <img src={product.img ? `/${product.img}` : productNoImage} alt={product.name} />
       </div>
       <Link className='product-card__link' to={`/products/${product.id}`}>
         <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
