@@ -16,6 +16,7 @@ import {
 } from 'entities/cart';
 import productNoImage from 'assets/images/product-no-image.png';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   product: Product;
@@ -46,7 +47,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <div className='product-card__img-wrapper'>
         <img src={product.img || productNoImage} alt={product.name} />
       </div>
-      <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
+      <Link className='product-card__link' to={`/products/${product.id}`}>
+        <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
+      </Link>
       {product.isPrescriptionRequired && (
         <Typography.Text className='product-card__prescriptionRequired'>
           По рецепту врача

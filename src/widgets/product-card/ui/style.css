@@ -16,6 +16,10 @@
   max-height: 100%;
 }
 
+.product-card__link {
+  text-align: center;
+}
+
 .product-card__name {
   color: #30394a;
   text-align: center;

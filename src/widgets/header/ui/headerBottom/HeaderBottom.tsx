@@ -13,6 +13,7 @@ import { products } from 'data/products';
 import { useState } from 'react';
 import { CartModal } from 'widgets/cart-modal';
 import { MenuModal } from 'widgets/menu-modal';
+import LogoExpanded from 'assets/images/logo-expanded.svg';
 
 const HeaderBottom = () => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
@@ -25,12 +26,8 @@ const HeaderBottom = () => {
       <Flex align='center' className='header_bottom'>
         <MenuBtn onClick={() => setMenuModalOpen(true)} />
         <div className='logo-wrap'>
-          <Link to={'/'}>
-            <Image
-              src='src\assets\images\logo-expanded.jpg'
-              preview={false}
-              className='header__logo'
-            />
+          <Link to='/'>
+            <Image src={LogoExpanded} preview={false} className='header__logo' />
           </Link>
         </div>
         <Select

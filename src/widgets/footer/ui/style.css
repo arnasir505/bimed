@@ -26,3 +26,51 @@
 .footer__link:hover {
   color: #054edb;
 }
+
+.footer__link_icon {
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 18px;
+}
+
+.footer__link_icon.vk {
+  background-image: url('../../../assets/images/icons/vk.svg');
+}
+
+.footer__link_icon.facebook {
+  background-image: url('../../../assets/images/icons/facebook.svg');
+}
+
+.footer__link_icon.odnoklassniki {
+  background-image: url('../../../assets/images/icons/odnoklassniki.svg');
+}
+
+.footer__link_icon.instagram {
+  background-image: url('../../../assets/images/icons/instagram.svg');
+}
+
+.footer__link_icon.mail {
+  background-image: url('../../../assets/images/icons/mail.svg');
+}
+
+.footer__link_icon.phone {
+  background-image: url('../../../assets/images/icons/phone.svg');
+}
+
+.app-marketplace {
+  margin-top: 20px;
+  display: block;
+  width: 80px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.app-store-link {
+  background-image: url('../../../assets/images/icons/app-store.svg');
+}
+
+.google-play-link {
+  background-image: url('../../../assets/images/icons/google-play.svg');
+}

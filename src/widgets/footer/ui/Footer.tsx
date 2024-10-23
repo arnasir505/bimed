@@ -1,6 +1,6 @@
 import { Col, Flex, List, Row, Typography } from 'antd';
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 export const Footer = () => {
   return (
