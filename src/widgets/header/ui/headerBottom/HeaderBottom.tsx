@@ -7,7 +7,6 @@ import {
   SearchOutlined,
   ShoppingCartOutlined,
 } from '@ant-design/icons';
-import './style.css';
 import { handleChange, handleSearch } from 'widgets/header/api/search';
 import { products } from 'data/products';
 import { useState } from 'react';
@@ -16,6 +15,7 @@ import { MenuModal } from 'widgets/menu-modal';
 import LogoExpanded from 'assets/images/logo-expanded.svg';
 import { useAppSelector } from 'shared/config';
 import { selectCartItems } from 'entities/cart';
+import './style.css';
 
 const HeaderBottom = () => {
   const cartItems = useAppSelector(selectCartItems);

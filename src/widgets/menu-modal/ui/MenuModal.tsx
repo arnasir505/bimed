@@ -1,7 +1,7 @@
 import { Divider, Modal, Typography } from 'antd';
 import { categories } from 'data/categories';
-import './style.css';
 import { useState } from 'react';
+import './style.css';
 
 interface Props {
   open: boolean;

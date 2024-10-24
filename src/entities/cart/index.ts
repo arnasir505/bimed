@@ -9,4 +9,8 @@ export {
 
 export { cartReducer } from './model/cartSlice';
 
-export { selectCartItems } from './model/cartSlice';
+export {
+  selectCartItems,
+  selectCartItemsTotal,
+  selectCartItemsTotalPrice,
+} from './model/cartSlice';

@@ -15,8 +15,8 @@ import {
   selectCartItems,
 } from 'entities/cart';
 import productNoImage from 'assets/images/product-no-image.png';
-import './style.css';
 import { Link } from 'react-router-dom';
+import './style.css';
 
 interface Props {
   product: Product;

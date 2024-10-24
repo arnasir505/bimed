@@ -7,11 +7,12 @@ import {
   minusOneFromCart,
   plusOneToCart,
   selectCartItems,
+  selectCartItemsTotal,
+  selectCartItemsTotalPrice,
 } from 'entities/cart';
 import { useEffect } from 'react';
 import { Product } from 'types';
 import { MinusOutlined, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import { selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart/model/cartSlice';
 import productNoImage from 'assets/images/product-no-image.png';
 import './style.css';
 

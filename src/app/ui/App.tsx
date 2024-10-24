@@ -1,9 +1,9 @@
 import { Home } from 'pages/home';
-import './style.css';
 import { Route, Routes } from 'react-router-dom';
 import { Catalog } from 'pages/catalog';
 import { ProductInfo } from 'pages/product-info';
 import { NotFound } from 'pages/404';
+import './style.css';
 
 export const App = () => {
   return (
