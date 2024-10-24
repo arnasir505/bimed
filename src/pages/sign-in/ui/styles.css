@@ -1,0 +1,40 @@
+.sign-in-bg {
+  height: 100vh;
+  background: url('../../../assets/images/sign-in-page-bg.png') center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.sign-in-bg::after {
+  content: url('../../../assets/images/logo-white.svg');
+  position: absolute;
+  bottom: 65px;
+  left: 91px;
+}
+
+.sign-in {
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 32px 32px 56px;
+  width: 320px;
+  margin-bottom: 50px;
+}
+
+.sign-in__link-to-home {
+  align-self: flex-end;
+  color: #054edb;
+  font-size: 14px;
+}
+
+.sign-in__title {
+  margin: 28px 0 !important;
+}
+
+.phone-input-wrap {
+  height: 44px;
+  margin-bottom: 12px;
+}
+
+.sign-in__next-btn {
+  height: 44px;
+}

@@ -68,13 +68,15 @@ const HeaderBottom = () => {
           >
             Избранное
           </Button>
-          <Button
-            className='header__button header__button_login'
-            icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-            type='text'
-          >
-            Войти
-          </Button>
+          <Link to='/sign-in'>
+            <Button
+              className='header__button header__button_login'
+              icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+              type='text'
+            >
+              Войти
+            </Button>
+          </Link>
           <Button
             className='header__button header__button_cart'
             icon={

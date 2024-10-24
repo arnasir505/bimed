@@ -1,0 +1,16 @@
+.phone-input {
+  border-radius: 16px;
+  border: 1px solid #d4e3ff;
+}
+
+.phone-input::placeholder {
+  color: #8b96b1;
+}
+
+.country-select-btn {
+  padding: 4px;
+  padding-left: 10px;
+  height: 100%;
+  z-index: 1;
+  border: 1px solid #d4e3ff;
+}
