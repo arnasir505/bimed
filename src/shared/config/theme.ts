@@ -8,6 +8,8 @@ export const theme: ThemeConfig = {
     colorTextDisabled: '#8B96B1',
     colorError: '#E31B4B',
     colorErrorText: '#E31B4B',
+    colorBorder: '#D4E3FF',
+    controlHeightLG: 44,
   },
   components: {
     Button: {
@@ -17,11 +19,28 @@ export const theme: ThemeConfig = {
       borderRadius: 16,
       paddingBlock: 10,
       paddingInline: 24,
+      borderRadiusLG: 16,
+      fontSizeLG: 14,
     },
     Typography: {
       fontSize: 15,
       colorText: '#171717',
       fontWeightStrong: 700,
+    },
+    Form: {
+      itemMarginBottom: 8,
+    },
+    Input: {
+      borderRadius: 16,
+      borderRadiusLG: 16,
+      colorTextPlaceholder: '#8B96B1',
+      paddingInlineLG: 16,
+      paddingBlockLG: 11.5,
+      fontSizeLG: 14,
+    },
+    DatePicker: {
+      paddingInlineLG: 16,
+      paddingBlockLG: 11.5,
     },
   },
 };

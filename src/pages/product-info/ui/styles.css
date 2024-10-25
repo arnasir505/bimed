@@ -56,7 +56,6 @@
 
 .product__btn {
   height: 100%;
-  border-radius: 16px;
 }
 
 .product__addToFavorite {
@@ -71,15 +70,12 @@
 
 .product__quantity {
   flex: 0 1 90px;
-  border: 1px solid #d4e3ff;
-  border-radius: 16px;
   font-weight: 600;
   font-size: 18px;
   text-align: center;
 }
 
 .product__minusOne {
-  border: 1px solid #d4e3ff;
   width: 56px !important;
 }
 
@@ -96,7 +92,6 @@
 }
 
 .product__addToCart {
-  border: 1px solid #d4e3ff;
   flex-grow: 2;
   font-size: 15px;
   font-weight: 700;

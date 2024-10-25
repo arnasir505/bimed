@@ -11,7 +11,7 @@ interface Props {
 export const SeeAllBtn: React.FC<Props> = ({ text, path }) => {
   return (
     <Link to={path || '/'}>
-      <Button type='primary' className='seeAllBtn'>
+      <Button size='large' type='primary' className='seeAllBtn'>
         {text}
       </Button>
     </Link>

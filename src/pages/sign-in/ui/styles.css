@@ -30,9 +30,9 @@
   margin: 28px 0 !important;
 }
 
-.phone-input-wrap {
+.sign-in__phone-input-wrap {
   height: 44px;
-  margin-bottom: 12px;
+  margin-bottom: 3px;
 }
 
 .phone-input-wrap.error {
@@ -44,6 +44,15 @@
   font-size: 13px;
 }
 
-.sign-in__next-btn {
-  height: 44px;
+.sign-in__no-acc {
+  margin-top: 10px;
+}
+
+.sign-in__no-acc-text {
+  font-size: 14px;
+}
+
+.sign-in__link-to-sign-up {
+  color: #054edb;
+  font-size: 14px;
 }

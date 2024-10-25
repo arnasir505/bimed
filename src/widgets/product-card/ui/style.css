@@ -52,7 +52,6 @@
 
 .product-card__quantity {
   flex: 0 1 64px;
-  border: 1px solid #d4e3ff;
   border-radius: 10px;
   font-weight: 700;
   font-size: 15px;
@@ -60,7 +59,6 @@
 }
 
 .product-card__minusOne {
-  border: 1px solid #d4e3ff;
   width: 40px !important;
 }
 
@@ -82,7 +80,6 @@
 }
 
 .product-card__addToCart {
-  border: 1px solid #d4e3ff;
   flex-grow: 2;
   font-size: 15px;
   font-weight: 700;

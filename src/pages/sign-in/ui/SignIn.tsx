@@ -31,7 +31,7 @@ export const SignIn = () => {
         <Typography.Title level={4} className='sign-in__title'>
           Вход/Регистрация
         </Typography.Title>
-        <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
+        <div className={`sign-in__phone-input-wrap ${error ? 'error' : ''}`}>
           <AntPhone value={phone} onChange={(phone) => setPhone(phone)} error={error} />
         </div>
         {error && (
@@ -39,9 +39,22 @@ export const SignIn = () => {
             Неправильно введен номер
           </Typography.Text>
         )}
-        <Button type='primary' className='sign-in__next-btn' onClick={() => setError(!isValid)}>
+        <Button
+          size='large'
+          type='primary'
+          className='sign-in__next-btn'
+          onClick={() => setError(!isValid)}
+        >
           Далее
         </Button>
+        <Flex justify='center' gap='5px' className='sign-in__no-acc'>
+          <Typography.Text className='sign-in__no-acc-text'>Нет аккаунта?</Typography.Text>
+          <Link to='/sign-up' className='sign-in__link-to-sign-up'>
+            <Typography.Text className='sign-in__link-to-sign-up'>
+              Зарегистрироваться
+            </Typography.Text>
+          </Link>
+        </Flex>
       </Flex>
     </Flex>
   );
