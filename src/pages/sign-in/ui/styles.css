@@ -35,6 +35,15 @@
   margin-bottom: 12px;
 }
 
+.phone-input-wrap.error {
+  margin-bottom: 0;
+}
+
+.sign-in__error-text {
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
 .sign-in__next-btn {
   height: 44px;
 }

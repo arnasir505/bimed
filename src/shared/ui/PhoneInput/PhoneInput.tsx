@@ -6,9 +6,10 @@ import './style.css';
 interface AntPhoneProps {
   value: string;
   onChange: (_phone: string) => void;
+  error: boolean;
 }
 
-export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange }) => {
+export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange, error }) => {
   const phoneInput = usePhoneInput({
     defaultCountry: 'kg',
     value,
@@ -33,7 +34,7 @@ export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange }) => {
           selectedCountry={phoneInput.country.iso2}
           onSelect={(country) => phoneInput.setCountry(country.iso2)}
           renderButtonWrapper={({ children, rootProps }) => (
-            <Button {...rootProps} className='country-select-btn'>
+            <Button {...rootProps} className={`country-select-btn ${error ? 'error' : ''}`}>
               {children}
             </Button>
           )}
@@ -53,6 +54,7 @@ export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange }) => {
           ref={inputRef}
           name='phone'
           autoComplete='tel'
+          status={error ? 'error' : ''}
         />
       </Space.Compact>
     </div>

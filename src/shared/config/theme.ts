@@ -6,6 +6,8 @@ export const theme: ThemeConfig = {
     colorLink: '#000000',
     colorLinkHover: '#054EDB',
     colorTextDisabled: '#8B96B1',
+    colorError: '#E31B4B',
+    colorErrorText: '#E31B4B',
   },
   components: {
     Button: {

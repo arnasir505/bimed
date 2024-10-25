@@ -1,5 +1,6 @@
 import { Button, Flex, Input, Typography } from 'antd';
 import {
+  HeartFilled,
   HeartOutlined,
   MinusOutlined,
   PlusOutlined,
@@ -17,7 +18,7 @@ import {
 import productNoImage from 'assets/images/product-no-image.png';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { toggleItemInFavorites } from 'entities/favorites';
+import { selectFavoriteItems, toggleItemInFavorites } from 'entities/favorites';
 
 interface Props {
   product: Product;
@@ -26,8 +27,9 @@ interface Props {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCartItems);
-  const foundItem = cart.find((item) => item.product.id === product.id);
-
+  const favorites = useAppSelector(selectFavoriteItems);
+  const foundItemInCart = cart.find((item) => item.product.id === product.id);
+  const foundItemInFavorites = favorites.find((item) => item.id === product.id);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
@@ -63,11 +65,17 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       )}
       <Flex className='product-card__buttons'>
         <Button
-          icon={<HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />}
+          icon={
+            foundItemInFavorites ? (
+              <HeartFilled style={{ color: '#E31B4B', fontSize: '22px' }} />
+            ) : (
+              <HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />
+            )
+          }
           onClick={() => dispatch(toggleItemInFavorites(product))}
           className='product-card__btn product-card__addToFavorite'
         />
-        {foundItem ? (
+        {foundItemInCart ? (
           <Flex gap='8px' justify='flex-end' className='product-card__quantity-wrap'>
             <Button
               icon={<MinusOutlined style={{ color: '#032D80' }} />}
@@ -78,7 +86,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               className='product-card__quantity'
               type='text'
               maxLength={3}
-              value={foundItem.quantity}
+              value={foundItemInCart.quantity}
               onChange={handleChange}
             />
             <Button
