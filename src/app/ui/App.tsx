@@ -6,6 +6,7 @@ import { NotFound } from 'pages/404';
 import { SignIn } from 'pages/sign-in';
 import { SignUp } from 'pages/sign-up';
 import './style.css';
+import { PhoneVerification } from 'pages/phone-verification';
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
       <Route path='/products/:id' element={<ProductInfo />} />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />
+      <Route path='/phone-verification' element={<PhoneVerification />} />
       <Route path='/*' element={<NotFound />} />
     </Routes>
   );

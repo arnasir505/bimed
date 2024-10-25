@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Button, DatePicker, Flex, Form, Input, Typography } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import { Button, DatePicker, Flex, Form, FormProps, Input, Typography } from 'antd';
 import './styles.css';
 import 'react-international-phone/style.css';
 import { useState } from 'react';
@@ -11,16 +11,28 @@ const phoneUtil = PhoneNumberUtil.getInstance();
 const isPhoneValid = (phone: string) => {
   try {
     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
 
+type FieldType = { firstName: string; lastName: string; dateOfBirth: Date; phone: string };
+
 export const SignUp = () => {
+  const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
   const isValid = isPhoneValid(phone);
+
+  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+    console.log('Success:', { ...values, phone });
+    navigate('/phone-verification');
+  };
+
+  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
 
   return (
     <Flex justify='center' align='center' className='sign-up-bg'>
@@ -37,7 +49,13 @@ export const SignUp = () => {
             <Typography.Text className='sign-up__link-to-sign-in'>Войти</Typography.Text>
           </Link>
         </Flex>
-        <Form name='sign-up' className='sign-up__form' size='large'>
+        <Form
+          name='sign-up'
+          className='sign-up__form'
+          size='large'
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+        >
           <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
             <Input placeholder='Имя' />
           </Form.Item>
@@ -46,19 +64,21 @@ export const SignUp = () => {
           </Form.Item>
           <Form.Item
             name='dateOfBirth'
-            rules={[{ required: true, message: 'Введите дату рождения!' }]}
+            rules={[{ required: true, message: 'Выберите дату рождения!' }]}
           >
             <DatePicker placeholder='Дата рождения' className='sign-up__datepicker' />
           </Form.Item>
           <Form.Item name='phoneNumber'>
-            <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
-              <AntPhone value={phone} onChange={(phone) => setPhone(phone)} error={error} />
+            <div>
+              <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
+                <AntPhone value={phone} onChange={(phone) => setPhone(phone)} error={error} />
+              </div>
+              {error && (
+                <Typography.Text type='danger' className='sign-up__error-text'>
+                  Неправильно введен номер!
+                </Typography.Text>
+              )}
             </div>
-            {error && (
-              <Typography.Text type='danger' className='sign-up__error-text'>
-                Неправильно введен номер
-              </Typography.Text>
-            )}
           </Form.Item>
           <Form.Item>
             <Button

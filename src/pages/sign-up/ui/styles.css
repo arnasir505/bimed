@@ -72,3 +72,7 @@
 .sign-up__error-text {
   font-size: 14px;
 }
+
+.sign-up__next-btn {
+  margin-top: 4px;
+}

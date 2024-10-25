@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Flex, Typography } from 'antd';
 import './styles.css';
 import 'react-international-phone/style.css';
@@ -18,9 +18,17 @@ const isPhoneValid = (phone: string) => {
 };
 
 export const SignIn = () => {
+  const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
   const isValid = isPhoneValid(phone);
+
+  const handleClickToNextPage = () => {
+    setError(!isValid);
+    if (isValid) {
+      navigate('/phone-verification');
+    }
+  };
 
   return (
     <Flex justify='center' align='center' className='sign-in-bg'>
@@ -43,7 +51,7 @@ export const SignIn = () => {
           size='large'
           type='primary'
           className='sign-in__next-btn'
-          onClick={() => setError(!isValid)}
+          onClick={handleClickToNextPage}
         >
           Далее
         </Button>

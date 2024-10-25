@@ -32,11 +32,11 @@
 
 .sign-in__phone-input-wrap {
   height: 44px;
-  margin-bottom: 3px;
+  margin-bottom: 12px;
 }
 
-.phone-input-wrap.error {
-  margin-bottom: 0;
+.sign-in__phone-input-wrap.error {
+  margin-bottom: 3px;
 }
 
 .sign-in__error-text {
