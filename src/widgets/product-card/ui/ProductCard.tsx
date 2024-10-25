@@ -17,6 +17,7 @@ import {
 import productNoImage from 'assets/images/product-no-image.png';
 import { Link } from 'react-router-dom';
 import './style.css';
+import { toggleItemInFavorites } from 'entities/favorites';
 
 interface Props {
   product: Product;
@@ -63,6 +64,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <Flex className='product-card__buttons'>
         <Button
           icon={<HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />}
+          onClick={() => dispatch(toggleItemInFavorites(product))}
           className='product-card__btn product-card__addToFavorite'
         />
         {foundItem ? (

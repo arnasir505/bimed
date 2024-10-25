@@ -11,6 +11,7 @@ import {
 } from 'redux-persist';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { cartReducer } from 'entities/cart';
+import { favoritesReducer } from 'entities/favorites';
 
 const cartPersistConfig = {
   key: 'bimed:cart',
@@ -18,8 +19,15 @@ const cartPersistConfig = {
   whiteList: ['cart'],
 };
 
+const favoritesPersistConfig = {
+  key: 'bimed:favorites',
+  storage,
+  whiteList: ['favorites'],
+};
+
 const rootReducer = combineReducers({
   cart: persistReducer(cartPersistConfig, cartReducer),
+  favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
 });
 
 export const store = configureStore({
