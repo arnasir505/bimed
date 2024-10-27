@@ -11,8 +11,8 @@ const phoneUtil = PhoneNumberUtil.getInstance();
 const isPhoneValid = (phone: string) => {
   try {
     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
-    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   } catch (e) {
+    console.log(e);
     return false;
   }
 };
@@ -68,7 +68,7 @@ export const SignUp = () => {
           >
             <DatePicker placeholder='Дата рождения' className='sign-up__datepicker' />
           </Form.Item>
-          <Form.Item name='phoneNumber'>
+          <Form.Item name='phone'>
             <div>
               <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
                 <AntPhone value={phone} onChange={(phone) => setPhone(phone)} error={error} />

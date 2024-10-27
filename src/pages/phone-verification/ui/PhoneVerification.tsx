@@ -1,18 +1,28 @@
 import { Button, Flex, Input, Typography } from 'antd';
 import './styles.css';
 import { Link } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
 
 export const PhoneVerification = () => {
-  let counter = 5;
+  const [counter, setCounter] = useState(59);
+  const [sendAgainAvailable, setSendAgainAvailable] = useState(true);
+  const intervalRef = useRef<number>();
 
   const handleClick = () => {
-    const countdown = setInterval(() => {
-      counter--;
-      if (counter === 0) {
-        clearInterval(countdown);
-      }
+    setSendAgainAvailable(false);
+    intervalRef.current = setInterval(() => {
+      setCounter((prev) => prev - 1);
     }, 1000);
   };
+
+  useEffect(() => {
+    if (counter === 0) {
+      clearInterval(intervalRef.current);
+      setSendAgainAvailable(true);
+      setCounter(59);
+    }
+  }, [counter]);
+
   return (
     <Flex justify='center' align='center' className='sign-up-bg'>
       <Flex vertical className='phone-verify'>
@@ -33,9 +43,15 @@ export const PhoneVerification = () => {
         <Typography.Text className='phone-verify__send-again-text'>
           Не пришло SMS сообщение?
         </Typography.Text>
-        <Button size='large' className='phone-verify__send-again' onClick={handleClick}>
-          Отправить снова {counter}
-        </Button>
+        {sendAgainAvailable ? (
+          <Button size='large' className='phone-verify__send-again' onClick={handleClick}>
+            Отправить снова
+          </Button>
+        ) : (
+          <Button size='large' disabled className='phone-verify__send-again'>
+            Отправить снова через {counter >= 10 ? `00:${counter}` : `00:0${counter}`}
+          </Button>
+        )}
       </Flex>
     </Flex>
   );
