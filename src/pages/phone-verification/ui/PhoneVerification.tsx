@@ -1,19 +1,41 @@
-import { Button, Flex, Input, Typography } from 'antd';
+import { Button, Flex, Input, message, Typography } from 'antd';
 import './styles.css';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
+import { RegisterForm } from 'types';
+import { useAppDispatch } from 'shared/config';
+import { loginUser, updateUser } from 'entities/user';
 
 export const PhoneVerification = () => {
+  const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useAppDispatch();
   const [counter, setCounter] = useState(59);
   const [sendAgainAvailable, setSendAgainAvailable] = useState(true);
+  const [code, setCode] = useState('');
   const intervalRef = useRef<number>();
-  const { phone, prevPage } = location.state as { phone: string; prevPage: string };
+  const { form, prevPage } = location.state as { form: RegisterForm; prevPage: string };
+  const [messageApi, contextHolder] = message.useMessage({ maxCount: 2 });
+
   const handleClick = () => {
     setSendAgainAvailable(false);
     intervalRef.current = setInterval(() => {
       setCounter((prev) => prev - 1);
     }, 1000);
+  };
+
+  const handleAuthorization = () => {
+    if (!(Number(code) === 1234)) {
+      messageApi.error({ content: 'Неверный код' });
+      return;
+    }
+    if (prevPage === '/sign-up') {
+      dispatch(updateUser({ id: Math.random().toString(), ...form, favorites: [] }));
+      navigate('/');
+    } else if (prevPage === '/sign-in') {
+      dispatch(loginUser(form.phone));
+      navigate('/');
+    }
   };
 
   useEffect(() => {
@@ -26,6 +48,7 @@ export const PhoneVerification = () => {
 
   return (
     <Flex justify='center' align='center' className='sign-up-bg'>
+      {contextHolder}
       <Flex vertical className='phone-verify'>
         <Link to='/' className='sign-up__link-to-home'>
           <Typography.Text className='sign-up__link-to-home'>На главную</Typography.Text>
@@ -33,12 +56,22 @@ export const PhoneVerification = () => {
         <Typography.Title level={4} className='phone-verify__title'>
           Подтверждение номера телефона
         </Typography.Title>
-        <Typography.Text className='phone-verify__phone'>{phone}</Typography.Text>
+        <Typography.Text className='phone-verify__phone'>{form.phone}</Typography.Text>
         <Link to={prevPage} className='phone-verify__link'>
           <Typography.Text className='phone-verify__link'>Неверный номер телефона?</Typography.Text>
         </Link>
-        <Input size='large' placeholder='Введите код подтверждения' />
-        <Button size='large' type='primary' className='phone-verify__confirm'>
+        <Input
+          size='large'
+          placeholder='Введите код подтверждения'
+          value={code}
+          onChange={(e) => setCode(e.target.value)}
+        />
+        <Button
+          size='large'
+          type='primary'
+          className='phone-verify__confirm'
+          onClick={handleAuthorization}
+        >
           Подтвердить
         </Button>
         <Typography.Text className='phone-verify__send-again-text'>

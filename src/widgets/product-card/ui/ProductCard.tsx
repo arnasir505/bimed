@@ -1,4 +1,4 @@
-import { Button, Flex, Input, Typography } from 'antd';
+import { Button, Flex, Input, message, Typography } from 'antd';
 import {
   HeartFilled,
   HeartOutlined,
@@ -29,8 +29,10 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const cart = useAppSelector(selectCartItems);
   const user = useAppSelector(selectUser);
   const favorites = useAppSelector(selectFavoriteItems);
+  const [messageApi, contextHolder] = message.useMessage({ maxCount: 2 });
   const foundItemInCart = cart.find((item) => item.product.id === product.id);
   const foundItemInFavorites = favorites?.find((item) => item.id === product.id);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
@@ -40,9 +42,10 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   };
 
   const handleAddToFavorites = () => {
-    if (user) {
-      dispatch(toggleItemInFavorites(product));
+    if (!user) {
+      messageApi.info({ content: 'Войдите, чтобы добавить товар в избранное' });
     }
+    dispatch(toggleItemInFavorites(product));
   };
 
   return (
@@ -54,6 +57,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       justify='space-between'
       gap={10}
     >
+      {contextHolder}
       <div className='product-card__img-wrapper'>
         <img src={product.img ? `/${product.img}` : productNoImage} alt={product.name} />
       </div>

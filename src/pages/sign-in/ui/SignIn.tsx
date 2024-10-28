@@ -1,10 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { Button, Flex, Typography } from 'antd';
+import { Button, Flex, message, Typography } from 'antd';
 import './styles.css';
 import 'react-international-phone/style.css';
 import { useState } from 'react';
 import { AntPhone } from 'shared/ui';
 import { PhoneNumberUtil } from 'google-libphonenumber';
+import { useAppSelector } from 'shared/config';
+import { selectUser } from 'entities/user';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -19,19 +21,27 @@ const isPhoneValid = (phone: string) => {
 
 export const SignIn = () => {
   const navigate = useNavigate();
+  const user = useAppSelector(selectUser);
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
   const isValid = isPhoneValid(phone);
+  const [messageApi, contextHolder] = message.useMessage({ maxCount: 2 });
 
   const handleClickToNextPage = () => {
     setError(!isValid);
-    if (isValid) {
-      navigate('/phone-verification', { state: { phone: phone, prevPage: '/sign-in' } });
+    if (!isValid) return;
+    if (!(user?.phone === phone)) {
+      messageApi.error({ content: 'Пользователя с таким номером не существует' });
+      return;
     }
+    navigate('/phone-verification', {
+      state: { form: { phone: phone }, prevPage: '/sign-in' },
+    });
   };
 
   return (
     <Flex justify='center' align='center' className='sign-in-bg'>
+      {contextHolder}
       <Flex vertical className='sign-in'>
         <Link to='/' className='sign-in__link-to-home'>
           <Typography.Text className='sign-in__link-to-home'>На главную</Typography.Text>

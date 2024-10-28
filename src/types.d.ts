@@ -31,3 +31,10 @@ export interface User {
   dateOfBirth: Date;
   favorites: Product[];
 }
+
+export interface RegisterForm {
+  firstName: string;
+  lastName: string;
+  dateOfBirth: Date;
+  phone: string;
+}

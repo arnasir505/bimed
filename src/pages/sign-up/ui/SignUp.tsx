@@ -5,6 +5,7 @@ import 'react-international-phone/style.css';
 import { useState } from 'react';
 import { AntPhone } from 'shared/ui';
 import { PhoneNumberUtil } from 'google-libphonenumber';
+import { RegisterForm } from 'types';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -17,20 +18,19 @@ const isPhoneValid = (phone: string) => {
   }
 };
 
-type FieldType = { firstName: string; lastName: string; dateOfBirth: Date; phone: string };
-
 export const SignUp = () => {
   const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
   const isValid = isPhoneValid(phone);
 
-  const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-    console.log('Success:', { ...values, phone });
-    navigate('/phone-verification', { state: { phone: phone, prevPage: '/sign-up' } });
+  const onFinish: FormProps<RegisterForm>['onFinish'] = (values) => {
+    const form: RegisterForm = { ...values, phone };
+    console.log('Success:', form);
+    navigate('/phone-verification', { state: { form: form, prevPage: '/sign-up' } });
   };
 
-  const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+  const onFinishFailed: FormProps<RegisterForm>['onFinishFailed'] = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
 
