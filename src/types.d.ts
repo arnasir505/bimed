@@ -22,3 +22,12 @@ export interface News {
   img: string;
   date: string;
 }
+
+export interface User {
+  id: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  dateOfBirth: Date;
+  favorites: Product[];
+}

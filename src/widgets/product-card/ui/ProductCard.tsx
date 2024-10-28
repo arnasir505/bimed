@@ -18,7 +18,7 @@ import {
 import productNoImage from 'assets/images/product-no-image.png';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { selectFavoriteItems, toggleItemInFavorites } from 'entities/favorites';
+import { selectFavoriteItems, selectUser, toggleItemInFavorites } from 'entities/user';
 
 interface Props {
   product: Product;
@@ -27,14 +27,21 @@ interface Props {
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCartItems);
+  const user = useAppSelector(selectUser);
   const favorites = useAppSelector(selectFavoriteItems);
   const foundItemInCart = cart.find((item) => item.product.id === product.id);
-  const foundItemInFavorites = favorites.find((item) => item.id === product.id);
+  const foundItemInFavorites = favorites?.find((item) => item.id === product.id);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
     if (reg.test(inputValue)) {
       dispatch(inputToCart({ product: product, quantity: Number(e.target.value) }));
+    }
+  };
+
+  const handleAddToFavorites = () => {
+    if (user) {
+      dispatch(toggleItemInFavorites(product));
     }
   };
 
@@ -72,7 +79,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               <HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />
             )
           }
-          onClick={() => dispatch(toggleItemInFavorites(product))}
+          onClick={handleAddToFavorites}
           className='product-card__btn product-card__addToFavorite'
         />
         {foundItemInCart ? (
