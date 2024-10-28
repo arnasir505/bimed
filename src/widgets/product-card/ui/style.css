@@ -98,6 +98,7 @@
 .product-card__quantity-wrap {
   width: min-content;
   flex-grow: 2;
+  gap: 8px;
 }
 
 .product-card__addToCart.not-available {

@@ -31,6 +31,7 @@
 .cart-item__content {
   flex: 0 1 202px;
   padding: 12px;
+  gap: 5px;
 }
 
 .cart-item__price-for-one,
@@ -50,10 +51,12 @@
   width: auto;
   scale: 0.8;
   transform-origin: left;
+  gap: 5px;
 }
 
 .cart-modal__totals-wrap {
   margin-top: 15px;
+  gap: 8px;
 }
 
 .cart-modal__totals-value {

@@ -2,13 +2,14 @@ import { Container } from 'shared/ui';
 import { useEffect, useState } from 'react';
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
-import { Button, Flex, Image, Input, Typography } from 'antd';
+import { Button, Flex, Image, Input, message, Typography } from 'antd';
 import { products } from 'data/products';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { NotFound } from 'pages/404';
 import { Link, useParams } from 'react-router-dom';
 import productNoImage from 'assets/images/product-no-image.png';
 import {
+  HeartFilled,
   HeartOutlined,
   MinusOutlined,
   PlusOutlined,
@@ -23,18 +24,23 @@ import {
 } from 'entities/cart';
 import { ProductCard } from 'widgets/product-card';
 import './styles.css';
+import { selectFavoriteItems, selectUser, toggleItemInFavorites } from 'entities/user';
 
 export const ProductInfo = () => {
   const params = useParams();
   const dispatch = useAppDispatch();
   const [ellipsis, setEllipsis] = useState(true);
+  const cart = useAppSelector(selectCartItems);
+  const user = useAppSelector(selectUser);
+  const favorites = useAppSelector(selectFavoriteItems);
+  const [messageApi, contextHolder] = message.useMessage({ maxCount: 2 });
+
   const product = products.find((item) => item.id === params.id);
   if (!product) {
     return <NotFound />;
   }
-  const cart = useAppSelector(selectCartItems);
   const foundItem = cart.find((item) => item.product.id === product.id);
-
+  const foundItemInFavorites = favorites?.find((item) => item.id === product.id);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value: inputValue } = e.target;
     const reg = /^-?\d*(\.\d*)?$/;
@@ -43,25 +49,33 @@ export const ProductInfo = () => {
     }
   };
 
+  const handleAddToFavorites = () => {
+    if (!user) {
+      messageApi.info({ content: 'Войдите, чтобы добавить товар в избранное' });
+    }
+    dispatch(toggleItemInFavorites(product));
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [product]);
 
   return (
     <>
+      {contextHolder}
       <header className='header'>
         <Container>
           <Header />
         </Container>
       </header>
-      <main className='main'>
+      <main>
         <Container>
-          <Flex gap='44px' className='product-info-wrap'>
+          <Flex className='product-info-wrap'>
             <Flex vertical gap='30px'>
               <Flex vertical justify='center' align='center' className='product-img_wrap'>
                 <Image preview={false} src={product.img ? `/${product.img}` : productNoImage} />
               </Flex>
-              <Flex className='product__info-instructions-wrap' gap='8px'>
+              <Flex className='product__info-instructions-wrap'>
                 <Typography.Text className='product__extra-info active'>
                   Информация о товаре
                 </Typography.Text>
@@ -92,7 +106,7 @@ export const ProductInfo = () => {
                 </Typography.Text>
               </Flex>
             </Flex>
-            <Flex vertical gap='24px' className='product__info'>
+            <Flex vertical className='product__info'>
               <Typography.Title level={4} className='product__title'>
                 {product.name}
               </Typography.Title>
@@ -120,11 +134,18 @@ export const ProductInfo = () => {
               )}
               <Flex className='product__buttons'>
                 <Button
-                  icon={<HeartOutlined style={{ color: '#E31B4B', fontSize: '25px' }} />}
+                  icon={
+                    foundItemInFavorites ? (
+                      <HeartFilled style={{ color: '#E31B4B', fontSize: '25px' }} />
+                    ) : (
+                      <HeartOutlined style={{ color: '#E31B4B', fontSize: '25px' }} />
+                    )
+                  }
                   className='product__btn product__addToFavorite'
+                  onClick={handleAddToFavorites}
                 />
                 {foundItem ? (
-                  <Flex gap='8px' justify='flex-end' className='product__quantity-wrap'>
+                  <Flex justify='flex-end' className='product__quantity-wrap'>
                     <Button
                       icon={<MinusOutlined style={{ color: '#032D80' }} />}
                       className='product__btn product__minusOne'
@@ -163,7 +184,7 @@ export const ProductInfo = () => {
               </Flex>
               <Flex vertical gap='8px'>
                 <Typography.Text className='product__share'>Поделиться</Typography.Text>
-                <Flex gap='16px' className='product__share-buttons'>
+                <Flex className='product__share-buttons'>
                   <Link to={'/'} className='product__share-btn vk' />
                   <Link to={'/'} className='product__share-btn facebook' />
                   <Link to={'/'} className='product__share-btn odnoklassniki' />

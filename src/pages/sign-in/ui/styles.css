@@ -46,6 +46,7 @@
 
 .sign-in__no-acc {
   margin-top: 10px;
+  gap: 5px;
 }
 
 .sign-in__no-acc-text {

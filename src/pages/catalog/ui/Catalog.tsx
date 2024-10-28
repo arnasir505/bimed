@@ -254,12 +254,12 @@ export const Catalog = () => {
           <Breadcrumb
             items={[
               { title: <Link to='/'>Главная</Link> },
-              { title: <Typography.Text>Каталог</Typography.Text> },
+              { title: <Link to='/catalog'>Каталог</Link> },
             ]}
           />
           <Typography.Title level={4}>Витамины</Typography.Title>
           <Flex justify='space-between'>
-            <Flex className='sort-options' gap='14px' align='center'>
+            <Flex className='sort-options' align='center'>
               <Typography.Text className='sort-options__title'>Сортировка:</Typography.Text>
               <Button
                 type='text'
@@ -330,7 +330,7 @@ export const Catalog = () => {
                 Хит продаж
               </Button>
             </Flex>
-            <Flex className='catalog-view-options' gap='8px'>
+            <Flex className='catalog-view-options'>
               <Typography.Text className='catalog-view-options__title'>Вид:</Typography.Text>
               <BlockViewIcon
                 style={{ color: blockViewEnabled ? '#054EDB' : '#8B96B1' }}

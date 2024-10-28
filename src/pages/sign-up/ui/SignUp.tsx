@@ -43,7 +43,7 @@ export const SignUp = () => {
         <Typography.Title level={4} className='sign-up__title'>
           Регистрация
         </Typography.Title>
-        <Flex gap='10px' className='sign-up__no-acc'>
+        <Flex className='sign-up__no-acc'>
           <Typography.Text className='sign-up__no-acc-text'>Есть аккаунт?</Typography.Text>
           <Link to='/sign-in' className='sign-up__link-to-sign-in'>
             <Typography.Text className='sign-up__link-to-sign-in'>Войти</Typography.Text>

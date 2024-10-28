@@ -1,5 +1,6 @@
 .product-info-wrap {
   margin-top: 53px;
+  gap: 44px;
 }
 
 .product-img_wrap {
@@ -18,6 +19,7 @@
 
 .product__info {
   flex-basis: 556px;
+  gap: 24px;
 }
 
 .product__title {
@@ -105,6 +107,7 @@
 .product__quantity-wrap {
   width: min-content;
   flex-grow: 2;
+  gap: 8px;
 }
 
 .product__addToCart.not-available {
@@ -121,6 +124,7 @@
 
 .product__share-buttons {
   height: 36px;
+  gap: 16px;
 }
 
 .product__share-btn {
@@ -164,6 +168,7 @@
   background-color: #e9f0fc;
   border-radius: 12px;
   width: fit-content;
+  gap: 8px;
 }
 
 .product__extra-info,

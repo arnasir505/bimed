@@ -6,6 +6,7 @@ import {
   LoginOutlined,
   SearchOutlined,
   ShoppingCartOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
 import { handleChange, handleSearch } from 'widgets/header/api/search';
 import { products } from 'data/products';
@@ -16,8 +17,11 @@ import LogoExpanded from 'assets/images/logo-expanded.svg';
 import { useAppSelector } from 'shared/config';
 import { selectCartItems } from 'entities/cart';
 import './style.css';
+import { selectIsUserLoggedIn, selectUser } from 'entities/user';
 
 const HeaderBottom = () => {
+  const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
+  const user = useAppSelector(selectUser);
   const cartItems = useAppSelector(selectCartItems);
   const [cartModalOpen, setCartModalOpen] = useState(false);
   const [menuModalOpen, setMenuModalOpen] = useState(false);
@@ -68,15 +72,27 @@ const HeaderBottom = () => {
           >
             Избранное
           </Button>
-          <Link to='/sign-in'>
-            <Button
-              className='header__button header__button_login'
-              icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-              type='text'
-            >
-              Войти
-            </Button>
-          </Link>
+          {isLoggedIn ? (
+            <Link to='/profile'>
+              <Button
+                className='header__button header__button_login'
+                icon={<UserOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+                type='text'
+              >
+                {user?.firstName}
+              </Button>
+            </Link>
+          ) : (
+            <Link to='/sign-in'>
+              <Button
+                className='header__button header__button_login'
+                icon={<LoginOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+                type='text'
+              >
+                Войти
+              </Button>
+            </Link>
+          )}
           <Button
             className='header__button header__button_cart'
             icon={

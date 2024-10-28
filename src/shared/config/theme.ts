@@ -21,6 +21,7 @@ export const theme: ThemeConfig = {
       paddingInline: 24,
       borderRadiusLG: 16,
       fontSizeLG: 14,
+      dangerColor: '#E31B4B',
     },
     Typography: {
       fontSize: 15,

@@ -65,7 +65,7 @@ export const SignIn = () => {
         >
           Далее
         </Button>
-        <Flex justify='center' gap='5px' className='sign-in__no-acc'>
+        <Flex justify='center' className='sign-in__no-acc'>
           <Typography.Text className='sign-in__no-acc-text'>Нет аккаунта?</Typography.Text>
           <Link to='/sign-up' className='sign-in__link-to-sign-up'>
             <Typography.Text className='sign-in__link-to-sign-up'>

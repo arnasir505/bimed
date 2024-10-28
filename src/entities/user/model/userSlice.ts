@@ -17,7 +17,6 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     unsetUser: (state) => {
-      state.user = null;
       state.isLoggedIn = false;
     },
     updateUser: (state, { payload }: PayloadAction<User>) => {

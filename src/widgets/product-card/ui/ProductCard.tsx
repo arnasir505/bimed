@@ -18,7 +18,12 @@ import {
 import productNoImage from 'assets/images/product-no-image.png';
 import { Link } from 'react-router-dom';
 import './style.css';
-import { selectFavoriteItems, selectUser, toggleItemInFavorites } from 'entities/user';
+import {
+  selectFavoriteItems,
+  selectIsUserLoggedIn,
+  selectUser,
+  toggleItemInFavorites,
+} from 'entities/user';
 
 interface Props {
   product: Product;
@@ -28,6 +33,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCartItems);
   const user = useAppSelector(selectUser);
+  const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
   const favorites = useAppSelector(selectFavoriteItems);
   const [messageApi, contextHolder] = message.useMessage({ maxCount: 2 });
   const foundItemInCart = cart.find((item) => item.product.id === product.id);
@@ -42,8 +48,9 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   };
 
   const handleAddToFavorites = () => {
-    if (!user) {
+    if (!(user && isLoggedIn)) {
       messageApi.info({ content: 'Войдите, чтобы добавить товар в избранное' });
+      return;
     }
     dispatch(toggleItemInFavorites(product));
   };
@@ -77,7 +84,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       <Flex className='product-card__buttons'>
         <Button
           icon={
-            foundItemInFavorites ? (
+            foundItemInFavorites && isLoggedIn ? (
               <HeartFilled style={{ color: '#E31B4B', fontSize: '22px' }} />
             ) : (
               <HeartOutlined style={{ color: '#E31B4B', fontSize: '22px' }} />
@@ -87,7 +94,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           className='product-card__btn product-card__addToFavorite'
         />
         {foundItemInCart ? (
-          <Flex gap='8px' justify='flex-end' className='product-card__quantity-wrap'>
+          <Flex justify='flex-end' className='product-card__quantity-wrap'>
             <Button
               icon={<MinusOutlined style={{ color: '#032D80' }} />}
               className='product-card__btn product-card__minusOne'

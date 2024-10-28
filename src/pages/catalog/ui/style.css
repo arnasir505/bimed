@@ -17,6 +17,10 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.sort-options {
+  gap: 14px;
+}
+
 .sort-options__title {
   color: #8b96b1;
 }
@@ -48,6 +52,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 10px 16px;
+  gap: 8px;
 }
 
 .catalog-view-options__title {
