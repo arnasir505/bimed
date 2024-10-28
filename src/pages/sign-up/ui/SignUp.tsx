@@ -11,8 +11,8 @@ const phoneUtil = PhoneNumberUtil.getInstance();
 const isPhoneValid = (phone: string) => {
   try {
     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
@@ -27,7 +27,7 @@ export const SignUp = () => {
 
   const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
     console.log('Success:', { ...values, phone });
-    navigate('/phone-verification');
+    navigate('/phone-verification', { state: { phone: phone, prevPage: '/sign-up' } });
   };
 
   const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {

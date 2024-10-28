@@ -1,13 +1,14 @@
 import { Button, Flex, Input, Typography } from 'antd';
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 export const PhoneVerification = () => {
+  const location = useLocation();
   const [counter, setCounter] = useState(59);
   const [sendAgainAvailable, setSendAgainAvailable] = useState(true);
   const intervalRef = useRef<number>();
-
+  const { phone, prevPage } = location.state as { phone: string; prevPage: string };
   const handleClick = () => {
     setSendAgainAvailable(false);
     intervalRef.current = setInterval(() => {
@@ -32,8 +33,8 @@ export const PhoneVerification = () => {
         <Typography.Title level={4} className='phone-verify__title'>
           Подтверждение номера телефона
         </Typography.Title>
-        <Typography.Text className='phone-verify__phone'>+996 555 55 55 55</Typography.Text>
-        <Link to='/sign-in' className='phone-verify__link'>
+        <Typography.Text className='phone-verify__phone'>{phone}</Typography.Text>
+        <Link to={prevPage} className='phone-verify__link'>
           <Typography.Text className='phone-verify__link'>Неверный номер телефона?</Typography.Text>
         </Link>
         <Input size='large' placeholder='Введите код подтверждения' />

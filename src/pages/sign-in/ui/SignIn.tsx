@@ -11,8 +11,8 @@ const phoneUtil = PhoneNumberUtil.getInstance();
 const isPhoneValid = (phone: string) => {
   try {
     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   } catch (e) {
-    console.log(e);
     return false;
   }
 };
@@ -26,7 +26,7 @@ export const SignIn = () => {
   const handleClickToNextPage = () => {
     setError(!isValid);
     if (isValid) {
-      navigate('/phone-verification');
+      navigate('/phone-verification', { state: { phone: phone, prevPage: '/sign-in' } });
     }
   };
 
