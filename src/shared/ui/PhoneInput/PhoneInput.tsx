@@ -7,9 +7,10 @@ interface AntPhoneProps {
   value: string;
   onChange: (_phone: string) => void;
   error: boolean;
+  readonly?: boolean;
 }
 
-export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange, error }) => {
+export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange, error, readonly }) => {
   const phoneInput = usePhoneInput({
     defaultCountry: 'kg',
     value,
@@ -34,7 +35,11 @@ export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange, error }) =>
           selectedCountry={phoneInput.country.iso2}
           onSelect={(country) => phoneInput.setCountry(country.iso2)}
           renderButtonWrapper={({ children, rootProps }) => (
-            <Button {...rootProps} className={`country-select-btn ${error ? 'error' : ''}`}>
+            <Button
+              {...rootProps}
+              className={`country-select-btn ${error ? 'error' : ''}`}
+              disabled={readonly}
+            >
               {children}
             </Button>
           )}
@@ -55,6 +60,7 @@ export const AntPhone: React.FC<AntPhoneProps> = ({ value, onChange, error }) =>
           name='phone'
           autoComplete='tel'
           status={error ? 'error' : ''}
+          readOnly={readonly}
         />
       </Space.Compact>
     </div>

@@ -5,7 +5,6 @@ import 'react-international-phone/style.css';
 import { useState } from 'react';
 import { AntPhone } from 'shared/ui';
 import { PhoneNumberUtil } from 'google-libphonenumber';
-import { RegisterForm } from 'types';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -24,13 +23,13 @@ export const SignUp = () => {
   const [error, setError] = useState(false);
   const isValid = isPhoneValid(phone);
 
-  const onFinish: FormProps<RegisterForm>['onFinish'] = (values) => {
-    const form: RegisterForm = { ...values, phone };
+  const onFinish: FormProps['onFinish'] = (values) => {
+    const form = { ...values, dateOfBirth: values.dateOfBirth.toISOString(), phone };
     console.log('Success:', form);
     navigate('/phone-verification', { state: { form: form, prevPage: '/sign-up' } });
   };
 
-  const onFinishFailed: FormProps<RegisterForm>['onFinishFailed'] = (errorInfo) => {
+  const onFinishFailed: FormProps['onFinishFailed'] = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
 
@@ -66,7 +65,11 @@ export const SignUp = () => {
             name='dateOfBirth'
             rules={[{ required: true, message: 'Выберите дату рождения!' }]}
           >
-            <DatePicker placeholder='Дата рождения' className='sign-up__datepicker' />
+            <DatePicker
+              placeholder='Дата рождения'
+              className='sign-up__datepicker'
+              format={'DD.MM.YYYY'}
+            />
           </Form.Item>
           <Form.Item name='phone'>
             <div>

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'shared/config';
-import { Product, User } from 'types';
+import { Product, RegisterForm, User } from 'types';
 
 interface UserState {
   user: User | null;
@@ -23,6 +23,12 @@ const userSlice = createSlice({
       state.user = payload;
       state.isLoggedIn = true;
     },
+    editUserFields: (state, { payload }: PayloadAction<RegisterForm>) => {
+      state.user!.firstName = payload.firstName;
+      state.user!.lastName = payload.lastName;
+      state.user!.dateOfBirth = payload.dateOfBirth;
+      state.user!.phone = payload.phone;
+    },
     loginUser: (state, { payload }: PayloadAction<string>) => {
       if (state.user?.phone === payload) {
         state.isLoggedIn = true;
@@ -39,7 +45,8 @@ const userSlice = createSlice({
   },
 });
 
-export const { toggleItemInFavorites, unsetUser, updateUser, loginUser } = userSlice.actions;
+export const { toggleItemInFavorites, unsetUser, updateUser, loginUser, editUserFields } =
+  userSlice.actions;
 
 export const userReducer = userSlice.reducer;
 

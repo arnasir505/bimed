@@ -28,13 +28,13 @@ export interface User {
   firstName: string;
   lastName: string;
   phone: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   favorites: Product[];
 }
 
 export interface RegisterForm {
   firstName: string;
   lastName: string;
-  dateOfBirth: Date;
+  dateOfBirth: string;
   phone: string;
 }
