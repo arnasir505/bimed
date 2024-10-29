@@ -23,6 +23,7 @@ import { useEffect, useState } from 'react';
 import { RegisterForm } from 'types';
 import { PhoneNumberUtil } from 'google-libphonenumber';
 import dayjs from 'dayjs';
+import QrCode from 'assets/images/qr-code.png';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -161,93 +162,106 @@ export const Profile = () => {
                 </Button>
               </Popconfirm>
             </Flex>
-            <Flex vertical className='profile__content'>
-              <Typography.Title level={3}>Профиль</Typography.Title>
-              <Flex className='profile-picture-wrap'>
-                <div className='profile-picture'>
-                  <img src={PfpDefault} alt='profile-picture' />
-                </div>
-                <Button
-                  type='primary'
-                  className='upload-pfp-btn
-                '
-                >
-                  Загрузить аватар
-                </Button>
-              </Flex>
-              <Typography.Text className='profile__content__title'>
-                Как к Вам обращаться?
-              </Typography.Text>
-              <Form
-                name='sign-up'
-                className='sign-up__form'
-                size='large'
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                form={profileForm}
-              >
-                <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
-                  <Input placeholder='Имя' readOnly={!isEditMode} />
-                </Form.Item>
-                <Form.Item
-                  name='lastName'
-                  rules={[{ required: true, message: 'Введите фамилию!' }]}
-                >
-                  <Input placeholder='Фамилия' readOnly={!isEditMode} />
-                </Form.Item>
-                <Form.Item
-                  name='dateOfBirth'
-                  rules={[{ required: true, message: 'Выберите дату рождения!' }]}
-                >
-                  <DatePicker
-                    placeholder='Дата рождения'
-                    className='sign-up__datepicker'
-                    inputReadOnly={!isEditMode}
-                    allowClear={isEditMode}
-                    open={isEditMode ? undefined : false}
-                    format={'DD.MM.YYYY'}
-                  />
-                </Form.Item>
-                <Form.Item name='phone'>
-                  <div>
-                    <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
-                      <AntPhone
-                        value={phone}
-                        onChange={(phone) => setPhone(phone)}
-                        error={error}
-                        readonly={!isEditMode}
-                      />
-                    </div>
-                    {error && (
-                      <Typography.Text type='danger' className='sign-up__error-text'>
-                        Неправильно введен номер!
-                      </Typography.Text>
-                    )}
+            <Flex className='profile__content'>
+              <Flex vertical>
+                <Typography.Title level={3}>Профиль</Typography.Title>
+                <Flex className='profile-picture-wrap'>
+                  <div className='profile-picture'>
+                    <img src={PfpDefault} alt='profile-picture' />
                   </div>
-                </Form.Item>
-                {isEditMode ? (
-                  <Form.Item>
+                  <Button
+                    type='primary'
+                    className='upload-pfp-btn
+                '
+                  >
+                    Загрузить аватар
+                  </Button>
+                </Flex>
+                <Typography.Text className='profile__content__title'>
+                  Как к Вам обращаться?
+                </Typography.Text>
+                <Form
+                  name='sign-up'
+                  className='sign-up__form'
+                  size='large'
+                  onFinish={onFinish}
+                  onFinishFailed={onFinishFailed}
+                  form={profileForm}
+                >
+                  <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
+                    <Input placeholder='Имя' readOnly={!isEditMode} />
+                  </Form.Item>
+                  <Form.Item
+                    name='lastName'
+                    rules={[{ required: true, message: 'Введите фамилию!' }]}
+                  >
+                    <Input placeholder='Фамилия' readOnly={!isEditMode} />
+                  </Form.Item>
+                  <Form.Item
+                    name='dateOfBirth'
+                    rules={[{ required: true, message: 'Выберите дату рождения!' }]}
+                  >
+                    <DatePicker
+                      placeholder='Дата рождения'
+                      className='sign-up__datepicker'
+                      inputReadOnly={!isEditMode}
+                      allowClear={isEditMode}
+                      open={isEditMode ? undefined : false}
+                      format={'DD.MM.YYYY'}
+                    />
+                  </Form.Item>
+                  <Form.Item name='phone'>
+                    <div>
+                      <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
+                        <AntPhone
+                          value={phone}
+                          onChange={(phone) => setPhone(phone)}
+                          error={error}
+                          readonly={!isEditMode}
+                        />
+                      </div>
+                      {error && (
+                        <Typography.Text type='danger' className='sign-up__error-text'>
+                          Неправильно введен номер!
+                        </Typography.Text>
+                      )}
+                    </div>
+                  </Form.Item>
+                  {isEditMode ? (
+                    <Form.Item>
+                      <Button
+                        htmlType='submit'
+                        type='primary'
+                        className='sign-up__next-btn'
+                        block
+                        onClick={() => setError(!isValid)}
+                      >
+                        Сохранить
+                      </Button>
+                    </Form.Item>
+                  ) : (
                     <Button
-                      htmlType='submit'
                       type='primary'
                       className='sign-up__next-btn'
                       block
-                      onClick={() => setError(!isValid)}
+                      onClick={handleSubmitClick}
                     >
-                      Сохранить
+                      Редактировать
                     </Button>
-                  </Form.Item>
-                ) : (
-                  <Button
-                    type='primary'
-                    className='sign-up__next-btn'
-                    block
-                    onClick={handleSubmitClick}
-                  >
-                    Редактировать
-                  </Button>
-                )}
-              </Form>
+                  )}
+                </Form>
+              </Flex>
+              <Flex vertical className='qr-code-bonus-wrap'>
+                <div className='qr-code-wrap'>
+                  <img src={QrCode} alt='qr-code' />
+                </div>
+                <Flex className='bonus-amount-wrap'>
+                  <Typography.Text className='bonus-amount'>250</Typography.Text>
+                  <Typography.Text className='bonus-amount-text'>
+                    Накопленных <br /> баллов
+                  </Typography.Text>
+                </Flex>
+              </Flex>
             </Flex>
           </Flex>
         </Container>
