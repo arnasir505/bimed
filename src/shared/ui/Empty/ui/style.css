@@ -15,15 +15,10 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
+  flex-grow: 2;
 }
 
-.not-found__return-home {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #054edb;
-  padding: 18px 105px;
-  border-radius: 16px;
-  margin-top: 43px;
+.empty__text {
+  color: #8b96b1;
+  font-weight: 700;
 }

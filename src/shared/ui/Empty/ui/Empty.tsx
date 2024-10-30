@@ -15,7 +15,7 @@ export const Empty: React.FC<Props> = ({ title, text, btnText }) => {
         {title}
       </Typography.Title>
       <Flex vertical className='empty__return-home'>
-        <Typography.Text>{text}</Typography.Text>
+        <Typography.Text className='empty__text'>{text}</Typography.Text>
         <Link to='/'>
           <Typography.Text className='not-found__return-home'>{btnText}</Typography.Text>
         </Link>

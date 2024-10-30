@@ -1,17 +1,18 @@
 import { Flex, Typography } from 'antd';
-import './style.css';
 import { useAppSelector } from 'shared/config';
 import { selectFavoriteItems } from 'entities/user';
 import { ProductCard } from 'widgets/product-card';
 import { useEffect, useState } from 'react';
 import { Empty } from 'shared/ui';
+import './style.css';
 
 export const ProfileFavorites = () => {
   const favorites = useAppSelector(selectFavoriteItems);
   const [isFavoritesEmpty, setIsFavoritesEmpty] = useState(true);
 
   useEffect(() => {
-    if (!favorites) {
+    if (!favorites || favorites.length === 0) {
+      setIsFavoritesEmpty(true);
       return;
     }
     if (favorites.length > 0) {
