@@ -65,13 +65,15 @@ const HeaderBottom = () => {
           )}
         />
         <Flex className='header__buttons_wrap'>
-          <Button
-            className='header__button'
-            icon={<HeartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
-            type='text'
-          >
-            Избранное
-          </Button>
+          <Link to='/profile/favorites'>
+            <Button
+              className='header__button'
+              icon={<HeartOutlined style={{ color: '#8B96B1', fontSize: '20px' }} />}
+              type='text'
+            >
+              Избранное
+            </Button>
+          </Link>
           {isLoggedIn ? (
             <Link to='/profile'>
               <Button
