@@ -10,6 +10,7 @@ export const theme: ThemeConfig = {
     colorErrorText: '#E31B4B',
     colorBorder: '#D4E3FF',
     controlHeightLG: 44,
+    colorTextHeading: '#181818',
   },
   components: {
     Button: {
@@ -27,6 +28,8 @@ export const theme: ThemeConfig = {
       fontSize: 15,
       colorText: '#171717',
       fontWeightStrong: 700,
+      titleMarginBottom: 0,
+      titleMarginTop: 0,
     },
     Form: {
       itemMarginBottom: 8,

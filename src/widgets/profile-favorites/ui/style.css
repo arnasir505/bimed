@@ -1,0 +1,13 @@
+.favorites {
+  margin-left: 16px;
+  flex-grow: 2;
+}
+
+.favorites__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 224px);
+  grid-template-rows: auto;
+  justify-content: center;
+  column-gap: 12px;
+  row-gap: 16px;
+}

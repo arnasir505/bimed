@@ -9,6 +9,7 @@ import './style.css';
 import { PhoneVerification } from 'pages/phone-verification';
 import { Profile } from 'pages/profile';
 import { ProfileInfo } from 'widgets/profile-info';
+import { ProfileFavorites } from 'widgets/profile-favorites';
 
 export const App = () => {
   return (
@@ -21,14 +22,7 @@ export const App = () => {
       <Route path='/phone-verification' element={<PhoneVerification />} />
       <Route path='/profile' element={<Profile />}>
         <Route path='' element={<ProfileInfo />} />
-        <Route
-          path='favorites'
-          element={
-            <>
-              <h1>Favorites</h1>
-            </>
-          }
-        />
+        <Route path='favorites' element={<ProfileFavorites />} />
       </Route>
       <Route path='/*' element={<NotFound />} />
     </Routes>

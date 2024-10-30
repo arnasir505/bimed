@@ -47,7 +47,7 @@ export const Profile = () => {
                   Профиль
                 </Button>
               </Link>
-              <Link to='/favorites'>
+              <Link to='favorites'>
                 <Button
                   type='text'
                   className='profile__nav__btn'

@@ -22,14 +22,3 @@
   font-size: 24px;
   font-weight: 700;
 }
-
-.not-found__return-home {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #054edb;
-  padding: 18px 105px;
-  border-radius: 16px;
-  margin-top: 43px;
-}

@@ -1,0 +1,29 @@
+.empty-wrap {
+  background-color: #fff;
+  flex-grow: 2;
+  border-radius: 16px;
+  height: 492px;
+  box-sizing: border-box;
+  padding: 24px 16px;
+}
+
+.empty__title {
+  margin-top: 0;
+}
+
+.empty__return-home {
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.not-found__return-home {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #054edb;
+  padding: 18px 105px;
+  border-radius: 16px;
+  margin-top: 43px;
+}
