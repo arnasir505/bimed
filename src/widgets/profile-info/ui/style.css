@@ -1,0 +1,78 @@
+.profile__content {
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 24px 24px 36px 24px;
+  flex-grow: 2;
+  justify-content: space-between;
+}
+
+.profile-picture-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 158px;
+  height: 158px;
+  border: 1px solid #d4e3ff;
+  border-radius: 50%;
+}
+
+.upload-pfp-btn {
+  font-size: 13px;
+  padding: 8px 16px;
+}
+
+.profile__content__title {
+  color: #181818;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 44px;
+  margin-bottom: 12px;
+}
+
+.qr-code-bonus-wrap {
+  margin-top: 54px;
+  margin-right: 160px;
+  gap: 32px;
+  align-items: center;
+}
+
+.qr-code-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 230px;
+  border: 1px solid #d4e3ff;
+  border-radius: 16px;
+}
+
+.qr-code-wrap img {
+  border-radius: 16px;
+}
+
+.bonus-amount-wrap {
+  gap: 12px;
+  align-items: center;
+}
+
+.bonus-amount {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #fd9b08;
+  border-radius: 12px;
+  padding: 4px 12px;
+}
+
+.bonus-amount-text {
+  font-size: 14px;
+  color: #8b96b1;
+  line-height: 1.25;
+}
