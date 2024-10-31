@@ -32,6 +32,13 @@ export interface User {
   favorites: Product[];
 }
 
+export interface RegisterFormMutation {
+  firstName: string;
+  lastName: string;
+  dateOfBirth: Date;
+  phone: string;
+}
+
 export interface RegisterForm {
   firstName: string;
   lastName: string;

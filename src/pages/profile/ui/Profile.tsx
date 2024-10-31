@@ -5,17 +5,26 @@ import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
 import './style.css';
 import { HeartOutlined, HistoryOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
-import { useAppDispatch } from 'shared/config';
-import { unsetUser } from 'entities/user';
+import { useAppDispatch, useAppSelector } from 'shared/config';
+import { selectIsUserLoggedIn, selectUser, unsetUser } from 'entities/user';
+import { useEffect } from 'react';
 
 export const Profile = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const user = useAppSelector(selectUser);
+  const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
 
   const handleLogout = () => {
     dispatch(unsetUser());
     navigate('/');
   };
+
+  useEffect(() => {
+    if (!user || !isLoggedIn) {
+      navigate('/sign-in', { replace: true });
+    }
+  }, [user, isLoggedIn]);
 
   return (
     <>
@@ -60,7 +69,7 @@ export const Profile = () => {
                   Избранное
                 </Button>
               </Link>
-              <Link to='/order-history'>
+              <Link to='order-history'>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -73,7 +82,7 @@ export const Profile = () => {
                   История заказов
                 </Button>
               </Link>
-              <Link to='/change-phone'>
+              <Link to='change-phone'>
                 <Button
                   type='text'
                   className='profile__nav__btn'

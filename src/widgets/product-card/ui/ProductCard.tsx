@@ -50,7 +50,6 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
   const handleAddToFavorites = () => {
     if (!(user && isLoggedIn)) {
       messageApi.info({ content: 'Войдите, чтобы добавить товар в избранное' });
-      return;
     }
     dispatch(toggleItemInFavorites(product));
   };

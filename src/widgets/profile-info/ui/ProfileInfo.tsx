@@ -5,7 +5,7 @@ import { PhoneNumberUtil } from 'google-libphonenumber';
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { AntPhone } from 'shared/ui';
-import { RegisterForm } from 'types';
+import { RegisterForm, RegisterFormMutation } from 'types';
 import PfpDefault from 'assets/images/pfp-default.svg';
 import QrCode from 'assets/images/qr-code.png';
 import './style.css';
@@ -28,18 +28,18 @@ export const ProfileInfo = () => {
   const [error, setError] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const isValid = isPhoneValid(phone);
-  const [profileForm] = Form.useForm<RegisterForm>();
+  const [profileForm] = Form.useForm<RegisterFormMutation>();
   const [messageApi, contextHolder] = message.useMessage({ maxCount: 1 });
 
-  const onFinish: FormProps<RegisterForm>['onFinish'] = (values) => {
-    const form: RegisterForm = { ...values, phone };
+  const onFinish: FormProps<RegisterFormMutation>['onFinish'] = (values) => {
+    const form: RegisterForm = { ...values, dateOfBirth: values.dateOfBirth.toISOString(), phone };
     console.log('Success:', form);
     dispatch(editUserFields(form));
     setIsEditMode(false);
     messageApi.success({ content: 'Изменения сохранены' });
   };
 
-  const onFinishFailed: FormProps<RegisterForm>['onFinishFailed'] = (errorInfo) => {
+  const onFinishFailed: FormProps<RegisterFormMutation>['onFinishFailed'] = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
 
