@@ -1,24 +1,17 @@
 import { Flex, Typography } from 'antd';
-import { Container, SeeAllBtn } from 'shared/ui';
-import { Header } from 'widgets/header';
+import { Container, Layout, SeeAllBtn } from 'shared/ui';
 import { Carousel } from 'widgets/carousel';
 import { ProductCard } from 'widgets/product-card';
 import { PromotionsCarousel } from 'widgets/promotions-carousel';
 import { NavHelp } from 'widgets/nav-help';
 import { NewsCard } from 'widgets/news-card';
-import { Footer } from 'widgets/footer';
 import { products } from 'data/products';
 import { news } from 'data/news';
 import './style.css';
 
 export const Home = () => {
   return (
-    <>
-      <header className='header'>
-        <Container>
-          <Header />
-        </Container>
-      </header>
+    <Layout>
       <main>
         <Container>
           <Carousel />
@@ -44,7 +37,7 @@ export const Home = () => {
             <Typography.Title level={3}>Акции</Typography.Title>
             <PromotionsCarousel />
             <Flex justify='center'>
-              <SeeAllBtn text='Посмотреть все' />
+              <SeeAllBtn text='Посмотреть все' path='/promotions' />
             </Flex>
             <NavHelp />
           </Container>
@@ -63,11 +56,6 @@ export const Home = () => {
           </Container>
         </section>
       </main>
-      <footer className='footer'>
-        <Container>
-          <Footer />
-        </Container>
-      </footer>
-    </>
+    </Layout>
   );
 };

@@ -1,8 +1,6 @@
 import { Breadcrumb, Button, Flex, Popconfirm } from 'antd';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import { Container } from 'shared/ui';
-import { Footer } from 'widgets/footer';
-import { Header } from 'widgets/header';
+import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { HeartOutlined, HistoryOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
 import { useAppDispatch, useAppSelector } from 'shared/config';
@@ -27,12 +25,7 @@ export const Profile = () => {
   }, [user, isLoggedIn]);
 
   return (
-    <>
-      <header className='header'>
-        <Container>
-          <Header />
-        </Container>
-      </header>
+    <Layout>
       <main className='profile-main'>
         <Container>
           <Breadcrumb
@@ -111,11 +104,6 @@ export const Profile = () => {
           </Flex>
         </Container>
       </main>
-      <footer className='footer'>
-        <Container>
-          <Footer />
-        </Container>
-      </footer>
-    </>
+    </Layout>
   );
 };

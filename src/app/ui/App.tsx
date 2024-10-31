@@ -10,12 +10,14 @@ import { PhoneVerification } from 'pages/phone-verification';
 import { Profile } from 'pages/profile';
 import { ProfileInfo } from 'widgets/profile-info';
 import { ProfileFavorites } from 'widgets/profile-favorites';
+import { Promotions } from 'pages/promotions';
 
 export const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/catalog' element={<Catalog />} />
+      <Route path='/promotions' element={<Promotions />} />
       <Route path='/products/:id' element={<ProductInfo />} />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />

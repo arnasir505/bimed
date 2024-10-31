@@ -1,7 +1,5 @@
-import { Container } from 'shared/ui';
+import { Container, Layout } from 'shared/ui';
 import { useEffect, useState } from 'react';
-import { Footer } from 'widgets/footer';
-import { Header } from 'widgets/header';
 import { Button, Flex, Image, Input, message, Typography } from 'antd';
 import { products } from 'data/products';
 import { useAppDispatch, useAppSelector } from 'shared/config';
@@ -61,13 +59,8 @@ export const ProductInfo = () => {
   }, [product]);
 
   return (
-    <>
+    <Layout>
       {contextHolder}
-      <header className='header'>
-        <Container>
-          <Header />
-        </Container>
-      </header>
       <main>
         <Container>
           <Flex className='product-info-wrap'>
@@ -228,11 +221,6 @@ export const ProductInfo = () => {
           </Container>
         </section>
       </main>
-      <footer className='footer'>
-        <Container>
-          <Footer />
-        </Container>
-      </footer>
-    </>
+    </Layout>
   );
 };

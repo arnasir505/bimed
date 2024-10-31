@@ -1,18 +1,12 @@
 import { Flex, Typography } from 'antd';
-import { Container } from 'shared/ui';
-import { Footer } from 'widgets/footer';
-import { Header } from 'widgets/header';
-import './styles.css';
+import { Container, Layout } from 'shared/ui';
 import { Link } from 'react-router-dom';
+
+import './styles.css';
 
 export const NotFound = () => {
   return (
-    <>
-      <header className='header'>
-        <Container>
-          <Header />
-        </Container>
-      </header>
+    <Layout>
       <main className='not-found__wrap'>
         <Container>
           <Flex vertical justify='center' align='center' className='not-found'>
@@ -24,11 +18,6 @@ export const NotFound = () => {
           </Flex>
         </Container>
       </main>
-      <footer className='footer'>
-        <Container>
-          <Footer />
-        </Container>
-      </footer>
-    </>
+    </Layout>
   );
 };
