@@ -19,20 +19,21 @@ export const Promotions = () => {
           <Typography.Title level={4} className='promotions__title'>
             Акции
           </Typography.Title>
-          <div className='promotions__wrapper'></div>
-          {promotions.map((item) => (
-            <Link to={'/'} key={item.id}>
-              <div className='promotions-carousel__wrap'>
-                <Flex align='center' className={`promotions-carousel__item item-${item.id}`}>
-                  <img src={item.img} alt='' className='promotions-carousel__img' />
-                  <Typography.Title className='promotions-carousel__title'>
-                    <span>до</span>
-                    {item.discountPercentage}%
-                  </Typography.Title>
-                </Flex>
-              </div>
-            </Link>
-          ))}
+          <div className='promotions__wrapper'>
+            {promotions.map((item) => (
+              <Link to={'/'} key={item.id} className='promotions__item-link'>
+                <div className='promotions-carousel__wrap'>
+                  <Flex align='center' className={`promotions-carousel__item item-${item.id}`}>
+                    <img src={item.img} alt='' className='promotions-carousel__img' />
+                    <Typography.Title className='promotions-carousel__title'>
+                      <span>до</span>
+                      {item.discountPercentage}%
+                    </Typography.Title>
+                  </Flex>
+                </div>
+              </Link>
+            ))}
+          </div>
         </Container>
       </main>
     </Layout>

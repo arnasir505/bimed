@@ -1,7 +1,17 @@
-.promotions__breadcrumb, .promotions__title {
+.promotions__breadcrumb,
+.promotions__title {
   margin-top: 12px;
 }
 
 .promotions__wrapper {
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 380px);
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 14px;
+  margin: 24px 0 90px 0;
+}
+
+.promotions__item-link {
+  text-decoration: none;
 }
