@@ -21,8 +21,8 @@ export const News = () => {
             Новости
           </Typography.Title>
           <div className='news-page__wrapper'>
-            {news.map((item) => (
-              <NewsCard key={item.id} news={item} />
+            {news.map((item, index) => (
+              <NewsCard key={item.id} news={item} index={index} />
             ))}
           </div>
         </Container>

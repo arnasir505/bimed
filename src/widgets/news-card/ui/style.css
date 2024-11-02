@@ -21,6 +21,17 @@
   margin-bottom: 8px;
 }
 
+.news-card__title.large {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.news-card__text {
+  color: #636875;
+  font-size: 14px;
+}
+
 .news-card__date {
   color: #8b96b1;
+  font-size: 14px;
 }

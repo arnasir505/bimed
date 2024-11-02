@@ -21,6 +21,7 @@ export interface News {
   title: string;
   img: string;
   date: string;
+  text: string;
 }
 
 export interface User {
