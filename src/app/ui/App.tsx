@@ -11,6 +11,7 @@ import { Profile } from 'pages/profile';
 import { ProfileInfo } from 'widgets/profile-info';
 import { ProfileFavorites } from 'widgets/profile-favorites';
 import { Promotions } from 'pages/promotions';
+import { News } from 'pages/news';
 
 export const App = () => {
   return (
@@ -22,6 +23,7 @@ export const App = () => {
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/phone-verification' element={<PhoneVerification />} />
+      <Route path='/news' element={<News />} />
       <Route path='/profile' element={<Profile />}>
         <Route path='' element={<ProfileInfo />} />
         <Route path='favorites' element={<ProfileFavorites />} />

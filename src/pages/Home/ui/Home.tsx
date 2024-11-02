@@ -51,7 +51,7 @@ export const Home = () => {
               ))}
             </div>
             <Flex justify='center'>
-              <SeeAllBtn text='Все новости' />
+              <SeeAllBtn text='Все новости' path='/news' />
             </Flex>
           </Container>
         </section>

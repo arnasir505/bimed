@@ -1,0 +1,17 @@
+.news-main {
+  background-color: #f5f5f5;
+  padding-top: 12px;
+  padding-bottom: 88px;
+}
+
+.news__title {
+  margin-top: 40px;
+}
+
+.news-page__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 12px;
+  margin-top: 24px;
+}
