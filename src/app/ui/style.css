@@ -8,3 +8,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.ant-card {
+  box-shadow: none !important;
+  border-radius: 16px;
+  transition: all 0.2s;
+}
+
+.ant-card img {
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.ant-card-body {
+  padding: 10px !important;
+}

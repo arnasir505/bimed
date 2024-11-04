@@ -12,7 +12,7 @@ const HeaderTop = () => {
         <Link to={'/'} className='header__links'>
           Помощь
         </Link>
-        <Link to={'/'} className='header__links'>
+        <Link to={'/branches'} className='header__links'>
           Филиалы
         </Link>
         <Link to={'/'} className='header__links header__links_contacts'>

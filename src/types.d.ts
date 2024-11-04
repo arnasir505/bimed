@@ -46,3 +46,13 @@ export interface RegisterForm {
   dateOfBirth: string;
   phone: string;
 }
+
+export interface Branch {
+  id: string;
+  img: string;
+  title: string;
+  address: string;
+  workingHours: string;
+  isOpen: boolean;
+  phoneNumbers: string[];
+}

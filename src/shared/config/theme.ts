@@ -46,5 +46,9 @@ export const theme: ThemeConfig = {
       paddingInlineLG: 16,
       paddingBlockLG: 11.5,
     },
+    Card: {
+      borderRadius: 16,
+      boxShadow: 'none',
+    },
   },
 };

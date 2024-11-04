@@ -1,0 +1,60 @@
+.branch-card__wrap {
+  position: relative;
+  display: grid;
+}
+
+.branch-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.branch-card__badge.branch-open {
+  background-color: #1d9f22;
+}
+
+.branch-card__badge.branch-closed {
+  background-color: #e31b4b;
+}
+
+.branch-card .ant-card-body {
+  padding: 12px 16px 20px 16px !important;
+}
+
+.branch-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.branch-card__label {
+  color: #8b96b1;
+  font-size: 14px;
+}
+
+.branch-card__text {
+  font-size: 14px;
+  color: #181818;
+}
+
+.branch-card__working-hours {
+  gap: 4px;
+  margin-top: 16px;
+  margin-bottom: 30px;
+}
+
+.show-on-map-btn {
+  color: #032d80;
+  margin-top: 16px;
+}
+
+.branch-card.ant-card-bordered {
+  border-color: #d4e3ff;
+}

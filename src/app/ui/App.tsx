@@ -13,6 +13,7 @@ import { ProfileFavorites } from 'widgets/profile-favorites';
 import { Promotions } from 'pages/promotions';
 import { News } from 'pages/news';
 import { NewsFull } from 'pages/news-full';
+import { Branches } from 'pages/branches';
 
 export const App = () => {
   return (
@@ -26,6 +27,7 @@ export const App = () => {
       <Route path='/phone-verification' element={<PhoneVerification />} />
       <Route path='/news' element={<News />} />
       <Route path='/news/:id' element={<NewsFull />} />
+      <Route path='/branches' element={<Branches />} />
       <Route path='/profile' element={<Profile />}>
         <Route path='' element={<ProfileInfo />} />
         <Route path='favorites' element={<ProfileFavorites />} />

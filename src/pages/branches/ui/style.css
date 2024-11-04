@@ -1,0 +1,28 @@
+.branches-main {
+  background-color: #f5f5f5;
+  padding-top: 12px;
+  padding-bottom: 36px;
+}
+
+.branches {
+  padding: 24px 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-sizing: border-box;
+  margin-top: 16px;
+}
+
+.branches__title {
+  margin-top: 0 !important;
+  margin-bottom: 26px;
+}
+
+.branches__wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 8px;
+  grid-row-gap: 12px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
