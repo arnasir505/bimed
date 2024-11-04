@@ -1,11 +1,17 @@
 .ant-card {
   box-shadow: none !important;
   border-radius: 16px;
+  transition: all 0.2s;
 }
 
-/* .ant-card:hover .news-card__title {
+.news-card__link {
+  display: grid;
+  text-decoration: none;
+}
+
+.ant-card:hover .news-card__title {
   color: #054edb;
-} */
+}
 
 .ant-card img {
   border-radius: 16px 16px 0 0 !important;

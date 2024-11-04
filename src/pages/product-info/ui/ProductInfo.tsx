@@ -4,7 +4,7 @@ import { Button, Flex, Image, Input, message, Typography } from 'antd';
 import { products } from 'data/products';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { NotFound } from 'pages/404';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import productNoImage from 'assets/images/product-no-image.png';
 import {
   HeartFilled,
@@ -23,6 +23,7 @@ import {
 import { ProductCard } from 'widgets/product-card';
 import './styles.css';
 import { selectFavoriteItems, selectUser, toggleItemInFavorites } from 'entities/user';
+import { SocialShare } from 'widgets/social-share';
 
 export const ProductInfo = () => {
   const params = useParams();
@@ -177,13 +178,7 @@ export const ProductInfo = () => {
               </Flex>
               <Flex vertical gap='8px'>
                 <Typography.Text className='product__share'>Поделиться</Typography.Text>
-                <Flex className='product__share-buttons'>
-                  <Link to={'/'} className='product__share-btn vk' />
-                  <Link to={'/'} className='product__share-btn facebook' />
-                  <Link to={'/'} className='product__share-btn odnoklassniki' />
-                  <Link to={'/'} className='product__share-btn instagram' />
-                  <Link to={'/'} className='product__share-btn whatsapp' />
-                </Flex>
+                <SocialShare />
               </Flex>
             </Flex>
           </Flex>

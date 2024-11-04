@@ -4,7 +4,7 @@ import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { news } from 'data/news';
 import { NewsCard } from 'widgets/news-card';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { News as INews } from 'types';
 import { Pagination } from 'widgets/pagination';
 
@@ -33,6 +33,10 @@ export const News = () => {
       setCurrent((prev) => prev + 1);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [current]);
   return (
     <Layout>
       <main className='news-main'>

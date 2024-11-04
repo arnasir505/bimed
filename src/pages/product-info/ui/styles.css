@@ -122,47 +122,6 @@
   color: #8b96b1;
 }
 
-.product__share-buttons {
-  height: 36px;
-  gap: 16px;
-}
-
-.product__share-btn {
-  border: 1px solid #d4e3ff;
-  border-radius: 8px;
-  height: 100%;
-  width: 36px;
-  padding: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 22px;
-  transition: all 0.2s;
-}
-
-.product__share-btn:hover {
-  background-color: #054edb;
-}
-
-.product__share-btn.vk {
-  background-image: url('../../../assets/images/icons/vk.svg');
-}
-
-.product__share-btn.facebook {
-  background-image: url('../../../assets/images/icons/facebook.svg');
-}
-
-.product__share-btn.odnoklassniki {
-  background-image: url('../../../assets/images/icons/odnoklassniki.svg');
-}
-
-.product__share-btn.instagram {
-  background-image: url('../../../assets/images/icons/instagram.svg');
-}
-
-.product__share-btn.whatsapp {
-  background-image: url('../../../assets/images/icons/whatsapp.svg');
-}
-
 .product__info-instructions-wrap {
   padding: 8px;
   background-color: #e9f0fc;
