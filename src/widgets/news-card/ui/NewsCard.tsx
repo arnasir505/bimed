@@ -5,12 +5,14 @@ import './style.css';
 interface Props {
   news: News;
   index?: number;
+  length: number;
 }
-export const NewsCard: React.FC<Props> = ({ news, index }) => {
+export const NewsCard: React.FC<Props> = ({ news, index, length }) => {
   const isFirstNews = index === 0;
+  const isLastNews = index === length - 1;
   return (
     <Card cover={<img src={news.img} />} bordered={false}>
-      {isFirstNews ? (
+      {isFirstNews || isLastNews ? (
         <>
           <Typography.Title level={4} className='news-card__title large'>
             {news.title}

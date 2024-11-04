@@ -46,8 +46,8 @@ export const Home = () => {
           <Container>
             <Typography.Title level={3}>Новости</Typography.Title>
             <div className='news__wrapper'>
-              {news.map((item) => (
-                <NewsCard key={item.id} news={item} />
+              {news.slice(0, 8).map((item) => (
+                <NewsCard key={item.id} news={item} length={news.length} />
               ))}
             </div>
             <Flex justify='center'>
