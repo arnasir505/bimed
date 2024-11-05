@@ -14,6 +14,7 @@ import { Promotions } from 'pages/promotions';
 import { News } from 'pages/news';
 import { NewsFull } from 'pages/news-full';
 import { Branches } from 'pages/branches';
+import { Cart } from 'pages/cart';
 
 export const App = () => {
   return (
@@ -28,6 +29,7 @@ export const App = () => {
       <Route path='/news' element={<News />} />
       <Route path='/news/:id' element={<NewsFull />} />
       <Route path='/branches' element={<Branches />} />
+      <Route path='/cart' element={<Cart />} />
       <Route path='/profile' element={<Profile />}>
         <Route path='' element={<ProfileInfo />} />
         <Route path='favorites' element={<ProfileFavorites />} />

@@ -15,6 +15,7 @@ import { Product } from 'types';
 import { MinusOutlined, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import productNoImage from 'assets/images/product-no-image.png';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 interface Props {
   open: boolean;
@@ -100,13 +101,15 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
               сом
             </Typography.Text>
           </Flex>
-          <Button
-            type='primary'
-            icon={<ShoppingCartOutlined style={{ fontSize: '20px' }} />}
-            className='cart-modal__navigate-to-cart'
-          >
-            Перейти в корзину
-          </Button>
+          <Link to={'/cart'}>
+            <Button
+              type='primary'
+              icon={<ShoppingCartOutlined style={{ fontSize: '20px' }} />}
+              className='cart-modal__navigate-to-cart'
+            >
+              Перейти в корзину
+            </Button>
+          </Link>
         </Flex>
       </>
     );
