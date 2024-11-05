@@ -8,8 +8,8 @@
   padding: 24px 16px;
   background-color: #fff;
   border-radius: 16px;
-  box-sizing: border-box;
   margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .branches__title {
@@ -24,5 +24,4 @@
   grid-column-gap: 8px;
   grid-row-gap: 12px;
   margin-top: 24px;
-  margin-bottom: 12px;
 }
