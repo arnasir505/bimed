@@ -5,6 +5,7 @@ export {
   inputToCart,
   getCartTotalPrice,
   getCartTotalItems,
+  deleteFromCart,
 } from './model/cartSlice';
 
 export { cartReducer } from './model/cartSlice';

@@ -53,21 +53,21 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
     modalContent = (
       <>
         {cartItems.map(({ product, quantity }) => (
-          <Flex key={product.id} className='cart-item'>
-            <div className='cart-item__img-wrap'>
+          <Flex key={product.id} className='cart-modal-item'>
+            <div className='cart-modal-item__img-wrap'>
               <img src={product.img ? `/${product.img}` : productNoImage} alt='' />
             </div>
-            <Flex vertical className='cart-item__content'>
+            <Flex vertical className='cart-modal-item__content'>
               <Typography.Text>{product.name}</Typography.Text>
               <Flex>
-                <Typography.Text className='cart-item__price-for-one'>
+                <Typography.Text className='cart-modal-item__price-for-one'>
                   Цена за шт {product.newPrice || product.oldPrice}
                 </Typography.Text>
-                <Typography.Text className='cart-item__price-for-one-total'>
+                <Typography.Text className='cart-modal-item__price-for-one-total'>
                   {(product.newPrice || product.oldPrice) * quantity} сом
                 </Typography.Text>
               </Flex>
-              <Flex className='product-card__quantity-wrap cart-item__quantity'>
+              <Flex className='product-card__quantity-wrap cart-modal-item__quantity'>
                 <Button
                   icon={<MinusOutlined style={{ color: '#032D80' }} />}
                   className='product-card__btn product-card__minusOne'

@@ -11,6 +11,10 @@
   align-items: flex-start;
 }
 
+.cart__breadcrumb {
+  margin-bottom: 12px;
+}
+
 .cart-items {
   flex-grow: 2;
   padding: 19px 16px 36px 16px;
@@ -25,4 +29,35 @@
   border-radius: 16px;
   background-color: #fff;
   box-sizing: border-box;
+}
+
+.cart__title {
+  margin-top: 5px !important;
+}
+
+.cart-items__totalCount {
+  color: #8b96b1;
+  margin-left: 5px;
+}
+
+.delivery-terms__link {
+  background-color: #d4e3ff;
+  border-radius: 16px;
+  padding: 8px 16px;
+}
+
+.cart-items__title-wrap {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.delivery-terms__link > span {
+  font-size: 13px;
+  color: #054edb;
+}
+
+.cart-items__wrap {
+  margin-top: 21px;
+  width: 100%;
+  gap: 16px;
 }

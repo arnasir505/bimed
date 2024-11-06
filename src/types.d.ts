@@ -16,6 +16,8 @@ export interface Product {
   composition: string;
 }
 
+export type CartItem = { product: Product; quantity: number };
+
 export interface News {
   id: string;
   title: string;
