@@ -1,4 +1,4 @@
-import { Breadcrumb, Button, Flex, Popconfirm } from 'antd';
+import { Breadcrumb, Button, Flex } from 'antd';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { Container, Layout } from 'shared/ui';
 import './style.css';
@@ -89,16 +89,14 @@ export const Profile = () => {
                 </Button>
               </Link>
               <div className='profile__nav__divider' />
-              <Popconfirm
-                title='Выйти из аккаунта?'
-                onConfirm={handleLogout}
-                okText='Да'
-                cancelText='Нет'
+              <Button
+                type='text'
+                danger
+                className='profile__nav__btn btn-logout'
+                onClick={handleLogout}
               >
-                <Button type='text' danger className='profile__nav__btn btn-logout'>
-                  Выйти из аккаунта
-                </Button>
-              </Popconfirm>
+                Выйти из аккаунта
+              </Button>
             </Flex>
             <Outlet />
           </Flex>

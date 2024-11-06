@@ -1,0 +1,24 @@
+.order-wrap {
+  flex-basis: 400px;
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+.order {
+  padding: 32px 24px;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+.order__title {
+  margin-top: 0 !important;
+}
+
+.cart-total__delivery-terms {
+  text-align: center;
+  color: #8b96b1;
+}
+.cart-total__delivery-terms a {
+  color: #054edb;
+  text-decoration: underline;
+}

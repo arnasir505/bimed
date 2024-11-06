@@ -1,0 +1,41 @@
+.cart-total {
+  flex-basis: 400px;
+  flex-shrink: 0;
+  padding: 32px 38px 32px 24px;
+  border-radius: 16px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.cart-total__title {
+  margin-top: 0;
+}
+
+.cart-total__info {
+  justify-content: space-between;
+}
+
+.cart-total__info-text {
+  font-weight: 500;
+  color: #8b96b1;
+}
+
+.cart-total__info-text.cart-total__info-text-orange {
+  color: #fd9b08;
+}
+
+.cart-total__sign-up {
+  text-align: center;
+  align-items: center;
+}
+
+.cart-total__sign-up-link {
+  color: #032d80;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.cart-total__bonuses-link {
+  font-size: 14px;
+  color: #054edb;
+}

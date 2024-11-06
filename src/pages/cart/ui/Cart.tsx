@@ -1,6 +1,6 @@
 import { Container, Empty, Layout } from 'shared/ui';
 import { Breadcrumb, Flex, Typography } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './style.css';
 import { useAppSelector } from 'shared/config';
 import { selectCartItems, selectCartItemsTotal } from 'entities/cart';
@@ -52,7 +52,7 @@ export const Cart = () => {
                   ))}
                 </Flex>
               </div>
-              <div className='cart-total'></div>
+              <Outlet />
             </div>
           ) : (
             <Empty title='Корзина' text='В корзине пока нет товаров' btnText='На главную' />
