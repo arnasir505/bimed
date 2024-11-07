@@ -8,6 +8,7 @@
   padding: 32px 24px;
   border-radius: 16px;
   background-color: #fff;
+  gap: 24px;
 }
 
 .order__title {

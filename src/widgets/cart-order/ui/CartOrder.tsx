@@ -1,9 +1,24 @@
-import { Button, Flex, Typography } from 'antd';
+import { Button, Flex, Form, Input, Typography } from 'antd';
 import './style.css';
 import { selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart';
 import { selectUser, selectIsUserLoggedIn } from 'entities/user';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from 'shared/config';
+import { AntPhone } from 'shared/ui';
+import { useState } from 'react';
+import { PhoneNumberUtil } from 'google-libphonenumber';
+import { WhatsAppOutlined } from '@ant-design/icons';
+
+const phoneUtil = PhoneNumberUtil.getInstance();
+
+const isPhoneValid = (phone: string) => {
+  try {
+    return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+  } catch (e) {
+    return false;
+  }
+};
 
 export const CartOrder = () => {
   const totalItemsInCart = useAppSelector(selectCartItemsTotal);
@@ -11,12 +26,59 @@ export const CartOrder = () => {
   const user = useAppSelector(selectUser);
   const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
 
+  const [phone, setPhone] = useState('');
+  const [error, setError] = useState(false);
+
+  const [form] = Form.useForm();
+
   return (
     <Flex vertical className='order-wrap'>
       <Flex vertical className='order'>
         <Typography.Title level={4} className='order__title'>
           Оформление заказа
         </Typography.Title>
+        <Form name='order' className='order__form' size='large' form={form}>
+          <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
+            <Input placeholder='Имя' />
+          </Form.Item>
+          <Form.Item
+            name='email'
+            rules={[{ required: true, message: 'Введите адрес электронной почты!' }]}
+          >
+            <Input placeholder='e-mail' type='email' />
+          </Form.Item>
+          <Form.Item name='phone'>
+            <div>
+              <div className={`phone-input-wrap ${error ? 'error' : ''}`}>
+                <AntPhone value={phone} onChange={(phone) => setPhone(phone)} error={error} />
+              </div>
+              {error && (
+                <Typography.Text type='danger' className='sign-up__error-text'>
+                  Неправильно введен номер!
+                </Typography.Text>
+              )}
+            </div>
+          </Form.Item>
+          <Form.Item name='whatsappPhone'>
+            <Input
+              placeholder='Номер WhatsApp'
+              prefix={
+                <WhatsAppOutlined
+                  style={{ color: '#1D9F22', fontSize: '22px', paddingRight: '8px' }}
+                />
+              }
+            />
+          </Form.Item>
+          <Form.Item
+            name='deliveryAddress'
+            rules={[{ required: true, message: 'Введите адрес доставки!' }]}
+          >
+            <Input placeholder='Адрес доставки' />
+          </Form.Item>
+          <Form.Item name='comment'>
+            <Input.TextArea placeholder='Комментарий' autoSize={{ minRows: 4, maxRows: 6 }} />
+          </Form.Item>
+        </Form>
       </Flex>
       <div className='cart-total'>
         <Flex vertical gap={'20px'}>
