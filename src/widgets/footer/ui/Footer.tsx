@@ -28,10 +28,10 @@ export const Footer = () => {
       <Col span={6}>
         <Typography.Text className='footer__title'>Компания</Typography.Text>
         <List className='footer__links'>
-          <Link to={'/'} className='footer__link'>
+          <Link to={'/faq'} className='footer__link'>
             О нас
           </Link>
-          <Link to={'/'} className='footer__link'>
+          <Link to={'/faq/contacts'} className='footer__link'>
             Контакты
           </Link>
         </List>

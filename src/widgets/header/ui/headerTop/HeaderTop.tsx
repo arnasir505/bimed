@@ -6,16 +6,16 @@ const HeaderTop = () => {
   return (
     <Flex justify='space-between' align='center' className='header_top' wrap>
       <Flex gap='24px' wrap>
-        <Link to={'/'} className='header__links'>
+        <Link to={'/faq'} className='header__links'>
           О нас
         </Link>
-        <Link to={'/'} className='header__links'>
+        <Link to={'/faq/help'} className='header__links'>
           Помощь
         </Link>
         <Link to={'/branches'} className='header__links'>
           Филиалы
         </Link>
-        <Link to={'/'} className='header__links header__links_contacts'>
+        <Link to={'/faq/contacts'} className='header__links header__links_contacts'>
           Контакты
         </Link>
       </Flex>
