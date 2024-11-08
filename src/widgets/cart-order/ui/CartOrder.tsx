@@ -1,13 +1,28 @@
-import { Button, Flex, Form, Input, Typography } from 'antd';
+import {
+  Button,
+  Checkbox,
+  Flex,
+  Form,
+  FormProps,
+  Input,
+  message,
+  Radio,
+  RadioChangeEvent,
+  Typography,
+} from 'antd';
 import './style.css';
-import { selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart';
+import { clearCart, selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart';
 import { selectUser, selectIsUserLoggedIn } from 'entities/user';
-import { Link } from 'react-router-dom';
-import { useAppSelector } from 'shared/config';
-import { AntPhone } from 'shared/ui';
-import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'shared/config';
+import { AntPhone, Result, SubmitButton } from 'shared/ui';
+import { useEffect, useState } from 'react';
 import { PhoneNumberUtil } from 'google-libphonenumber';
-import { WhatsAppOutlined } from '@ant-design/icons';
+import {
+  CheckCircleOutlined,
+  ExclamationCircleOutlined,
+  WhatsAppOutlined,
+} from '@ant-design/icons';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -21,31 +36,87 @@ const isPhoneValid = (phone: string) => {
 };
 
 export const CartOrder = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const totalItemsInCart = useAppSelector(selectCartItemsTotal);
   const totalPrice = useAppSelector(selectCartItemsTotalPrice);
   const user = useAppSelector(selectUser);
   const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
+  const [radioValue, setRadioValue] = useState<'cash' | 'online' | 'terminal'>('cash');
+  const [messageApi, contextHolder] = message.useMessage({ maxCount: 1 });
 
+  const onChange = (e: RadioChangeEvent) => {
+    setRadioValue(e.target.value);
+  };
   const [phone, setPhone] = useState('');
   const [error, setError] = useState(false);
+  const isValid = isPhoneValid(phone);
 
   const [form] = Form.useForm();
 
+  const handleClose = () => {
+    messageApi.destroy();
+    navigate('/');
+    dispatch(clearCart());
+  };
+
+  const onFinish: FormProps['onFinish'] = (values) => {
+    setError(!isValid);
+    if (isValid) {
+      console.log('Success:', { ...values, phone, payment: radioValue });
+      if (!values) {
+        messageApi.error({
+          content: (
+            <Result
+              title='Ошибка! Попробуйте снова'
+              icon={<ExclamationCircleOutlined style={{ color: '#E31B4B' }} />}
+              btnText='Закрыть'
+              onClick={handleClose}
+            />
+          ),
+          icon: <></>,
+          className: 'order__result',
+          duration: 0,
+        });
+      }
+      messageApi.success({
+        content: (
+          <Result
+            title='Успешно оплачено!'
+            icon={<CheckCircleOutlined style={{ color: '#1d9f22' }} />}
+            btnText='Хорошо'
+            onClick={handleClose}
+          />
+        ),
+        icon: <></>,
+        className: 'order__result',
+        duration: 0,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (!(user && isLoggedIn)) {
+      return;
+    }
+    const { firstName } = user;
+    form.setFieldValue('firstName', firstName);
+    setPhone(user.phone);
+  }, []);
+
   return (
     <Flex vertical className='order-wrap'>
+      {contextHolder}
       <Flex vertical className='order'>
         <Typography.Title level={4} className='order__title'>
           Оформление заказа
         </Typography.Title>
-        <Form name='order' className='order__form' size='large' form={form}>
+        <Form name='order' className='order__form' size='large' form={form} onFinish={onFinish}>
           <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
             <Input placeholder='Имя' />
           </Form.Item>
-          <Form.Item
-            name='email'
-            rules={[{ required: true, message: 'Введите адрес электронной почты!' }]}
-          >
-            <Input placeholder='e-mail' type='email' />
+          <Form.Item name='email'>
+            <Input placeholder='e-mail' />
           </Form.Item>
           <Form.Item name='phone'>
             <div>
@@ -79,6 +150,35 @@ export const CartOrder = () => {
             <Input.TextArea placeholder='Комментарий' autoSize={{ minRows: 4, maxRows: 6 }} />
           </Form.Item>
         </Form>
+        <Flex vertical gap={'16px'}>
+          <Typography.Text>Выбор оплаты</Typography.Text>
+          <Radio.Group onChange={onChange} value={radioValue}>
+            <Flex vertical gap={'16px'}>
+              <Radio value={'cash'} style={{ gap: '5px' }}>
+                Наличный
+              </Radio>
+              <Radio value={'online'} style={{ gap: '5px' }}>
+                Безналичный
+              </Radio>
+              <Radio value={'terminal'} style={{ gap: '5px' }}>
+                POS - терминал
+              </Radio>
+            </Flex>
+          </Radio.Group>
+          {user && isLoggedIn && (
+            <Flex justify='space-between' align='flex-start'>
+              <Checkbox style={{ gap: '5px' }}>
+                <Flex vertical>
+                  <span>Оплата баллами</span>
+                  <span className='order__bonus-description'>
+                    На вашем счету 450 бонусов, доступно к списанию 150 баллов
+                  </span>
+                </Flex>
+              </Checkbox>
+              <Input name='bonus-amount' className='order__bonus-amount' />
+            </Flex>
+          )}
+        </Flex>
       </Flex>
       <div className='cart-total'>
         <Flex vertical gap={'20px'}>
@@ -115,9 +215,20 @@ export const CartOrder = () => {
           </Typography.Text>
           <Flex vertical gap={'8px'}>
             <Link to={'/cart/order'} style={{ width: '100%' }}>
-              <Button type='primary' block size='large'>
+              <SubmitButton
+                form={form}
+                props={{
+                  type: 'primary',
+                  htmlType: 'submit',
+                  block: true,
+                  size: 'large',
+                  onClick: () => {
+                    form.submit();
+                  },
+                }}
+              >
                 Заказать
-              </Button>
+              </SubmitButton>
             </Link>
             <Link to={'/cart'} style={{ width: '100%' }}>
               <Button block size='large' style={{ color: '#032D80' }}>

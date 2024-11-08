@@ -6,6 +6,7 @@ export {
   getCartTotalPrice,
   getCartTotalItems,
   deleteFromCart,
+  clearCart,
 } from './model/cartSlice';
 
 export { cartReducer } from './model/cartSlice';
