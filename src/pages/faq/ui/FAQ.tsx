@@ -1,7 +1,7 @@
 import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { Breadcrumb, Button, Flex } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import {
   PhoneOutlined,
   InfoCircleOutlined,
@@ -75,6 +75,7 @@ export const FAQ = () => {
                 </Button>
               </Link>
             </Flex>
+            <Outlet />
           </Flex>
         </Container>
       </main>

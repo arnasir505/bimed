@@ -19,6 +19,7 @@ import { CartTotal } from 'widgets/cart-total';
 import { CartOrder } from 'widgets/cart-order';
 import { DeliveryTerms } from 'pages/delivery-terms';
 import { FAQ } from 'pages/faq';
+import { AboutUs } from 'widgets/about-us';
 
 export const App = () => {
   return (
@@ -34,7 +35,9 @@ export const App = () => {
       <Route path='/news/:id' element={<NewsFull />} />
       <Route path='/branches' element={<Branches />} />
       <Route path='/delivery-terms' element={<DeliveryTerms />} />
-      <Route path='/faq' element={<FAQ />}></Route>
+      <Route path='/faq' element={<FAQ />}>
+        <Route path='' element={<AboutUs />} />
+      </Route>
       <Route path='/cart' element={<Cart />}>
         <Route path='' element={<CartTotal />} />
         <Route path='order' element={<CartOrder />} />
