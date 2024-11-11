@@ -58,6 +58,10 @@
   background-image: url('../../../assets/images/icons/phone.svg');
 }
 
+.footer__link_icon.pin {
+  background-image: url('../../../assets/images/icons/pin.svg');
+}
+
 .app-marketplace {
   margin-top: 20px;
   display: block;

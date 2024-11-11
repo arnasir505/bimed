@@ -20,6 +20,7 @@ import { CartOrder } from 'widgets/cart-order';
 import { DeliveryTerms } from 'pages/delivery-terms';
 import { FAQ } from 'pages/faq';
 import { AboutUs } from 'widgets/about-us';
+import { Contacts } from 'widgets/contacts';
 
 export const App = () => {
   return (
@@ -37,6 +38,7 @@ export const App = () => {
       <Route path='/delivery-terms' element={<DeliveryTerms />} />
       <Route path='/faq' element={<FAQ />}>
         <Route path='' element={<AboutUs />} />
+        <Route path='contacts' element={<Contacts />} />
       </Route>
       <Route path='/cart' element={<Cart />}>
         <Route path='' element={<CartTotal />} />
