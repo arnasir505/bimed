@@ -21,6 +21,7 @@ import { DeliveryTerms } from 'pages/delivery-terms';
 import { FAQ } from 'pages/faq';
 import { AboutUs } from 'widgets/about-us';
 import { Contacts } from 'widgets/contacts';
+import { Help } from 'widgets/help';
 
 export const App = () => {
   return (
@@ -39,6 +40,7 @@ export const App = () => {
       <Route path='/faq' element={<FAQ />}>
         <Route path='' element={<AboutUs />} />
         <Route path='contacts' element={<Contacts />} />
+        <Route path='help' element={<Help />} />
       </Route>
       <Route path='/cart' element={<Cart />}>
         <Route path='' element={<CartTotal />} />

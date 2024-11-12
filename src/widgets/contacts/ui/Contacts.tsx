@@ -126,7 +126,7 @@ export const Contacts = () => {
               >
                 <Input placeholder='e-mail' />
               </Form.Item>
-              <Form.Item name='theme' rules={[{ required: true, message: 'Введите  тему !' }]}>
+              <Form.Item name='theme' rules={[{ required: true, message: 'Введите  тему!' }]}>
                 <Input placeholder='Тема' />
               </Form.Item>
             </Flex>
