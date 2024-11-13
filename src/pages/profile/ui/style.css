@@ -19,8 +19,22 @@
   gap: 12px;
 }
 
+.profile__nav a.active {
+  color: #054edb;
+}
+
 .profile__nav__btn {
   padding: 0 !important;
+  color: inherit;
+  transition: none;
+}
+
+.profile__nav a.active .profile__nav__btn:hover {
+  color: inherit !important;
+}
+
+.profile__nav a.active .anticon {
+  color: #054edb !important;
 }
 
 .profile__nav__btn:hover,

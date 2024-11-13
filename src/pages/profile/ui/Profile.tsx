@@ -1,5 +1,5 @@
 import { Breadcrumb, Button, Flex } from 'antd';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { HeartOutlined, HistoryOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
@@ -36,7 +36,7 @@ export const Profile = () => {
           />
           <Flex className='profile'>
             <Flex vertical className='profile__nav'>
-              <Link to='/profile'>
+              <NavLink to='/profile' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -48,8 +48,8 @@ export const Profile = () => {
                 >
                   Профиль
                 </Button>
-              </Link>
-              <Link to='favorites'>
+              </NavLink>
+              <NavLink to='favorites' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -61,8 +61,8 @@ export const Profile = () => {
                 >
                   Избранное
                 </Button>
-              </Link>
-              <Link to='order-history'>
+              </NavLink>
+              <NavLink to='order-history' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -74,8 +74,8 @@ export const Profile = () => {
                 >
                   История заказов
                 </Button>
-              </Link>
-              <Link to='change-phone'>
+              </NavLink>
+              <NavLink to='change-phone' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -87,7 +87,7 @@ export const Profile = () => {
                 >
                   Сменить номер
                 </Button>
-              </Link>
+              </NavLink>
               <div className='profile__nav__divider' />
               <Button
                 type='text'

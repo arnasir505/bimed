@@ -229,7 +229,7 @@ export const CartOrder = () => {
               </SubmitButton>
             </Link>
             <Link to={'/cart'} style={{ width: '100%' }}>
-              <Button block size='large' style={{ color: '#032D80' }}>
+              <Button block size='large'>
                 Отменить оформление заказа
               </Button>
             </Link>
