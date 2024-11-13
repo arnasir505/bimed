@@ -32,7 +32,7 @@ export const PhoneVerification = () => {
       return;
     }
     if (prevPage === '/sign-up') {
-      dispatch(updateUser({ id: Math.random().toString(), ...form, favorites: [] }));
+      dispatch(updateUser({ id: Math.random().toString(), ...form, favorites: [], orders: [] }));
       navigate('/');
     } else if (prevPage === '/sign-in') {
       dispatch(loginUser(form.phone));

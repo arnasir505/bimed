@@ -16,6 +16,15 @@ export interface Product {
   composition: string;
 }
 
+export interface Order {
+  id: string;
+  date: string;
+  status: 'accepted' | 'delivered' | null;
+  totalItems: number;
+  totalPrice: number;
+  items: CartItem[];
+}
+
 export type CartItem = { product: Product; quantity: number };
 
 export interface News {
@@ -33,6 +42,7 @@ export interface User {
   phone: string;
   dateOfBirth: string;
   favorites: Product[];
+  orders: Order[];
 }
 
 export interface RegisterFormMutation {

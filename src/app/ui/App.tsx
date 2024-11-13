@@ -23,6 +23,7 @@ import { AboutUs } from 'widgets/about-us';
 import { Contacts } from 'widgets/contacts';
 import { Help } from 'widgets/help';
 import { ProfileChangePhone } from 'widgets/profile-change-phone';
+import { ProfileOrderHistory } from 'widgets/profile-order-history';
 
 export const App = () => {
   return (
@@ -51,6 +52,7 @@ export const App = () => {
         <Route path='' element={<ProfileInfo />} />
         <Route path='favorites' element={<ProfileFavorites />} />
         <Route path='change-phone' element={<ProfileChangePhone />} />
+        <Route path='order-history' element={<ProfileOrderHistory />} />
       </Route>
       <Route path='/*' element={<NotFound />} />
     </Routes>

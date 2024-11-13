@@ -7,6 +7,12 @@ export {
   loginUser,
   editUserFields,
   updateUserPhone,
+  addOrderToHistory,
 } from './model/userSlice';
 
-export { selectFavoriteItems, selectUser, selectIsUserLoggedIn } from './model/userSlice';
+export {
+  selectFavoriteItems,
+  selectUser,
+  selectIsUserLoggedIn,
+  selectOrderHistory,
+} from './model/userSlice';

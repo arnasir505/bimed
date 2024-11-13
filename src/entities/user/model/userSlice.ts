@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from 'shared/config';
-import { Product, RegisterForm, User } from 'types';
+import { Order, Product, RegisterForm, User } from 'types';
 
 interface UserState {
   user: User | null;
@@ -45,6 +45,9 @@ const userSlice = createSlice({
         state.user!.favorites = state.user!.favorites.filter((item) => item.id !== product.id);
       }
     },
+    addOrderToHistory: (state, { payload: order }: PayloadAction<Order>) => {
+      state.user!.orders.unshift(order);
+    },
   },
 });
 
@@ -55,6 +58,7 @@ export const {
   loginUser,
   editUserFields,
   updateUserPhone,
+  addOrderToHistory,
 } = userSlice.actions;
 
 export const userReducer = userSlice.reducer;
@@ -62,3 +66,4 @@ export const userReducer = userSlice.reducer;
 export const selectFavoriteItems = (state: RootState) => state.user.user?.favorites;
 export const selectUser = (state: RootState) => state.user.user;
 export const selectIsUserLoggedIn = (state: RootState) => state.user.isLoggedIn;
+export const selectOrderHistory = (state: RootState) => state.user.user?.orders;

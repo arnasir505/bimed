@@ -11,8 +11,13 @@ import {
   Typography,
 } from 'antd';
 import './style.css';
-import { clearCart, selectCartItemsTotal, selectCartItemsTotalPrice } from 'entities/cart';
-import { selectUser, selectIsUserLoggedIn } from 'entities/user';
+import {
+  clearCart,
+  selectCartItems,
+  selectCartItemsTotal,
+  selectCartItemsTotalPrice,
+} from 'entities/cart';
+import { selectUser, selectIsUserLoggedIn, addOrderToHistory } from 'entities/user';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { AntPhone, Result, SubmitButton } from 'shared/ui';
@@ -23,6 +28,7 @@ import {
   ExclamationCircleOutlined,
   WhatsAppOutlined,
 } from '@ant-design/icons';
+import { Order } from 'types';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
 
@@ -35,11 +41,18 @@ const isPhoneValid = (phone: string) => {
   }
 };
 
+const getRandomID = () => {
+  const minCeiled = Math.ceil(1000000000);
+  const maxFloored = Math.floor(9000000000);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled).toString();
+};
+
 export const CartOrder = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const totalItemsInCart = useAppSelector(selectCartItemsTotal);
   const totalPrice = useAppSelector(selectCartItemsTotalPrice);
+  const cartItems = useAppSelector(selectCartItems);
   const user = useAppSelector(selectUser);
   const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
   const [radioValue, setRadioValue] = useState<'cash' | 'online' | 'terminal'>('cash');
@@ -64,6 +77,15 @@ export const CartOrder = () => {
     setError(!isValid);
     if (isValid) {
       console.log('Success:', { ...values, phone, payment: radioValue });
+      const order: Order = {
+        id: getRandomID(),
+        date: new Date().toISOString(),
+        status: 'accepted',
+        totalItems: totalItemsInCart,
+        totalPrice: totalPrice,
+        items: cartItems,
+      };
+      dispatch(addOrderToHistory(order));
       if (!values) {
         messageApi.error({
           content: (
