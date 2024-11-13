@@ -168,7 +168,9 @@ export const Catalog = () => {
               { title: <Link to='/catalog'>Каталог</Link> },
             ]}
           />
-          <Typography.Title level={4}>Витамины</Typography.Title>
+          <Typography.Title level={4} className='catalog__title'>
+            Витамины
+          </Typography.Title>
           <Flex justify='space-between'>
             <Flex className='sort-options' align='center'>
               <Typography.Text className='sort-options__title'>Сортировка:</Typography.Text>

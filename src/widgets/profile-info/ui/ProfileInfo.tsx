@@ -110,7 +110,7 @@ export const ProfileInfo = () => {
                   value={phone}
                   onChange={(phone) => setPhone(phone)}
                   error={error}
-                  readonly={!isEditMode}
+                  readonly
                 />
               </div>
               {error && (

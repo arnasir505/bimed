@@ -22,6 +22,7 @@ import { FAQ } from 'pages/faq';
 import { AboutUs } from 'widgets/about-us';
 import { Contacts } from 'widgets/contacts';
 import { Help } from 'widgets/help';
+import { ProfileChangePhone } from 'widgets/profile-change-phone';
 
 export const App = () => {
   return (
@@ -49,6 +50,7 @@ export const App = () => {
       <Route path='/profile' element={<Profile />}>
         <Route path='' element={<ProfileInfo />} />
         <Route path='favorites' element={<ProfileFavorites />} />
+        <Route path='change-phone' element={<ProfileChangePhone />} />
       </Route>
       <Route path='/*' element={<NotFound />} />
     </Routes>

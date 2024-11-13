@@ -34,6 +34,9 @@ const userSlice = createSlice({
         state.isLoggedIn = true;
       }
     },
+    updateUserPhone: (state, { payload }: PayloadAction<string>) => {
+      state.user!.phone = payload;
+    },
     toggleItemInFavorites: (state, { payload: product }: PayloadAction<Product>) => {
       const foundIndex = state.user?.favorites.findIndex((item) => item.id === product.id);
       if (foundIndex === -1) {
@@ -45,8 +48,14 @@ const userSlice = createSlice({
   },
 });
 
-export const { toggleItemInFavorites, unsetUser, updateUser, loginUser, editUserFields } =
-  userSlice.actions;
+export const {
+  toggleItemInFavorites,
+  unsetUser,
+  updateUser,
+  loginUser,
+  editUserFields,
+  updateUserPhone,
+} = userSlice.actions;
 
 export const userReducer = userSlice.reducer;
 

@@ -11,10 +11,6 @@
   gap: 24px;
 }
 
-.order__title {
-  margin-top: 0 !important;
-}
-
 .cart-total__delivery-terms {
   text-align: center;
   color: #8b96b1;

@@ -7,10 +7,6 @@
   box-sizing: border-box;
 }
 
-.cart-total__title {
-  margin-top: 0;
-}
-
 .cart-total__info {
   justify-content: space-between;
 }

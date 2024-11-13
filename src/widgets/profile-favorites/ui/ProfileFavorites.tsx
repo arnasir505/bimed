@@ -26,9 +26,7 @@ export const ProfileFavorites = () => {
         <Empty title='Избранное' text='В избранном пока пусто' btnText='На главную' />
       ) : (
         <>
-          <Typography.Title level={4} className='favorites__title'>
-            Избранное
-          </Typography.Title>
+          <Typography.Title level={4}>Избранное</Typography.Title>
           <div className='favorites__wrapper'>
             {favorites?.map((item) => <ProductCard key={item.id} product={item} />)}
           </div>

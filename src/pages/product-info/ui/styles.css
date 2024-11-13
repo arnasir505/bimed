@@ -22,11 +22,6 @@
   gap: 24px;
 }
 
-.product__title {
-  font-weight: 700;
-  margin: 0 !important;
-}
-
 .product__when-to-use {
   color: #98949e;
 }

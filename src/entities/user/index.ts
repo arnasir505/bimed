@@ -6,6 +6,7 @@ export {
   updateUser,
   loginUser,
   editUserFields,
+  updateUserPhone,
 } from './model/userSlice';
 
 export { selectFavoriteItems, selectUser, selectIsUserLoggedIn } from './model/userSlice';

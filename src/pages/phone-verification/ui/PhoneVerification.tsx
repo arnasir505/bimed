@@ -6,6 +6,8 @@ import { RegisterForm } from 'types';
 import { useAppDispatch } from 'shared/config';
 import { loginUser, updateUser } from 'entities/user';
 
+const correctCode = 1234;
+
 export const PhoneVerification = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,7 +27,7 @@ export const PhoneVerification = () => {
   };
 
   const handleAuthorization = () => {
-    if (!(Number(code) === 1234)) {
+    if (!(Number(code) === correctCode)) {
       messageApi.error({ content: 'Неверный код' });
       return;
     }

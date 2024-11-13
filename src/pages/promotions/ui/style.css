@@ -1,6 +1,6 @@
 .promotions__breadcrumb,
 .promotions__title {
-  margin-top: 12px;
+  margin-top: 12px !important;
 }
 
 .promotions__wrapper {

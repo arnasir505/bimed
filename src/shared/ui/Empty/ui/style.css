@@ -7,10 +7,6 @@
   padding: 24px 16px;
 }
 
-.empty__title {
-  margin-top: 0;
-}
-
 .empty__return-home {
   justify-content: center;
   align-items: center;

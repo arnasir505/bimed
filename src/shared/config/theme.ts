@@ -23,6 +23,7 @@ export const theme: ThemeConfig = {
       borderRadiusLG: 16,
       fontSizeLG: 14,
       dangerColor: '#E31B4B',
+      defaultColor: '#032D80',
     },
     Typography: {
       fontSize: 15,

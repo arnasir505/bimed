@@ -108,9 +108,7 @@ export const CartOrder = () => {
     <Flex vertical className='order-wrap'>
       {contextHolder}
       <Flex vertical className='order'>
-        <Typography.Title level={4} className='order__title'>
-          Оформление заказа
-        </Typography.Title>
+        <Typography.Title level={4}>Оформление заказа</Typography.Title>
         <Form name='order' className='order__form' size='large' form={form} onFinish={onFinish}>
           <Form.Item name='firstName' rules={[{ required: true, message: 'Введите имя!' }]}>
             <Input placeholder='Имя' />
