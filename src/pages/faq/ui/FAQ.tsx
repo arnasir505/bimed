@@ -1,7 +1,7 @@
 import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { Breadcrumb, Button, Flex } from 'antd';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import {
   PhoneOutlined,
   InfoCircleOutlined,
@@ -22,7 +22,7 @@ export const FAQ = () => {
           />
           <Flex className='profile faq-nav'>
             <Flex vertical className='profile__nav'>
-              <Link to='/faq'>
+              <NavLink to='/faq' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -34,8 +34,8 @@ export const FAQ = () => {
                 >
                   О нас
                 </Button>
-              </Link>
-              <Link to='contacts'>
+              </NavLink>
+              <NavLink to='contacts' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -47,8 +47,8 @@ export const FAQ = () => {
                 >
                   Контакты
                 </Button>
-              </Link>
-              <Link to='help'>
+              </NavLink>
+              <NavLink to='help' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -60,8 +60,8 @@ export const FAQ = () => {
                 >
                   Помощь
                 </Button>
-              </Link>
-              <Link to='/branches'>
+              </NavLink>
+              <NavLink to='/branches' end>
                 <Button
                   type='text'
                   className='profile__nav__btn'
@@ -73,7 +73,7 @@ export const FAQ = () => {
                 >
                   Филиалы
                 </Button>
-              </Link>
+              </NavLink>
             </Flex>
             <Outlet />
           </Flex>
