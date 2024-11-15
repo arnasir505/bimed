@@ -132,20 +132,22 @@ export const ProfileOrderHistory = () => {
               </div>
             </Flex>
             <Flex justify='center'>
-              <Button
-                size='large'
-                iconPosition='end'
-                icon={
-                  itemsToShow.includes(order.id) ? (
-                    <ArrowUpOutlined style={{ color: '#054EDB' }} />
-                  ) : (
-                    <ArrowDownOutlined style={{ color: '#054EDB' }} />
-                  )
-                }
-                onClick={() => onShowAllClick(order.id)}
-              >
-                {itemsToShow.includes(order.id) ? 'Свернуть' : 'Подробнее'}
-              </Button>
+              {order.items.length > 1 && (
+                <Button
+                  size='large'
+                  iconPosition='end'
+                  icon={
+                    itemsToShow.includes(order.id) ? (
+                      <ArrowUpOutlined style={{ color: '#054EDB' }} />
+                    ) : (
+                      <ArrowDownOutlined style={{ color: '#054EDB' }} />
+                    )
+                  }
+                  onClick={() => onShowAllClick(order.id)}
+                >
+                  {itemsToShow.includes(order.id) ? 'Свернуть' : 'Подробнее'}
+                </Button>
+              )}
             </Flex>
           </Flex>
         );
