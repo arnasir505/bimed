@@ -31,20 +31,7 @@
   border-radius: 8px;
 }
 
-.order__result {
-  margin-top: 20vh;
+.order-result-modal .ant-modal-content {
+  padding: 24px 16px;
   border-radius: 16px;
-}
-
-.order__result .ant-message-notice-content {
-  padding: 24px 16px !important;
-  width: 320px;
-}
-
-.order__result .ant-message-custom-content {
-  justify-content: center;
-}
-
-.order__result .ant-message-custom-content span {
-  width: 100%;
 }

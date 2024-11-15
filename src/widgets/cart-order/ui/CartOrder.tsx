@@ -5,7 +5,7 @@ import {
   Form,
   FormProps,
   Input,
-  message,
+  Modal,
   Radio,
   RadioChangeEvent,
   Typography,
@@ -23,11 +23,7 @@ import { useAppDispatch, useAppSelector } from 'shared/config';
 import { AntPhone, Result, SubmitButton } from 'shared/ui';
 import { useEffect, useState } from 'react';
 import { PhoneNumberUtil } from 'google-libphonenumber';
-import {
-  CheckCircleOutlined,
-  ExclamationCircleOutlined,
-  WhatsAppOutlined,
-} from '@ant-design/icons';
+import { CheckCircleOutlined, WhatsAppOutlined } from '@ant-design/icons';
 import { Order } from 'types';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
@@ -56,19 +52,18 @@ export const CartOrder = () => {
   const user = useAppSelector(selectUser);
   const isLoggedIn = useAppSelector(selectIsUserLoggedIn);
   const [radioValue, setRadioValue] = useState<'cash' | 'online' | 'terminal'>('cash');
-  const [messageApi, contextHolder] = message.useMessage({ maxCount: 1 });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [phone, setPhone] = useState('');
+  const [error, setError] = useState(false);
+  const isValid = isPhoneValid(phone);
+  const [form] = Form.useForm();
 
   const onChange = (e: RadioChangeEvent) => {
     setRadioValue(e.target.value);
   };
-  const [phone, setPhone] = useState('');
-  const [error, setError] = useState(false);
-  const isValid = isPhoneValid(phone);
-
-  const [form] = Form.useForm();
 
   const handleClose = () => {
-    messageApi.destroy();
+    setIsModalOpen(false);
     navigate('/');
     dispatch(clearCart());
   };
@@ -86,34 +81,7 @@ export const CartOrder = () => {
         items: cartItems,
       };
       dispatch(addOrderToHistory(order));
-      if (!values) {
-        messageApi.error({
-          content: (
-            <Result
-              title='Ошибка! Попробуйте снова'
-              icon={<ExclamationCircleOutlined style={{ color: '#E31B4B' }} />}
-              btnText='Закрыть'
-              onClick={handleClose}
-            />
-          ),
-          icon: <></>,
-          className: 'order__result',
-          duration: 0,
-        });
-      }
-      messageApi.success({
-        content: (
-          <Result
-            title='Успешно оплачено!'
-            icon={<CheckCircleOutlined style={{ color: '#1d9f22' }} />}
-            btnText='Хорошо'
-            onClick={handleClose}
-          />
-        ),
-        icon: <></>,
-        className: 'order__result',
-        duration: 0,
-      });
+      setIsModalOpen(true);
     }
   };
 
@@ -128,7 +96,23 @@ export const CartOrder = () => {
 
   return (
     <Flex vertical className='order-wrap'>
-      {contextHolder}
+      <Modal
+        open={isModalOpen}
+        closable={false}
+        keyboard={false}
+        mask={false}
+        maskClosable={false}
+        width={'320px'}
+        footer={null}
+        className='order-result-modal'
+      >
+        <Result
+          title='Успешно оплачено!'
+          icon={<CheckCircleOutlined style={{ color: '#1d9f22' }} />}
+          btnText='Хорошо'
+          onClick={handleClose}
+        />
+      </Modal>
       <Flex vertical className='order'>
         <Typography.Title level={4}>Оформление заказа</Typography.Title>
         <Form name='order' className='order__form' size='large' form={form} onFinish={onFinish}>
