@@ -144,10 +144,6 @@ export const Catalog = () => {
     setGridViewEnabled(true);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [current]);
-
   type CustomIconComponentProps = GetProps<typeof Icon>;
 
   const BlockViewIcon = (props: Partial<CustomIconComponentProps>) => (

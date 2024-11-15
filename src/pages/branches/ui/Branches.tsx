@@ -34,9 +34,6 @@ export const Branches = () => {
     }
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [current]);
   return (
     <Layout>
       <main className='branches-main'>

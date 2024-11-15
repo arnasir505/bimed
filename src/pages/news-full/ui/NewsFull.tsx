@@ -16,10 +16,6 @@ export const NewsFull = () => {
     return <NotFound />;
   }
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [params.id]);
-
   return (
     <Layout>
       <main className='news-full__main'>

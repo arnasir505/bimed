@@ -34,9 +34,6 @@ export const News = () => {
     }
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [current]);
   return (
     <Layout>
       <main className='news-main'>

@@ -55,10 +55,6 @@ export const ProductInfo = () => {
     dispatch(toggleItemInFavorites(product));
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [product]);
-
   return (
     <Layout>
       {contextHolder}
