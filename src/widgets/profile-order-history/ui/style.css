@@ -27,6 +27,11 @@
   align-items: flex-start;
 }
 
+.order-history__cart-items {
+  flex-grow: 2;
+  gap: 12px;
+}
+
 .cart-item__img-wrap.order-history-item__img-wrap {
   flex: 0 0 193px;
 }
