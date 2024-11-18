@@ -1,0 +1,79 @@
+.sign-up-bg {
+  height: 100vh;
+  background: url('../../../assets/images/sign-up-page-bg.png') center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.sign-up-bg::after {
+  content: url('../../../assets/images/logo-white.svg');
+  position: absolute;
+  bottom: 65px;
+  left: 91px;
+}
+
+.sign-up {
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 32px 32px 56px;
+  width: 384px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.sign-up__link-to-home {
+  align-self: flex-end;
+  color: #054edb;
+  font-size: 14px;
+}
+
+.sign-up__title {
+  margin: 12px 0 !important;
+}
+
+.sign-up__no-acc {
+  margin-bottom: 24px;
+  gap: 10px;
+}
+
+.sign-up__no-acc-text {
+  color: #8b96b1;
+  font-size: 14px;
+}
+
+.sign-up__link-to-sign-in {
+  color: #054edb;
+  font-size: 14px;
+}
+
+.sign-up__form {
+  max-width: 320px;
+}
+
+.sign-up__datepicker {
+  display: block;
+  border-radius: 16px;
+  font-size: 14px;
+  padding: 11.5px 16px;
+}
+
+.sign-up__datepicker .ant-picker-input {
+  flex-direction: row-reverse;
+  gap: 11px;
+}
+
+.sign-up__datepicker .ant-picker-input > input {
+  font-size: 14px;
+}
+
+.sign-up__datepicker .ant-picker-input > input::placeholder {
+  color: #8b96b1;
+}
+
+.sign-up__error-text {
+  font-size: 14px;
+}
+
+.sign-up__next-btn {
+  margin-top: 4px;
+}

@@ -1,0 +1,110 @@
+.product-card {
+  padding: 8px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #eaf1ff;
+}
+
+.product-card__img-wrapper {
+  height: 216px;
+  border-bottom: 1px solid #eaf1ff;
+}
+
+.product-card__img-wrapper > img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.product-card__link {
+  text-align: center;
+}
+
+.product-card__name {
+  color: #30394a;
+  text-align: center;
+}
+
+.product-card__prescriptionRequired {
+  color: #fd9b08;
+}
+
+.product-card__oldPrice {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  color: #8b96b1;
+}
+
+.product-card__oldPrice > span {
+  text-decoration: none;
+}
+
+.product-card__buttons {
+  height: 40px;
+  width: 100%;
+  gap: 8px;
+}
+
+.product-card__btn {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.product-card__quantity {
+  flex: 0 1 64px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+}
+
+.product-card__minusOne {
+  width: 40px !important;
+}
+
+.product-card__addOne {
+  width: 40px !important;
+  background: #1fa655;
+  border: 1px solid #1fa655;
+}
+
+.product-card__addOne:hover,
+.product-card__addOne:active {
+  background: #139246 !important;
+  border: 1px solid #139246 !important;
+}
+
+.product-card__addToFavorite {
+  border: 1px solid #ffc9d6;
+  width: 40px !important;
+}
+
+.product-card__addToCart {
+  flex-grow: 2;
+  font-size: 15px;
+  font-weight: 700;
+  color: #171717;
+}
+
+.product-card__addToFavorite:hover,
+.product-card__addToFavorite:active {
+  border-color: #e31b4b !important;
+}
+
+.product-card__addToCart:hover {
+  color: #171717 !important;
+}
+
+.product-card__quantity-wrap {
+  width: min-content;
+  flex-grow: 2;
+  gap: 8px;
+}
+
+.product-card__addToCart.not-available {
+  background: transparent;
+}
+
+.product-card__addToCart.not-available:hover {
+  color: #8b96b1 !important;
+}

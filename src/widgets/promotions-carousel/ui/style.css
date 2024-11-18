@@ -1,0 +1,90 @@
+.promotions__carousel {
+  margin-top: 14px;
+  margin-bottom: 46px;
+}
+
+.promotions-carousel__wrap {
+  background: #fff;
+  height: 232px;
+}
+
+.promotions-carousel__item {
+  height: 100%;
+  width: 380px;
+  margin: 0 auto;
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.promotions-carousel__item.item-101,
+.promotions-carousel__item.item-104 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-1.png');
+}
+
+.promotions-carousel__item.item-102,
+.promotions-carousel__item.item-105 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-2.png');
+}
+
+.promotions-carousel__item.item-103,
+.promotions-carousel__item.item-106 {
+  background-image: url('../../../assets/images/promotions-carousel-item-bg-3.png');
+}
+
+.promotions-carousel__img {
+  margin-left: 22px;
+  margin-right: 26px;
+}
+
+.promotions-carousel__item.item-101 .ant-typography.promotions-carousel__title,
+.promotions-carousel__item.item-104 .ant-typography.promotions-carousel__title {
+  color: #065bab;
+}
+
+.ant-typography.promotions-carousel__title {
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 40px;
+  font-size: 42px;
+}
+
+.promotions-carousel__title > span {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  border: 2px solid #eaf1ff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  opacity: 1;
+}
+
+.slick-arrow.slick-next::after,
+.slick-arrow.slick-prev::after {
+  display: none;
+}
+
+.slick-arrow.slick-prev {
+  background-image: url('../../../assets/images/icons/arrow-left.png');
+}
+
+.slick-arrow.slick-next {
+  background-image: url('../../../assets/images/icons/arrow-right.png');
+}
+
+.arrows-outside .slick-arrow.slick-prev {
+  inset-inline-start: -63px;
+  background-color: transparent;
+}
+
+.arrows-outside .slick-arrow.slick-next {
+  inset-inline-end: -63px;
+  background-color: transparent;
+}

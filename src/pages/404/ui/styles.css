@@ -1,0 +1,35 @@
+.not-found__wrap {
+  background-color: #f5f5f5;
+}
+
+.not-found {
+  padding-top: 177px;
+  padding-bottom: 165px;
+}
+
+.not-found__error {
+  font-size: 24px;
+  font-weight: 700;
+  color: #054edb;
+  background: url('../../../assets/images/404.svg') no-repeat bottom center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 50px;
+}
+
+.not-found__page {
+  padding-top: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 43px;
+}
+
+.not-found__return-home {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #054edb;
+  padding: 15px 105px;
+  border-radius: 16px;
+}

@@ -1,0 +1,24 @@
+.faq__questions {
+  background-color: #fff;
+  margin-top: 16px;
+}
+
+.faq__questions .ant-collapse-item {
+  margin-bottom: 16px !important;
+  border: 1px solid #d4e3ff !important;
+  border-radius: 16px !important;
+}
+
+.faq__questions .ant-collapse-header {
+  padding: 16px !important;
+}
+
+.faq__questions .ant-collapse-header-text {
+  font-size: 15px;
+  color: #181818;
+  font-weight: 700;
+}
+
+.faq__questions .ant-collapse-arrow {
+  color: #054edb !important;
+}

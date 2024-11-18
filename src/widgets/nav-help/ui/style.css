@@ -1,0 +1,43 @@
+.nav-help {
+  border-radius: 16px;
+  width: 33%;
+  height: 232px;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: 64px;
+}
+
+.nav-help.pharmacy-map {
+  background-image: url('../../../assets/images/pharmacy-map.png');
+}
+
+.nav-help.how-to-order {
+  background-image: url('../../../assets/images/how-to-order.png');
+}
+
+.nav-help.free-delivery {
+  background-image: url('../../../assets/images/free-delivery.png');
+}
+
+.nav-help__text {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.nav-help__text_green {
+  background-color: #1d9f22;
+}
+
+.nav-help__text_blue {
+  background-color: #054edb;
+}
+
+.nav-help__text_orange {
+  background-color: #fd9b08;
+}

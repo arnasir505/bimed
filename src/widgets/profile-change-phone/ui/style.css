@@ -1,0 +1,49 @@
+.profile__content.phone__change {
+  height: 494px;
+}
+
+.phone-change__step {
+  max-width: 316px;
+}
+
+.phone-change__helper-text {
+  font-size: 14px;
+  color: #8b96b1;
+  margin-top: 16px;
+}
+
+.phone-change__btn-wrap {
+  margin-top: 24px;
+}
+
+.phone-change__phone-number {
+  font-size: 18px;
+  font-weight: 600;
+  color: #181818;
+  margin-top: 12px;
+}
+
+.phone-change__step-2-cancel {
+  margin-bottom: 24px;
+}
+
+.phone-change__wrong-phone-number {
+  color: #054edb;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.phone-change__success {
+  justify-content: center;
+}
+
+.phone-change__success-content {
+  width: 320px;
+  align-self: center;
+  text-align: center;
+}
+
+.phone-change__success-content__title {
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
+}

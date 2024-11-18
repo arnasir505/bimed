@@ -1,0 +1,38 @@
+.phone-verify {
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 32px 32px 56px;
+  width: 384px;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+}
+
+.phone-verify__title {
+  margin: 24px 0 !important;
+}
+
+.phone-verify__phone {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.phone-verify__link {
+  color: #054edb;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.phone-verify__confirm {
+  margin-top: 12px;
+  margin-bottom: 24px;
+}
+
+.phone-verify__send-again-text {
+  color: #8b96b1;
+  text-align: center;
+  font-size: 14px;
+}
+
+.phone-verify__send-again {
+  margin-top: 6px;
+}

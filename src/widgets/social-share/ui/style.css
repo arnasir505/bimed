@@ -1,0 +1,85 @@
+.social__share-buttons {
+  height: 36px;
+  gap: 16px;
+}
+
+.social__share-btn {
+  border: 1px solid #d4e3ff;
+  border-radius: 8px;
+  height: 100%;
+  width: 36px;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  transition: all 0.2s;
+}
+
+.social__share-btn:hover {
+  background-color: #054edb;
+}
+
+.social__share-btn.vk {
+  background-image: url('../../../assets/images/icons/vk.svg');
+}
+
+.social__share-btn.facebook {
+  background-image: url('../../../assets/images/icons/facebook.svg');
+}
+
+.social__share-btn.odnoklassniki {
+  background-image: url('../../../assets/images/icons/odnoklassniki.svg');
+}
+
+.social__share-btn.instagram {
+  background-image: url('../../../assets/images/icons/instagram.svg');
+}
+
+.social__share-btn.whatsapp {
+  background-image: url('../../../assets/images/icons/whatsapp.svg');
+}
+
+.social__share-btn.vk:hover {
+  background-image: url('../../../assets/images/icons/vk-white.svg');
+}
+
+.social__share-btn.facebook:hover {
+  background-image: url('../../../assets/images/icons/facebook-white.svg');
+}
+
+.social__share-btn.odnoklassniki:hover {
+  background-image: url('../../../assets/images/icons/odnoklassniki-white.svg');
+}
+
+.social__share-btn.instagram:hover {
+  background-image: url('../../../assets/images/icons/instagram-white.svg');
+}
+
+.social__share-btn.whatsapp:hover {
+  background-image: url('../../../assets/images/icons/whatsapp-white.svg');
+}
+
+.social__share-btn.vk.filled {
+  background-image: url('../../../assets/images/icons/vk-white.svg');
+  background-color: #054edb;
+}
+
+.social__share-btn.facebook.filled {
+  background-image: url('../../../assets/images/icons/facebook-white.svg');
+  background-color: #054edb;
+}
+
+.social__share-btn.odnoklassniki.filled {
+  background-image: url('../../../assets/images/icons/odnoklassniki-white.svg');
+  background-color: #054edb;
+}
+
+.social__share-btn.instagram.filled {
+  background-image: url('../../../assets/images/icons/instagram-white.svg');
+  background-color: #054edb;
+}
+
+.social__share-btn.whatsapp.filled {
+  background-image: url('../../../assets/images/icons/whatsapp-white.svg');
+  background-color: #054edb;
+}

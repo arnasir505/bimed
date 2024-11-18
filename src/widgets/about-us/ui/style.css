@@ -1,0 +1,23 @@
+.faq__content {
+  padding: 24px 16px;
+  background-color: #fff;
+  border-radius: 16px;
+  flex-grow: 2;
+}
+
+.faq__img-wrap {
+  margin-top: 12px;
+  margin-bottom: 44px;
+}
+
+.faq__img-wrap > img {
+  border-radius: 16px;
+  width: 100%;
+  height: auto;
+}
+
+.faq__text {
+  font-size: 14px;
+  color: #181818;
+  line-height: 1.5;
+}

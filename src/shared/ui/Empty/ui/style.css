@@ -1,0 +1,20 @@
+.empty-wrap {
+  background-color: #fff;
+  flex-grow: 2;
+  border-radius: 16px;
+  height: 492px;
+  box-sizing: border-box;
+  padding: 24px 16px;
+}
+
+.empty__return-home {
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-grow: 2;
+}
+
+.empty__text {
+  color: #8b96b1;
+  font-weight: 700;
+}
