@@ -13,7 +13,6 @@ import { products } from 'data/products';
 import { useState } from 'react';
 import { CartModal } from 'widgets/cart-modal';
 import { MenuModal } from 'widgets/menu-modal';
-import LogoExpanded from 'assets/images/logo-expanded.svg';
 import { useAppSelector } from 'shared/config';
 import { selectCartItems } from 'entities/cart';
 import './style.css';
@@ -34,7 +33,11 @@ const HeaderBottom = () => {
         <MenuBtn onClick={() => setMenuModalOpen(true)} />
         <div className='logo-wrap'>
           <Link to='/'>
-            <Image src={LogoExpanded} preview={false} className='header__logo' />
+            <Image
+              src='/public/static/images/logo-expanded.svg'
+              preview={false}
+              className='header__logo'
+            />
           </Link>
         </div>
         <Select

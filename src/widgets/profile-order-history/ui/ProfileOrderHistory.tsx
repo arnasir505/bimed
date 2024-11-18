@@ -4,7 +4,6 @@ import { Empty } from 'shared/ui';
 import { selectOrderHistory } from 'entities/user';
 import { Button, Flex, Typography } from 'antd';
 import dayjs from 'dayjs';
-import productNoImage from 'assets/images/product-no-image.png';
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 
@@ -58,7 +57,14 @@ export const ProfileOrderHistory = () => {
                   .map(({ product, quantity }) => (
                     <Flex key={product.id} className='cart-item'>
                       <div className='cart-item__img-wrap order-history-item__img-wrap'>
-                        <img src={product.img ? `/${product.img}` : productNoImage} alt='' />
+                        <img
+                          src={
+                            product.img
+                              ? `/${product.img}`
+                              : '/public/static/images/product-no-image.png'
+                          }
+                          alt=''
+                        />
                       </div>
                       <Flex vertical className='cart-item__content order-history-item__content'>
                         <Typography.Text className='cart-item__name'>

@@ -13,7 +13,6 @@ import {
 import { useEffect } from 'react';
 import { Product } from 'types';
 import { MinusOutlined, PlusOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import productNoImage from 'assets/images/product-no-image.png';
 import './style.css';
 import { Link } from 'react-router-dom';
 
@@ -55,7 +54,10 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
         {cartItems.map(({ product, quantity }) => (
           <Flex key={product.id} className='cart-modal-item'>
             <div className='cart-modal-item__img-wrap'>
-              <img src={product.img ? `/${product.img}` : productNoImage} alt='' />
+              <img
+                src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+                alt=''
+              />
             </div>
             <Flex vertical className='cart-modal-item__content'>
               <Typography.Text>{product.name}</Typography.Text>

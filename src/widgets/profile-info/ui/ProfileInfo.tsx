@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { AntPhone } from 'shared/ui';
 import { RegisterForm, RegisterFormMutation } from 'types';
-import PfpDefault from 'assets/images/pfp-default.svg';
-import QrCode from 'assets/images/qr-code.png';
 import './style.css';
 
 const phoneUtil = PhoneNumberUtil.getInstance();
@@ -65,7 +63,11 @@ export const ProfileInfo = () => {
         <Typography.Title level={3}>Профиль</Typography.Title>
         <Flex className='profile-picture-wrap'>
           <div className='profile-picture'>
-            <img src={PfpDefault} alt='profile-picture' />
+            <img
+              src='/public/static/images/pfp-default.svg
+            '
+              alt='profile-picture'
+            />
           </div>
           <Button
             type='primary'
@@ -141,7 +143,7 @@ export const ProfileInfo = () => {
       </Flex>
       <Flex vertical className='qr-code-bonus-wrap'>
         <div className='qr-code-wrap'>
-          <img src={QrCode} alt='qr-code' />
+          <img src='/public/static/images/qr-code.png' alt='qr-code' />
         </div>
         <Flex className='bonus-amount-wrap'>
           <Typography.Text className='bonus-amount'>250</Typography.Text>

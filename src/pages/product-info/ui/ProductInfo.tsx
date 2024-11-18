@@ -5,7 +5,6 @@ import { products } from 'data/products';
 import { useAppDispatch, useAppSelector } from 'shared/config';
 import { NotFound } from 'pages/404';
 import { useParams } from 'react-router-dom';
-import productNoImage from 'assets/images/product-no-image.png';
 import {
   HeartFilled,
   HeartOutlined,
@@ -63,7 +62,12 @@ export const ProductInfo = () => {
           <Flex className='product-info-wrap'>
             <Flex vertical gap='30px'>
               <Flex vertical justify='center' align='center' className='product-img_wrap'>
-                <Image preview={false} src={product.img ? `/${product.img}` : productNoImage} />
+                <Image
+                  preview={false}
+                  src={
+                    product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'
+                  }
+                />
               </Flex>
               <Flex className='product__info-instructions-wrap'>
                 <Typography.Text className='product__extra-info active'>

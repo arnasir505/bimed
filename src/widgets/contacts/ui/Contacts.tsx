@@ -1,6 +1,5 @@
 import { Button, Flex, Form, FormProps, Input, List, Typography } from 'antd';
 import { Link } from 'react-router-dom';
-import Locations from 'assets/images/locations.svg';
 import './style.css';
 import { AntPhone } from 'shared/ui';
 import { PhoneNumberUtil } from 'google-libphonenumber';
@@ -82,7 +81,7 @@ export const Contacts = () => {
       </Flex>
       <Flex className='faq__content'>
         <div className='contacts__location'>
-          <img src={Locations} alt='locations' />
+          <img src='/public/static/images/locations.svg' alt='locations' />
         </div>
       </Flex>
       <Flex className='faq__content' gap={'16px'}>

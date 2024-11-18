@@ -16,7 +16,6 @@ import {
   selectUser,
   toggleItemInFavorites,
 } from 'entities/user';
-import productNoImage from 'assets/images/product-no-image.png';
 
 interface Props {
   item: ICartItem;
@@ -49,7 +48,10 @@ export const CartItem: React.FC<Props> = ({ item: { product, quantity } }) => {
     <Flex key={product.id} className='cart-item'>
       {contextHolder}
       <div className='cart-item__img-wrap'>
-        <img src={product.img ? `/${product.img}` : productNoImage} alt='' />
+        <img
+          src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+          alt=''
+        />
       </div>
       <Flex vertical className='cart-item__content'>
         <Typography.Text className='cart-item__name'>{product.name}</Typography.Text>

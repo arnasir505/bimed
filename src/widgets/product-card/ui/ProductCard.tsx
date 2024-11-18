@@ -15,7 +15,6 @@ import {
   plusOneToCart,
   selectCartItems,
 } from 'entities/cart';
-import productNoImage from 'assets/images/product-no-image.png';
 import { Link } from 'react-router-dom';
 import './style.css';
 import {
@@ -65,7 +64,10 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     >
       {contextHolder}
       <div className='product-card__img-wrapper'>
-        <img src={product.img ? `/${product.img}` : productNoImage} alt={product.name} />
+        <img
+          src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+          alt={product.name}
+        />
       </div>
       <Link className='product-card__link' to={`/products/${product.id}`}>
         <Typography.Text className='product-card__name'>{product.name}</Typography.Text>
