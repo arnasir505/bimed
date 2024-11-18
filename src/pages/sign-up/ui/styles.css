@@ -1,12 +1,12 @@
 .sign-up-bg {
   height: 100vh;
-  background: url('../../../assets/images/sign-up-page-bg.png') center no-repeat;
+  background: url('/public/static/images/sign-up-page-bg.png') center no-repeat;
   background-size: cover;
   position: relative;
 }
 
 .sign-up-bg::after {
-  content: url('../../../assets/images/logo-white.svg');
+  content: url('/public/static/images/logo-white.svg');
   position: absolute;
   bottom: 65px;
   left: 91px;

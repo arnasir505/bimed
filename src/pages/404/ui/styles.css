@@ -11,7 +11,7 @@
   font-size: 24px;
   font-weight: 700;
   color: #054edb;
-  background: url('../../../assets/images/404.svg') no-repeat bottom center;
+  background: url('/public/static/images/404.svg') no-repeat bottom center;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 50px;

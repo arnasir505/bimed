@@ -13,7 +13,7 @@
 }
 
 .menu-modal__title.back {
-  background: url('../../../assets/images/icons/arrow-left-min.svg') left center no-repeat;
+  background: url('/public/static/images/icons/arrow-left-min.svg') left center no-repeat;
   padding-left: 32px;
   margin-left: 16px;
   cursor: pointer;
@@ -36,7 +36,7 @@
   padding: 10px 16px;
   width: 100%;
   display: block;
-  background: url('../../../assets/images/icons/arrow-right-min.svg') right center no-repeat;
+  background: url('/public/static/images/icons/arrow-right-min.svg') right center no-repeat;
   background-origin: content-box;
   border-radius: 12px;
   transition: background-color 0.2s;
