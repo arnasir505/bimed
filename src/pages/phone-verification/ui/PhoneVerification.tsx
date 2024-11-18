@@ -21,7 +21,7 @@ export const PhoneVerification = () => {
 
   const handleClick = () => {
     setSendAgainAvailable(false);
-    intervalRef.current = setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setCounter((prev) => prev - 1);
     }, 1000);
   };

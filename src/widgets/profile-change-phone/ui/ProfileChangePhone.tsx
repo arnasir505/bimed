@@ -73,14 +73,14 @@ export const ProfileChangePhone = () => {
 
   const onSendCodeAgainClick = () => {
     setSendAgainAvailable(false);
-    intervalRef.current = setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setCounter((prev) => prev - 1);
     }, 1000);
   };
 
   const onSendCodeAgainClick2 = () => {
     setSendAgainAvailable2(false);
-    intervalRef2.current = setInterval(() => {
+    intervalRef2.current = window.setInterval(() => {
       setCounter2((prev) => prev - 1);
     }, 1000);
   };
