@@ -34,7 +34,7 @@ const HeaderBottom = () => {
         <div className='logo-wrap'>
           <Link to='/'>
             <Image
-              src='/public/static/images/logo-expanded.svg'
+              src={`${import.meta.env.BASE_URL}static/images/logo-expanded.svg`}
               preview={false}
               className='header__logo'
             />

@@ -9,15 +9,15 @@
 }
 
 .nav-help.pharmacy-map {
-  background-image: url('../../../assets/images/pharmacy-map.png');
+  background-image: url('/public/static/images/pharmacy-map.png');
 }
 
 .nav-help.how-to-order {
-  background-image: url('../../../assets/images/how-to-order.png');
+  background-image: url('/public/static/images/how-to-order.png');
 }
 
 .nav-help.free-delivery {
-  background-image: url('../../../assets/images/free-delivery.png');
+  background-image: url('/public/static/images/free-delivery.png');
 }
 
 .nav-help__text {

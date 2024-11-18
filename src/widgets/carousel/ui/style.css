@@ -9,8 +9,8 @@
   width: 100%;
   height: 448px;
   background:
-    no-repeat url('../../../assets/images/carousel-item-bg.svg'),
-    no-repeat url('../../../assets/images/carousel-img.png');
+    no-repeat url('/public/static/images/carousel-item-bg.svg'),
+    no-repeat url('/public/static/images/carousel-img.png');
   background-position:
     left,
     150px 0;
@@ -56,4 +56,3 @@
 .slick-dots-bottom > li > button {
   opacity: 0 !important;
 }
-

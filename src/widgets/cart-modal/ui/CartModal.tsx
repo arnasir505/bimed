@@ -55,7 +55,11 @@ export const CartModal: React.FC<Props> = ({ open, closeModal }) => {
           <Flex key={product.id} className='cart-modal-item'>
             <div className='cart-modal-item__img-wrap'>
               <img
-                src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+                src={
+                  product.img
+                    ? `/${product.img}`
+                    : `${import.meta.env.BASE_URL}static/images/product-no-image.png`
+                }
                 alt=''
               />
             </div>

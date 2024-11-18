@@ -65,7 +65,9 @@ export const ProductInfo = () => {
                 <Image
                   preview={false}
                   src={
-                    product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'
+                    product.img
+                      ? `/${product.img}`
+                      : `${import.meta.env.BASE_URL}static/images/product-no-image.png`
                   }
                 />
               </Flex>

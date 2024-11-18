@@ -81,7 +81,7 @@ export const Contacts = () => {
       </Flex>
       <Flex className='faq__content'>
         <div className='contacts__location'>
-          <img src='/public/static/images/locations.svg' alt='locations' />
+          <img src={`${import.meta.env.BASE_URL}static/images/locations.svg`} alt='locations' />
         </div>
       </Flex>
       <Flex className='faq__content' gap={'16px'}>

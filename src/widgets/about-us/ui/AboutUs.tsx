@@ -8,7 +8,7 @@ export const AboutUs = () => {
         О нас
       </Typography.Title>
       <div className='faq__img-wrap'>
-        <img src='/public/static/images/about-us-bg.png' alt='about-us' />
+        <img src='static/images/about-us-bg.png' alt='about-us' />
       </div>
       <Typography.Text className='faq__text'>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas purus integer tortor, ac

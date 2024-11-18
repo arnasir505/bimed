@@ -3,7 +3,7 @@ import { Branch } from 'types';
 export const branches: Branch[] = [
   {
     id: '301',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -12,7 +12,7 @@ export const branches: Branch[] = [
   },
   {
     id: '302',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet,',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -21,7 +21,7 @@ export const branches: Branch[] = [
   },
   {
     id: '303',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -30,7 +30,7 @@ export const branches: Branch[] = [
   },
   {
     id: '304',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -39,7 +39,7 @@ export const branches: Branch[] = [
   },
   {
     id: '305',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -48,7 +48,7 @@ export const branches: Branch[] = [
   },
   {
     id: '306',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -57,7 +57,7 @@ export const branches: Branch[] = [
   },
   {
     id: '307',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -66,7 +66,7 @@ export const branches: Branch[] = [
   },
   {
     id: '308',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -75,7 +75,7 @@ export const branches: Branch[] = [
   },
   {
     id: '309',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -84,7 +84,7 @@ export const branches: Branch[] = [
   },
   {
     id: '310',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -93,7 +93,7 @@ export const branches: Branch[] = [
   },
   {
     id: '311',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -102,7 +102,7 @@ export const branches: Branch[] = [
   },
   {
     id: '312',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -111,7 +111,7 @@ export const branches: Branch[] = [
   },
   {
     id: '313',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -120,7 +120,7 @@ export const branches: Branch[] = [
   },
   {
     id: '314',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -129,7 +129,7 @@ export const branches: Branch[] = [
   },
   {
     id: '315',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -138,7 +138,7 @@ export const branches: Branch[] = [
   },
   {
     id: '316',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -147,7 +147,7 @@ export const branches: Branch[] = [
   },
   {
     id: '317',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -156,7 +156,7 @@ export const branches: Branch[] = [
   },
   {
     id: '318',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -165,7 +165,7 @@ export const branches: Branch[] = [
   },
   {
     id: '319',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -174,7 +174,7 @@ export const branches: Branch[] = [
   },
   {
     id: '320',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -183,7 +183,7 @@ export const branches: Branch[] = [
   },
   {
     id: '321',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -192,7 +192,7 @@ export const branches: Branch[] = [
   },
   {
     id: '322',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',
@@ -201,7 +201,7 @@ export const branches: Branch[] = [
   },
   {
     id: '323',
-    img: '/public/static/images/branch.png',
+    img: 'static/images/branch.png',
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
     address: 'Боконбаева Мира',
     workingHours: '10:00 - 21:00',

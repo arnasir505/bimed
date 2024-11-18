@@ -35,31 +35,31 @@
 }
 
 .footer__link_icon.vk {
-  background-image: url('../../../assets/images/icons/vk.svg');
+  background-image: url('/public/static/images/icons/vk.svg');
 }
 
 .footer__link_icon.facebook {
-  background-image: url('../../../assets/images/icons/facebook.svg');
+  background-image: url('/public/static/images/icons/facebook.svg');
 }
 
 .footer__link_icon.odnoklassniki {
-  background-image: url('../../../assets/images/icons/odnoklassniki.svg');
+  background-image: url('/public/static/images/icons/odnoklassniki.svg');
 }
 
 .footer__link_icon.instagram {
-  background-image: url('../../../assets/images/icons/instagram.svg');
+  background-image: url('/public/static/images/icons/instagram.svg');
 }
 
 .footer__link_icon.mail {
-  background-image: url('../../../assets/images/icons/mail.svg');
+  background-image: url('/public/static/images/icons/mail.svg');
 }
 
 .footer__link_icon.phone {
-  background-image: url('../../../assets/images/icons/phone.svg');
+  background-image: url('/public/static/images/icons/phone.svg');
 }
 
 .footer__link_icon.pin {
-  background-image: url('../../../assets/images/icons/pin.svg');
+  background-image: url('/public/static/images/icons/pin.svg');
 }
 
 .app-marketplace {
@@ -72,9 +72,9 @@
 }
 
 .app-store-link {
-  background-image: url('../../../assets/images/icons/app-store.svg');
+  background-image: url('/public/static/images/icons/app-store.svg');
 }
 
 .google-play-link {
-  background-image: url('../../../assets/images/icons/google-play.svg');
+  background-image: url('/public/static/images/icons/google-play.svg');
 }

@@ -19,17 +19,17 @@
 
 .promotions-carousel__item.item-101,
 .promotions-carousel__item.item-104 {
-  background-image: url('../../../assets/images/promotions-carousel-item-bg-1.png');
+  background-image: url('/public/static/images/promotions-carousel-item-bg-1.png');
 }
 
 .promotions-carousel__item.item-102,
 .promotions-carousel__item.item-105 {
-  background-image: url('../../../assets/images/promotions-carousel-item-bg-2.png');
+  background-image: url('/public/static/images/promotions-carousel-item-bg-2.png');
 }
 
 .promotions-carousel__item.item-103,
 .promotions-carousel__item.item-106 {
-  background-image: url('../../../assets/images/promotions-carousel-item-bg-3.png');
+  background-image: url('/public/static/images/promotions-carousel-item-bg-3.png');
 }
 
 .promotions-carousel__img {
@@ -72,11 +72,11 @@
 }
 
 .slick-arrow.slick-prev {
-  background-image: url('../../../assets/images/icons/arrow-left.png');
+  background-image: url('/public/static/images/icons/arrow-left.png');
 }
 
 .slick-arrow.slick-next {
-  background-image: url('../../../assets/images/icons/arrow-right.png');
+  background-image: url('/public/static/images/icons/arrow-right.png');
 }
 
 .arrows-outside .slick-arrow.slick-prev {

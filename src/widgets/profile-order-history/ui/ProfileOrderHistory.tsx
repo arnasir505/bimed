@@ -61,7 +61,7 @@ export const ProfileOrderHistory = () => {
                           src={
                             product.img
                               ? `/${product.img}`
-                              : '/public/static/images/product-no-image.png'
+                              : `${import.meta.env.BASE_URL}static/images/product-no-image.png`
                           }
                           alt=''
                         />

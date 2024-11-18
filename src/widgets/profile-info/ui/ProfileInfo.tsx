@@ -64,7 +64,7 @@ export const ProfileInfo = () => {
         <Flex className='profile-picture-wrap'>
           <div className='profile-picture'>
             <img
-              src='/public/static/images/pfp-default.svg
+              src='static/images/pfp-default.svg
             '
               alt='profile-picture'
             />
@@ -143,7 +143,7 @@ export const ProfileInfo = () => {
       </Flex>
       <Flex vertical className='qr-code-bonus-wrap'>
         <div className='qr-code-wrap'>
-          <img src='/public/static/images/qr-code.png' alt='qr-code' />
+          <img src='static/images/qr-code.png' alt='qr-code' />
         </div>
         <Flex className='bonus-amount-wrap'>
           <Typography.Text className='bonus-amount'>250</Typography.Text>

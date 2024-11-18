@@ -49,7 +49,11 @@ export const CartItem: React.FC<Props> = ({ item: { product, quantity } }) => {
       {contextHolder}
       <div className='cart-item__img-wrap'>
         <img
-          src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+          src={
+            product.img
+              ? `/${product.img}`
+              : `${import.meta.env.BASE_URL}static/images/product-no-image.png`
+          }
           alt=''
         />
       </div>

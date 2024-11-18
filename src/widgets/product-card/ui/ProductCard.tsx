@@ -65,7 +65,11 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
       {contextHolder}
       <div className='product-card__img-wrapper'>
         <img
-          src={product.img ? `/${product.img}` : '/public/static/images/product-no-image.png'}
+          src={
+            product.img
+              ? `/${product.img}`
+              : `${import.meta.env.BASE_URL}static/images/product-no-image.png`
+          }
           alt={product.name}
         />
       </div>
