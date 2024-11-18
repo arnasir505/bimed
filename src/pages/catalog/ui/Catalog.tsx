@@ -3,7 +3,7 @@ import { Breadcrumb, Button, Flex, GetProps, Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { products } from 'data/products';
 import { ProductCard } from 'widgets/product-card';
-import { useEffect, useReducer, useState } from 'react';
+import { useReducer, useState } from 'react';
 import { Product } from 'types';
 import { Pagination } from 'widgets/pagination';
 import Icon, { CaretDownOutlined, CaretUpOutlined } from '@ant-design/icons';

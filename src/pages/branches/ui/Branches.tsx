@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { branches } from 'data/branches';
 import { BranchesCard } from 'widgets/branches-card';
 import { Branch } from 'types';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Pagination } from 'widgets/pagination';
 
 export const Branches = () => {

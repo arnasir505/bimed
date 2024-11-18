@@ -4,7 +4,7 @@ import { Container, Layout } from 'shared/ui';
 import './style.css';
 import { news } from 'data/news';
 import { NewsCard } from 'widgets/news-card';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { News as INews } from 'types';
 import { Pagination } from 'widgets/pagination';
 

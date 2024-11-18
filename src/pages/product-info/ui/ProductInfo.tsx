@@ -1,5 +1,5 @@
 import { Container, Layout } from 'shared/ui';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Flex, Image, Input, message, Typography } from 'antd';
 import { products } from 'data/products';
 import { useAppDispatch, useAppSelector } from 'shared/config';

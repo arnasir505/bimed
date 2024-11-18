@@ -5,7 +5,6 @@ import { Breadcrumb, Button, Flex, Typography } from 'antd';
 import { news } from 'data/news';
 import { NotFound } from 'pages/404';
 import { SocialShare } from 'widgets/social-share';
-import { useEffect } from 'react';
 import { NewsCard } from 'widgets/news-card';
 
 export const NewsFull = () => {
